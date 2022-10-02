@@ -1,0 +1,16 @@
+digraph "Index::build"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Index::build",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Build the index using the Brand o the userID as searching key according to the onBrand value."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="EventSet::at",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEventSet.html#ab8ac311a6121981191ce61d505cc069f",tooltip="get the event in a position selected, for consulting"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Event::getBrand",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEvent.html#aace1f28b7c4dca4c943c46a85b74764a",tooltip="It gives the Brand of the event."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Event::getField",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEvent.html#aa0f2e1910272a7014e97794b7fc73d9a",tooltip="Given the name of a field of Event, field, it returns, always as a string, the value of the specified..."];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="EventSet::size",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEventSet.html#afa17cf8b71961fe1bab9ae5bc7f4963d",tooltip="Returns the number of events stored."];
+}

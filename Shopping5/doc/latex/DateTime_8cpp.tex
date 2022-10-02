@@ -1,0 +1,154 @@
+\hypertarget{DateTime_8cpp}{}\doxysection{Referencia del Archivo src/\+Date\+Time.cpp}
+\label{DateTime_8cpp}\index{src/DateTime.cpp@{src/DateTime.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include \char`\"{}Date\+Time.\+h\char`\"{}}\newline
+Dependencia gráfica adjunta para Date\+Time.\+cpp\+:
+% FIG 0
+\doxysubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{DateTime_8cpp_a9962ec9b30855e08347df66f3fc99345}{is\+Correct}} (int year, int month, int day, int hour, int min, int sec)
+\begin{DoxyCompactList}\small\item\em auxiliary function to check if the date and the time are in correct format, taking into account, leap year etc. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{DateTime_8cpp_af2b9a13e863e39a34e807bef47cbbd16}{split}} (const std\+::string \&line, int \&y, int \&m, int \&d, int \&h, int \&mn, int \&s)
+\begin{DoxyCompactList}\small\item\em split the first field in 6 components of the data time. Please consider using string\+::substr(int, int)\mbox{[}\href{https://en.cppreference.com/w/cpp/string/basic_string/substr}{\texttt{ https\+://en.\+cppreference.\+com/w/cpp/string/basic\+\_\+string/substr}}\mbox{]} to cut the line into the appropriate substrings and then convert it into integer values with the function stoi(string) \mbox{[}\href{https://en.cppreference.com/w/cpp/string/basic_string/stol}{\texttt{ https\+://en.\+cppreference.\+com/w/cpp/string/basic\+\_\+string/stol}}\mbox{]} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+\begin{DoxyAuthor}{Autor}
+D\+E\+C\+S\+AI 
+\end{DoxyAuthor}
+\begin{DoxyNote}{Nota}
+To be implemented by students 
+\end{DoxyNote}
+
+
+\doxysubsection{Documentación de las funciones}
+\mbox{\Hypertarget{DateTime_8cpp_a9962ec9b30855e08347df66f3fc99345}\label{DateTime_8cpp_a9962ec9b30855e08347df66f3fc99345}} 
+\index{DateTime.cpp@{DateTime.cpp}!isCorrect@{isCorrect}}
+\index{isCorrect@{isCorrect}!DateTime.cpp@{DateTime.cpp}}
+\doxysubsubsection{\texorpdfstring{isCorrect()}{isCorrect()}}
+{\footnotesize\ttfamily bool is\+Correct (\begin{DoxyParamCaption}\item[{int}]{year,  }\item[{int}]{month,  }\item[{int}]{day,  }\item[{int}]{hour,  }\item[{int}]{min,  }\item[{int}]{sec }\end{DoxyParamCaption})}
+
+
+
+auxiliary function to check if the date and the time are in correct format, taking into account, leap year etc. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em year} & input \\
+\hline
+{\em month} & input \\
+\hline
+{\em day} & input \\
+\hline
+{\em hour} & input \\
+\hline
+{\em min} & input \\
+\hline
+{\em sec} & input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true if is correct, false if not 
+\end{DoxyReturn}
+
+
+Definición en la línea 54 del archivo Date\+Time.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{54                                                                          \{}
+\DoxyCodeLine{55     \textcolor{keywordtype}{bool} correct = \textcolor{keyword}{false};}
+\DoxyCodeLine{56     }
+\DoxyCodeLine{57     \textcolor{keyword}{const} \textcolor{keywordtype}{int} MAX\_YEAR = 9999;}
+\DoxyCodeLine{58     \textcolor{keyword}{const} \textcolor{keywordtype}{int} MAX\_MONTH = 12;}
+\DoxyCodeLine{59     \textcolor{keyword}{const} \textcolor{keywordtype}{int} MAX\_HOUR = 23;}
+\DoxyCodeLine{60     \textcolor{keyword}{const} \textcolor{keywordtype}{int} MAX\_MIN = 59;}
+\DoxyCodeLine{61     \textcolor{keyword}{const} \textcolor{keywordtype}{int} MAX\_SEC = 59;}
+\DoxyCodeLine{62     }
+\DoxyCodeLine{63     \textcolor{keywordtype}{int} days\_month[MAX\_MONTH] = \{31,28,31,30,31,30,31,31,30,31,30,31\};}
+\DoxyCodeLine{64     }
+\DoxyCodeLine{65     \textcolor{comment}{// Leap year considered.}}
+\DoxyCodeLine{66     \textcolor{keywordflow}{if} ((year \% 4 == 0 \&\& year \% 100 != 0) || year \% 400 == 0)}
+\DoxyCodeLine{67         days\_month[1]++;}
+\DoxyCodeLine{68     }
+\DoxyCodeLine{69     \textcolor{keywordflow}{if} (1000 <= year \&\& year <= MAX\_YEAR)}
+\DoxyCodeLine{70         \textcolor{keywordflow}{if} (1 <= month \&\& month <= MAX\_MONTH)}
+\DoxyCodeLine{71             \textcolor{keywordflow}{if} (1 <= day \&\& day <= days\_month[month-\/1])}
+\DoxyCodeLine{72                 \textcolor{keywordflow}{if} (0 <= hour \&\& hour <= MAX\_HOUR)}
+\DoxyCodeLine{73                     \textcolor{keywordflow}{if} (0 <= min \&\& min <= MAX\_MIN)}
+\DoxyCodeLine{74                         \textcolor{keywordflow}{if} (0 <= sec \&\& sec <= MAX\_SEC)}
+\DoxyCodeLine{75                             correct = \textcolor{keyword}{true};}
+\DoxyCodeLine{76     }
+\DoxyCodeLine{77     \textcolor{keywordflow}{return} correct;}
+\DoxyCodeLine{78 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{DateTime_8cpp_af2b9a13e863e39a34e807bef47cbbd16}\label{DateTime_8cpp_af2b9a13e863e39a34e807bef47cbbd16}} 
+\index{DateTime.cpp@{DateTime.cpp}!split@{split}}
+\index{split@{split}!DateTime.cpp@{DateTime.cpp}}
+\doxysubsubsection{\texorpdfstring{split()}{split()}}
+{\footnotesize\ttfamily void split (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{line,  }\item[{int \&}]{y,  }\item[{int \&}]{m,  }\item[{int \&}]{d,  }\item[{int \&}]{h,  }\item[{int \&}]{mn,  }\item[{int \&}]{s }\end{DoxyParamCaption})}
+
+
+
+split the first field in 6 components of the data time. Please consider using string\+::substr(int, int)\mbox{[}\href{https://en.cppreference.com/w/cpp/string/basic_string/substr}{\texttt{ https\+://en.\+cppreference.\+com/w/cpp/string/basic\+\_\+string/substr}}\mbox{]} to cut the line into the appropriate substrings and then convert it into integer values with the function stoi(string) \mbox{[}\href{https://en.cppreference.com/w/cpp/string/basic_string/stol}{\texttt{ https\+://en.\+cppreference.\+com/w/cpp/string/basic\+\_\+string/stol}}\mbox{]} 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{YYYY-\/MM-\/dd hh:mm:ss UTC }
+\DoxyCodeLine{+-\/-\/-\/-\/+-\/-\/-\/-\/+-\/-\/-\/-\/+-\/-\/-\/-\/+-\/-\/-\/-\/+ }
+\DoxyCodeLine{|    |    |    |    |    |}
+\DoxyCodeLine{0    5    10   15   20   25}
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Parámetros}
+{\em line} & input string \\
+\hline
+{\em y} & output int \\
+\hline
+{\em m} & output int \\
+\hline
+{\em d} & output int \\
+\hline
+{\em h} & output int \\
+\hline
+{\em mn} & output int \\
+\hline
+{\em s} & output int \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}
+
+Definición en la línea 80 del archivo Date\+Time.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{80                                                                                    \{}
+\DoxyCodeLine{81     \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{82         y = stoi(line.substr(0,4));}
+\DoxyCodeLine{83         m = stoi(line.substr(5,2));}
+\DoxyCodeLine{84         d = stoi(line.substr(8,2));}
+\DoxyCodeLine{85         h = stoi(line.substr(11,2));}
+\DoxyCodeLine{86         mn = stoi(line.substr(14,2));}
+\DoxyCodeLine{87         s = stoi(line.substr(17,2));}
+\DoxyCodeLine{88         }
+\DoxyCodeLine{89         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{DateTime_8cpp_a9962ec9b30855e08347df66f3fc99345}{isCorrect}}(y, m, d, h, mn, s))}
+\DoxyCodeLine{90             \mbox{\hyperlink{DateTime_8cpp_af2b9a13e863e39a34e807bef47cbbd16}{split}}(\mbox{\hyperlink{DateTime_8h_a292ad31d1998b1655e56c85d294fd185}{DATETIME\_DEFAULT}}, y, m, d, h, mn, s);}
+\DoxyCodeLine{91         }
+\DoxyCodeLine{92     \} \textcolor{keywordflow}{catch} (\textcolor{keyword}{const} std::invalid\_argument \&e) \{}
+\DoxyCodeLine{93         cout << \textcolor{stringliteral}{"An exception happened."} << endl;}
+\DoxyCodeLine{94         \mbox{\hyperlink{DateTime_8cpp_af2b9a13e863e39a34e807bef47cbbd16}{split}}(\mbox{\hyperlink{DateTime_8h_a292ad31d1998b1655e56c85d294fd185}{DATETIME\_DEFAULT}}, y, m, d, h, mn, s);}
+\DoxyCodeLine{95     \}}
+\DoxyCodeLine{96     }
+\DoxyCodeLine{97 \}}
+
+\end{DoxyCode}
+Gráfico de llamadas para esta función\+:
+% FIG 1

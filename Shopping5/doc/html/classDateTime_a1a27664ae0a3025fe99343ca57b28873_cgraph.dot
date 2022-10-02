@@ -1,0 +1,12 @@
+digraph "DateTime::set"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="DateTime::set",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="set the dataTime if is correct, as well as in date, as in time"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="split",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$DateTime_8cpp.html#af2b9a13e863e39a34e807bef47cbbd16",tooltip="split the first field in 6 components of the data time. Please consider using string::substr(int,..."];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="isCorrect",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$DateTime_8cpp.html#a9962ec9b30855e08347df66f3fc99345",tooltip="auxiliary function to check if the date and the time are in correct format, taking into account,..."];
+}

@@ -1,0 +1,12 @@
+digraph "Index::add"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Index::add",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Inserts a new entry in the index, in a way that the index remains in ascending order of searching key..."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Pair::getKey",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPair.html#a265336f9fccf8cfd441545158192e68c",tooltip="Get the key value from the Pair."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Pair::to_string",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPair.html#a5d585945bacfe7f4a99d4966909e6e63",tooltip="Convert the content in a string."];
+}

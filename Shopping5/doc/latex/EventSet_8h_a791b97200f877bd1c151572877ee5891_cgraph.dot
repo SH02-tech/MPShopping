@@ -1,0 +1,26 @@
+digraph "findUnique"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="findUnique",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="It explores all the EventSet and builds a string[] composed of all different values taken by the fiel..."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="EventSet::add",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEventSet.html#acfb9e40b46c649bef5082f5577d733a6",tooltip="Adds a new event at the end of the eventSet whenever there is some room."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="EventSet::at",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEventSet.html#ab8ac311a6121981191ce61d505cc069f",tooltip="get the event in a position selected, for consulting"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="DateTime::day",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDateTime.html#a2d1b93811c0d81597963162b726d26f3",tooltip="It gives the day."];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="Event::getDateTime",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEvent.html#ad89e0d4c55a2ede8980489d8d0de7704",tooltip="It gives the date of the event."];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="Event::getField",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEvent.html#aa0f2e1910272a7014e97794b7fc73d9a",tooltip="Given the name of a field of Event, field, it returns, always as a string, the value of the specified..."];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="DateTime::month",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDateTime.html#a294643a8ce6bd0cca6cda71890e7456c",tooltip="It gives the month."];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="Event::setDateTime",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEvent.html#ae549abc198ea2737dcaf426eadd9f70e",tooltip="Sets the date and time of the event."];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="EventSet::size",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEventSet.html#afa17cf8b71961fe1bab9ae5bc7f4963d",tooltip="Returns the number of events stored."];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="DateTime::year",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDateTime.html#af0eb582fdc2b0964ecf255df53396712",tooltip="It gives the year."];
+}

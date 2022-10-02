@@ -1,0 +1,33 @@
+MEMORY LEAK REPORT BY Valgrind 
+
+jue 20 may 2021 00:09:03 CEST
+
+
+==41289== Memcheck, a memory error detector
+==41289== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==41289== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==41289== Command: ./dist/Debug/GNU-Linux/shopping2 -noargs
+==41289== 
+==41289== 
+==41289== Process terminating with default action of signal 2 (SIGINT)
+==41289==    at 0x4CC41E5: write (write.c:26)
+==41289==    by 0x4C4500C: _IO_file_write@@GLIBC_2.2.5 (fileops.c:1181)
+==41289==    by 0x4C46AD0: new_do_write (fileops.c:449)
+==41289==    by 0x4C46AD0: _IO_new_do_write (fileops.c:426)
+==41289==    by 0x4C46AD0: _IO_do_write@@GLIBC_2.2.5 (fileops.c:423)
+==41289==    by 0x4C445F7: _IO_file_sync@@GLIBC_2.2.5 (fileops.c:799)
+==41289==    by 0x4C38545: fflush (iofflush.c:40)
+==41289==    by 0x499AA42: std::ostream::flush() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+==41289==    by 0x49239D5: std::ios_base::Init::~Init() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+==41289==    by 0x4BFCA26: __run_exit_handlers (exit.c:108)
+==41289==    by 0x4BFCBDF: exit (exit.c:139)
+==41289==    by 0x4BDA0B9: (below main) (libc-start.c:342)
+==41289== 
+==41289== HEAP SUMMARY:
+==41289==     in use at exit: 0 bytes in 0 blocks
+==41289==   total heap usage: 46 allocs, 46 frees, 80,273 bytes allocated
+==41289== 
+==41289== All heap blocks were freed -- no leaks are possible
+==41289== 
+==41289== For lists of detected and suppressed errors, rerun with: -s
+==41289== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

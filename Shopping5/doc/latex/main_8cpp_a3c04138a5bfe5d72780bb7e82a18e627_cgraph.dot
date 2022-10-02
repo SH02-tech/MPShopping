@@ -1,0 +1,18 @@
+digraph "main"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="main",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="The main function of the program carries out the following procedure."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="computeActivity",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#a257f51fa47933f108226f8c281d06bd2",tooltip="Update the counter per week day (value in 0..6) for every event found . It also shows the computed va..."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="computeMaxActivityDay",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#aea9a8497f53cd708c33d9b2a5efb0204",tooltip="Compute the max number of activity events, and the day on which is produced."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Event::isEmpty",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEvent.html#ae0da185c1abc7223f0bd0184e0937c24",tooltip="verifies if the object is considered empty, when any (one) of the fields are set to the default value..."];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="print",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#a563289ecc8833a85499bfda52717dcf3",tooltip="displays the content of the array by using the method to_string that easy to transfer data to stream...."];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="Event::set",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEvent.html#a0c00543bfef818a103e68b9a71d0943d",tooltip="It sets all the data members from a line that describe the event."];
+}

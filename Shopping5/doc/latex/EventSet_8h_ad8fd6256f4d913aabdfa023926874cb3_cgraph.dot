@@ -1,0 +1,20 @@
+digraph "rawFilterEvents"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="rawFilterEvents",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Extract a subset of the EventSet composed only of those events in which the given field matches the g..."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="EventSet::add",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEventSet.html#acfb9e40b46c649bef5082f5577d733a6",tooltip="Adds a new event at the end of the eventSet whenever there is some room."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="EventSet::at",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEventSet.html#ab8ac311a6121981191ce61d505cc069f",tooltip="get the event in a position selected, for consulting"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Event::getDateTime",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEvent.html#ad89e0d4c55a2ede8980489d8d0de7704",tooltip="It gives the date of the event."];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="Event::getField",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEvent.html#aa0f2e1910272a7014e97794b7fc73d9a",tooltip="Given the name of a field of Event, field, it returns, always as a string, the value of the specified..."];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="DateTime::sameDay",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDateTime.html#ab29a27908ce1e547fe907dc23e5bbe62",tooltip="Check if the referenced object and the argument belong to the same day."];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="EventSet::size",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEventSet.html#afa17cf8b71961fe1bab9ae5bc7f4963d",tooltip="Returns the number of events stored."];
+}

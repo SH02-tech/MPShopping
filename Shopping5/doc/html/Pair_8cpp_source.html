@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SHOPPING1: Fichero Fuente src/Pair.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SHOPPING1
+   &#160;<span id="projectnumber">0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Pair.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* </span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:   Pair.cpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * @author MP-Team DECSAI</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * @warning To be implemented by students</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;Pair.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<a class="code" href="classPair.html">Pair</a> NULL_PAIR;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classPair.html#af4048d0a7dfc586b82619107cf7f12e5">   14</a></span>&#160;<a class="code" href="classPair.html#af4048d0a7dfc586b82619107cf7f12e5">Pair::Pair</a>() {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    initDefault();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classPair.html#a9d52f503e74ee00228769580d22bb12a">   18</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classPair.html#a9d52f503e74ee00228769580d22bb12a">Pair::isEmpty</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">return</span> (_key == <a class="code" href="Event_8h.html#ab602a7440a5bf2a7a3e6e411432576fe">EMPTY_FIELD</a> &amp;&amp; _pos == -1 ? <span class="keyword">true</span> : <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classPair.html#ad3c545f637dd7bbcd23000a80c8ab38e">   22</a></span>&#160;<a class="code" href="classPair.html#af4048d0a7dfc586b82619107cf7f12e5">Pair::Pair</a>(<span class="keyword">const</span> std::string &amp; key, <span class="keywordtype">int</span> pos) {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    set(key, pos);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classPair.html#a265336f9fccf8cfd441545158192e68c">   26</a></span>&#160;<span class="keyword">const</span> std::string &amp; <a class="code" href="classPair.html#a265336f9fccf8cfd441545158192e68c">Pair::getKey</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> _key;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classPair.html#ae792131d5d5d921c6ec972ee928e3f05">   30</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classPair.html#ae792131d5d5d921c6ec972ee928e3f05">Pair::getPos</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">return</span> _pos;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classPair.html#a50030329aed221d2942db296448f155a">   34</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classPair.html#a50030329aed221d2942db296448f155a">Pair::setKey</a>(<span class="keyword">const</span> std::string &amp; key) {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    _key = (!key.empty() ? key : <a class="code" href="Event_8h.html#ab602a7440a5bf2a7a3e6e411432576fe">EMPTY_FIELD</a>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classPair.html#af20b1906372d2c140fa0a858baa7cfc8">   38</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classPair.html#af20b1906372d2c140fa0a858baa7cfc8">Pair::setPos</a>(<span class="keywordtype">int</span> pos) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">if</span> (pos &gt;= 0)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        _pos = pos;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        _pos = -1;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classPair.html#ac6f8ec02a32caeea7c9bd3923bcf6044">   46</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classPair.html#ac6f8ec02a32caeea7c9bd3923bcf6044">Pair::set</a>(<span class="keyword">const</span> std::string &amp; key, <span class="keywordtype">int</span> pos) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    setKey(key);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    setPos(pos);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classPair.html#a5d585945bacfe7f4a99d4966909e6e63">   51</a></span>&#160;std::string <a class="code" href="classPair.html#a5d585945bacfe7f4a99d4966909e6e63">Pair::to_string</a>()<span class="keyword"> const </span>{ </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">string</span> result;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    result = _key + <span class="stringliteral">&quot; &quot;</span> + std::to_string(_pos);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classPair.html#a757d2e7494c3c922d09da5b63653f737">   57</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classPair.html#a757d2e7494c3c922d09da5b63653f737">Pair::initDefault</a>() {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    _key = <a class="code" href="Event_8h.html#ab602a7440a5bf2a7a3e6e411432576fe">EMPTY_FIELD</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    _pos = -1;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keywordtype">bool</span> equalKey(<span class="keyword">const</span> <a class="code" href="classPair.html">Pair</a> &amp; left, <span class="keyword">const</span> <a class="code" href="classPair.html">Pair</a> &amp; right) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">return</span> (left.<a class="code" href="classPair.html#a265336f9fccf8cfd441545158192e68c">getKey</a>() == right.<a class="code" href="classPair.html#a265336f9fccf8cfd441545158192e68c">getKey</a>() ? <span class="keyword">true</span> : <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassPair_html_a265336f9fccf8cfd441545158192e68c"><div class="ttname"><a href="classPair.html#a265336f9fccf8cfd441545158192e68c">Pair::getKey</a></div><div class="ttdeci">const std::string &amp; getKey() const</div><div class="ttdoc">Get the key value from the Pair.</div><div class="ttdef"><b>Definition:</b> <a href="Pair_8cpp_source.html#l00026">Pair.cpp:26</a></div></div>
+<div class="ttc" id="aclassPair_html_af4048d0a7dfc586b82619107cf7f12e5"><div class="ttname"><a href="classPair.html#af4048d0a7dfc586b82619107cf7f12e5">Pair::Pair</a></div><div class="ttdeci">Pair()</div><div class="ttdoc">default constructor</div><div class="ttdef"><b>Definition:</b> <a href="Pair_8cpp_source.html#l00014">Pair.cpp:14</a></div></div>
+<div class="ttc" id="aclassPair_html_ac6f8ec02a32caeea7c9bd3923bcf6044"><div class="ttname"><a href="classPair.html#ac6f8ec02a32caeea7c9bd3923bcf6044">Pair::set</a></div><div class="ttdeci">void set(const std::string &amp;key, int pos)</div><div class="ttdoc">Set the key and position values for a Pair. Check for the validity of the new values.</div><div class="ttdef"><b>Definition:</b> <a href="Pair_8cpp_source.html#l00046">Pair.cpp:46</a></div></div>
+<div class="ttc" id="aclassPair_html_a50030329aed221d2942db296448f155a"><div class="ttname"><a href="classPair.html#a50030329aed221d2942db296448f155a">Pair::setKey</a></div><div class="ttdeci">void setKey(const std::string &amp;key)</div><div class="ttdoc">Set a key value for a Pair. Check the validity of the key.</div><div class="ttdef"><b>Definition:</b> <a href="Pair_8cpp_source.html#l00034">Pair.cpp:34</a></div></div>
+<div class="ttc" id="aclassPair_html_a5d585945bacfe7f4a99d4966909e6e63"><div class="ttname"><a href="classPair.html#a5d585945bacfe7f4a99d4966909e6e63">Pair::to_string</a></div><div class="ttdeci">std::string to_string() const</div><div class="ttdoc">Convert the content in a string.</div><div class="ttdef"><b>Definition:</b> <a href="Pair_8cpp_source.html#l00051">Pair.cpp:51</a></div></div>
+<div class="ttc" id="aEvent_8h_html_ab602a7440a5bf2a7a3e6e411432576fe"><div class="ttname"><a href="Event_8h.html#ab602a7440a5bf2a7a3e6e411432576fe">EMPTY_FIELD</a></div><div class="ttdeci">const char EMPTY_FIELD[]</div><div class="ttdoc">Value assigned to any field which is found empty in the data.</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00014">Event.h:14</a></div></div>
+<div class="ttc" id="aclassPair_html_ae792131d5d5d921c6ec972ee928e3f05"><div class="ttname"><a href="classPair.html#ae792131d5d5d921c6ec972ee928e3f05">Pair::getPos</a></div><div class="ttdeci">const int getPos() const</div><div class="ttdoc">Get the position value from the Pair.</div><div class="ttdef"><b>Definition:</b> <a href="Pair_8cpp_source.html#l00030">Pair.cpp:30</a></div></div>
+<div class="ttc" id="aclassPair_html"><div class="ttname"><a href="classPair.html">Pair</a></div><div class="ttdef"><b>Definition:</b> <a href="Pair_8h_source.html#l00013">Pair.h:13</a></div></div>
+<div class="ttc" id="aclassPair_html_a9d52f503e74ee00228769580d22bb12a"><div class="ttname"><a href="classPair.html#a9d52f503e74ee00228769580d22bb12a">Pair::isEmpty</a></div><div class="ttdeci">bool isEmpty() const</div><div class="ttdoc">It detect invalid pairs.</div><div class="ttdef"><b>Definition:</b> <a href="Pair_8cpp_source.html#l00018">Pair.cpp:18</a></div></div>
+<div class="ttc" id="aclassPair_html_a757d2e7494c3c922d09da5b63653f737"><div class="ttname"><a href="classPair.html#a757d2e7494c3c922d09da5b63653f737">Pair::initDefault</a></div><div class="ttdeci">void initDefault()</div><div class="ttdoc">Set a Pair to the default values, key to the default value given in an Event, and pos to a unknown po...</div><div class="ttdef"><b>Definition:</b> <a href="Pair_8cpp_source.html#l00057">Pair.cpp:57</a></div></div>
+<div class="ttc" id="aclassPair_html_af20b1906372d2c140fa0a858baa7cfc8"><div class="ttname"><a href="classPair.html#af20b1906372d2c140fa0a858baa7cfc8">Pair::setPos</a></div><div class="ttdeci">void setPos(int pos)</div><div class="ttdoc">Set a value for entry in the Pair. Check the validity of the position.</div><div class="ttdef"><b>Definition:</b> <a href="Pair_8cpp_source.html#l00038">Pair.cpp:38</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

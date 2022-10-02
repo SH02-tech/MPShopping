@@ -1,0 +1,50 @@
+# ACTUALIZACIÓN DE Shopping2 a Shopping3
+
+Fecha: 16/ABR/2021
+
+
+* Duplicar el proyecto Shopping2 y renombrarlo como Shopping3 
+
+	Proyecto - Botón derecho - Copy - Renombrar
+
+* Copiar estas carpeta en Shopping3 y sobreescribir
+
+	doc/ 		--> 			Shopping3
+	data/ 		--> 			Shopping3
+	include/  	--> 			Shopping3
+	src/  		--> 			Shopping3
+	tests/  	--> 			Shopping3
+	
+* Añadir a `DateTime.cpp`
+
+	bool DateTime::sameDay(const DateTime &other) const {  }
+
+* Añadir a `Event.cpp`
+
+	void Event::write(ostream &os) const { }
+	void Event::read(istream &is) { }
+
+* Añadir a `EventSet.cpp`
+
+	void EventSet::write(ofstream &os) const { }
+	bool EventSet::read(ifstream &is, int nelements) { }	
+	
+* Reconfigurar el nuevo proyecto sin tests de integración
+	* Header Files.
+		* `Add Existing Item`  	-->		`Pair.h`	 `Index.h`
+	* Source Files.
+		* `Add Existing Item`  	-->		`Pair.cpp`	 `Index.cpp`
+ 	*	Tests. Desde la pestaña de proeyctos, `Test Files`
+	 	* `Remove from project`    --> 	`10.Integration_DataVector.cpp`
+	 	* A continuación `Add existing item` 
+	 		* `04.UnitPair.cpp`
+	 		* `05.UnitIndex.cpp`
+	 		
+* Reconfigurar el nuevo proyecto con tests de integración cuando se pasen, al menos los tests unitarios básicos
+	*	Tests. Desde la pestaña de proeyctos, `Test Files` pulsar `Add existing item`
+	 		* `10.Integration_WEEK_2.cpp`
+ 	
+* Cuando sepamos manejar los parámetros de main. Reconfigurar el nuevo proyecto con tests de integración cuando se pasen, al menos los tests unitarios básicos
+	*	Tests. Desde la pestaña de proeyctos, `Test Files`
+	 		* `Add Existing item` `1.Integration_WEEK_3.cpp`
+ 	

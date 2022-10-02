@@ -1,0 +1,30 @@
+\hypertarget{DateTime_8h}{}\doxysection{Referencia del Archivo include/\+Date\+Time.h}
+\label{DateTime_8h}\index{include/DateTime.h@{include/DateTime.h}}
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:
+% FIG 0
+\doxysubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classDateTime}{Date\+Time}}
+\begin{DoxyCompactList}\small\item\em Used to represent dates and times in the format Y\+Y\+Y\+Y-\/\+M\+M-\/dd hh\+:mm\+:\+:ss, where. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{DateTime_8h_a292ad31d1998b1655e56c85d294fd185}\label{DateTime_8h_a292ad31d1998b1655e56c85d294fd185}} 
+\#define \mbox{\hyperlink{DateTime_8h_a292ad31d1998b1655e56c85d294fd185}{D\+A\+T\+E\+T\+I\+M\+E\+\_\+\+D\+E\+F\+A\+U\+LT}}~\char`\"{}1971-\/01-\/01 00\+:00\+:00 U\+TC\char`\"{}
+\begin{DoxyCompactList}\small\item\em Default date. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{DateTime_8h_adf570ba6d985791ba57df3f224853c7e}\label{DateTime_8h_adf570ba6d985791ba57df3f224853c7e}} 
+const char $\ast$const \mbox{\hyperlink{DateTime_8h_adf570ba6d985791ba57df3f224853c7e}{D\+A\+Y\+N\+A\+ME}} \mbox{[}$\,$\mbox{]} = \{\char`\"{}S\+U\+N\+D\+AY\char`\"{}, \char`\"{}M\+O\+N\+D\+AY\char`\"{}, \char`\"{}T\+U\+E\+S\+D\+AY\char`\"{}, \char`\"{}W\+E\+D\+N\+E\+S\+D\+AY\char`\"{}, \char`\"{}T\+H\+U\+R\+S\+D\+AY\char`\"{}, \char`\"{}F\+R\+I\+D\+AY\char`\"{}, \char`\"{}S\+A\+T\+U\+R\+D\+AY\char`\"{}\}
+\begin{DoxyCompactList}\small\item\em Array of day names. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+\begin{DoxyAuthor}{Autor}
+M\+P-\/\+Team D\+E\+C\+S\+AI 
+\end{DoxyAuthor}
+\begin{DoxyNote}{Nota}
+To be implemented by students 
+\end{DoxyNote}

@@ -1,0 +1,405 @@
+\hypertarget{classEventSet}{}\doxysection{Referencia de la Clase Event\+Set}
+\label{classEventSet}\index{EventSet@{EventSet}}
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEventSet_aee4ddfa7f8c26efab1c978b891999f7e}\label{classEventSet_aee4ddfa7f8c26efab1c978b891999f7e}} 
+\mbox{\hyperlink{classEventSet_aee4ddfa7f8c26efab1c978b891999f7e}{Event\+Set}} ()
+\begin{DoxyCompactList}\small\item\em Basic constructor. Set the fiel to the default value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEventSet_adf603161bf5a39cd41b1fe97d083bd10}{Event\+Set}} (const \mbox{\hyperlink{classEventSet}{Event\+Set}} \&orig)
+\begin{DoxyCompactList}\small\item\em Copy constructor, a new object is created from the parameter object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classEventSet_afa17cf8b71961fe1bab9ae5bc7f4963d}{size}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of events stored. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classEventSet_afc14a43734b5dc5d03289d02546c9ed9}{to\+\_\+string}} () const
+\begin{DoxyCompactList}\small\item\em transform an event\+Set to a string, \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEventSet_a82709f9c800e8df263ec719c64b5d81d}\label{classEventSet_a82709f9c800e8df263ec719c64b5d81d}} 
+void \mbox{\hyperlink{classEventSet_a82709f9c800e8df263ec719c64b5d81d}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Resets the set of events to 0 components. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classEventSet_acfb9e40b46c649bef5082f5577d733a6}{add}} (const \mbox{\hyperlink{classEvent}{Event}} \&e)
+\begin{DoxyCompactList}\small\item\em Adds a new event at the end of the event\+Set whenever there is some room. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classEventSet_ae51197986d66bbccdfaa136efdf2088f}{add}} (const std\+::string \&line)
+\begin{DoxyCompactList}\small\item\em Adds a new event at the end of the event\+Set whenever there is some room. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classEvent}{Event}} \& \mbox{\hyperlink{classEventSet_ab8ac311a6121981191ce61d505cc069f}{at}} (int pos) const
+\begin{DoxyCompactList}\small\item\em get the event in a position selected, for consulting \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classEventSet_a96bdfa35b46daf5760a9152d22d1ceb9}{report\+Data}} () const
+\begin{DoxyCompactList}\small\item\em Shows the number of events in the \mbox{\hyperlink{classEventSet}{Event\+Set}} and a numeric value that encodes the whole set of events. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEventSet_a73bc5f23d807c0fcafd4e93c8b5b1652}{write}} (std\+::ofstream \&os) const
+\begin{DoxyCompactList}\small\item\em Writes the \mbox{\hyperlink{classEventSet}{Event\+Set}} in an output stream in C\+SV format. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classEventSet_a71b8b0c87f2d00203e7a72c42f485478}{read}} (std\+::ifstream \&is, int nelements)
+\begin{DoxyCompactList}\small\item\em Reads the \mbox{\hyperlink{classEventSet}{Event\+Set}} from an input stream. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEventSet}{Event\+Set}} \& \mbox{\hyperlink{classEventSet_a06550d2576728865e3204ae6b05a738b}{operator=}} (const \mbox{\hyperlink{classEventSet}{Event\+Set}} \&one)
+\item 
+\mbox{\hyperlink{classEventSet_a25df816581fde04c7da0cc71c2e08065}{$\sim$\+Event\+Set}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+
+
+Definición en la línea 16 del archivo Event\+Set.\+h.
+
+
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{classEventSet_adf603161bf5a39cd41b1fe97d083bd10}\label{classEventSet_adf603161bf5a39cd41b1fe97d083bd10}} 
+\index{EventSet@{EventSet}!EventSet@{EventSet}}
+\index{EventSet@{EventSet}!EventSet@{EventSet}}
+\doxysubsubsection{\texorpdfstring{EventSet()}{EventSet()}}
+{\footnotesize\ttfamily Event\+Set\+::\+Event\+Set (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classEventSet}{Event\+Set}} \&}]{orig }\end{DoxyParamCaption})}
+
+
+
+Copy constructor, a new object is created from the parameter object. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em org} & the \mbox{\hyperlink{classEventSet}{Event\+Set}} we want a copy from \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 101 del archivo Event\+Set.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{101                                        \{}
+\DoxyCodeLine{102     this-\/>\_events = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{103     this-\/>\_nEvents = this-\/>\_capacity = 0;}
+\DoxyCodeLine{104     copy(orig);}
+\DoxyCodeLine{105 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classEventSet_a25df816581fde04c7da0cc71c2e08065}\label{classEventSet_a25df816581fde04c7da0cc71c2e08065}} 
+\index{EventSet@{EventSet}!````~EventSet@{$\sim$EventSet}}
+\index{````~EventSet@{$\sim$EventSet}!EventSet@{EventSet}}
+\doxysubsubsection{\texorpdfstring{$\sim$EventSet()}{~EventSet()}}
+{\footnotesize\ttfamily Event\+Set\+::$\sim$\+Event\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor for \mbox{\hyperlink{classEventSet}{Event\+Set}} 
+
+Definición en la línea 107 del archivo Event\+Set.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{107                     \{}
+\DoxyCodeLine{108     \mbox{\hyperlink{classEventSet_a82709f9c800e8df263ec719c64b5d81d}{clear}}();}
+\DoxyCodeLine{109 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classEventSet_acfb9e40b46c649bef5082f5577d733a6}\label{classEventSet_acfb9e40b46c649bef5082f5577d733a6}} 
+\index{EventSet@{EventSet}!add@{add}}
+\index{add@{add}!EventSet@{EventSet}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Event\+Set\+::add (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classEvent}{Event}} \&}]{e }\end{DoxyParamCaption})}
+
+
+
+Adds a new event at the end of the event\+Set whenever there is some room. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em e} & an \mbox{\hyperlink{classEvent}{Event}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+1 when the operation has been successful, 0 when it fails 
+\end{DoxyReturn}
+
+
+Definición en la línea 127 del archivo Event\+Set.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{127                                  \{}
+\DoxyCodeLine{128     }
+\DoxyCodeLine{129     \textcolor{keywordflow}{if} (\_nEvents == \_capacity)}
+\DoxyCodeLine{130         reallocate(2*\_capacity+1);}
+\DoxyCodeLine{131         }
+\DoxyCodeLine{132     \_events[\_nEvents] = e;}
+\DoxyCodeLine{133     }
+\DoxyCodeLine{134     \_nEvents++;}
+\DoxyCodeLine{135     }
+\DoxyCodeLine{136     \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{137 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classEventSet_ae51197986d66bbccdfaa136efdf2088f}\label{classEventSet_ae51197986d66bbccdfaa136efdf2088f}} 
+\index{EventSet@{EventSet}!add@{add}}
+\index{add@{add}!EventSet@{EventSet}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Event\+Set\+::add (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{line }\end{DoxyParamCaption})}
+
+
+
+Adds a new event at the end of the event\+Set whenever there is some room. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em line} & the input string from which to form the \mbox{\hyperlink{classEvent}{Event}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+1 when the operation as been successful, 0 otherwise 
+\end{DoxyReturn}
+
+
+Definición en la línea 139 del archivo Event\+Set.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{139                                        \{}
+\DoxyCodeLine{140     \textcolor{keywordflow}{return} (\mbox{\hyperlink{classEventSet_acfb9e40b46c649bef5082f5577d733a6}{add}}(\mbox{\hyperlink{classEvent}{Event}}(line)));}
+\DoxyCodeLine{141 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classEventSet_ab8ac311a6121981191ce61d505cc069f}\label{classEventSet_ab8ac311a6121981191ce61d505cc069f}} 
+\index{EventSet@{EventSet}!at@{at}}
+\index{at@{at}!EventSet@{EventSet}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classEvent}{Event}} \& Event\+Set\+::at (\begin{DoxyParamCaption}\item[{int}]{pos }\end{DoxyParamCaption}) const}
+
+
+
+get the event in a position selected, for consulting 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em pos,position} & in the \mbox{\hyperlink{classEventSet}{Event\+Set}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+the selected event in the \mbox{\hyperlink{classEventSet}{Event\+Set}} 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Atención}
+If pos is not a valid value, it returns an E\+M\+P\+TY \mbox{\hyperlink{classEvent}{Event}}, that is ane event whose is\+Empty() method returns true. the program 
+\end{DoxyWarning}
+
+
+Definición en la línea 143 del archivo Event\+Set.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{143                                         \{}
+\DoxyCodeLine{144     }
+\DoxyCodeLine{145     \textcolor{keywordflow}{if} (0 <= pos \&\& pos < \_nEvents)}
+\DoxyCodeLine{146         \textcolor{keywordflow}{return} \_events[pos];}
+\DoxyCodeLine{147     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{148         \textcolor{keywordflow}{return} NULL\_EVENT;}
+\DoxyCodeLine{149 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classEventSet_a06550d2576728865e3204ae6b05a738b}\label{classEventSet_a06550d2576728865e3204ae6b05a738b}} 
+\index{EventSet@{EventSet}!operator=@{operator=}}
+\index{operator=@{operator=}!EventSet@{EventSet}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEventSet}{Event\+Set}} \& Event\+Set\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classEventSet}{Event\+Set}} \&}]{one }\end{DoxyParamCaption})}
+
+Assignment operator overload. This operator copies the content of other \mbox{\hyperlink{classEventSet}{Event\+Set}} into this. 
+\begin{DoxyParams}{Parámetros}
+{\em one} & \mbox{\hyperlink{classEventSet}{Event\+Set}} to be copied \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Reference to this, in order to chain the operator 
+\end{DoxyReturn}
+
+
+Definición en la línea 111 del archivo Event\+Set.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{111                                                   \{}
+\DoxyCodeLine{112     \textcolor{keywordflow}{if} (\&one != \textcolor{keyword}{this}) \{}
+\DoxyCodeLine{113         this-\/>copy(one);}
+\DoxyCodeLine{114     \}    }
+\DoxyCodeLine{115     }
+\DoxyCodeLine{116     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{117 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classEventSet_a71b8b0c87f2d00203e7a72c42f485478}\label{classEventSet_a71b8b0c87f2d00203e7a72c42f485478}} 
+\index{EventSet@{EventSet}!read@{read}}
+\index{read@{read}!EventSet@{EventSet}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily bool Event\+Set\+::read (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{is,  }\item[{int}]{nelements }\end{DoxyParamCaption})}
+
+
+
+Reads the \mbox{\hyperlink{classEventSet}{Event\+Set}} from an input stream. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em is} & input file stream \\
+\hline
+{\em nelements} & number of elements to be read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+bool True if the reading operation has been successful, false otherwise 
+\end{DoxyReturn}
+
+
+Definición en la línea 179 del archivo Event\+Set.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{179                                                \{}
+\DoxyCodeLine{180     \textcolor{keywordtype}{bool} \mbox{\hyperlink{DateTime_8cpp_a9962ec9b30855e08347df66f3fc99345}{isCorrect}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{181     }
+\DoxyCodeLine{182     \mbox{\hyperlink{classEventSet_a82709f9c800e8df263ec719c64b5d81d}{clear}}();}
+\DoxyCodeLine{183     reallocate(nelements);}
+\DoxyCodeLine{184     }
+\DoxyCodeLine{185     \textcolor{keywordtype}{int} l2Read = 0;}
+\DoxyCodeLine{186     }
+\DoxyCodeLine{187     \textcolor{keywordflow}{while} (l2Read < nelements \&\& \mbox{\hyperlink{DateTime_8cpp_a9962ec9b30855e08347df66f3fc99345}{isCorrect}}) \{}
+\DoxyCodeLine{188         \mbox{\hyperlink{classEvent}{Event}} e;}
+\DoxyCodeLine{189         }
+\DoxyCodeLine{190         e.\mbox{\hyperlink{classEvent_ae27f6d4ed15f5f6592e0a37d4ba32aef}{read}}(is);}
+\DoxyCodeLine{191         }
+\DoxyCodeLine{192         \textcolor{keywordflow}{if} (is) \{}
+\DoxyCodeLine{193             \mbox{\hyperlink{classEventSet_acfb9e40b46c649bef5082f5577d733a6}{add}}(e);}
+\DoxyCodeLine{194             l2Read++;}
+\DoxyCodeLine{195         \}}
+\DoxyCodeLine{196         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{197             \mbox{\hyperlink{DateTime_8cpp_a9962ec9b30855e08347df66f3fc99345}{isCorrect}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{198     \}}
+\DoxyCodeLine{199     }
+\DoxyCodeLine{200     }
+\DoxyCodeLine{201     \textcolor{keywordflow}{return} \mbox{\hyperlink{DateTime_8cpp_a9962ec9b30855e08347df66f3fc99345}{isCorrect}};}
+\DoxyCodeLine{202 \}   }
+
+\end{DoxyCode}
+Gráfico de llamadas para esta función\+:
+% FIG 0
+\mbox{\Hypertarget{classEventSet_a96bdfa35b46daf5760a9152d22d1ceb9}\label{classEventSet_a96bdfa35b46daf5760a9152d22d1ceb9}} 
+\index{EventSet@{EventSet}!reportData@{reportData}}
+\index{reportData@{reportData}!EventSet@{EventSet}}
+\doxysubsubsection{\texorpdfstring{reportData()}{reportData()}}
+{\footnotesize\ttfamily std\+::string Event\+Set\+::report\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Shows the number of events in the \mbox{\hyperlink{classEventSet}{Event\+Set}} and a numeric value that encodes the whole set of events. 
+
+\begin{DoxyReturn}{Devuelve}
+A string made up of the size of the \mbox{\hyperlink{classEventSet}{Event\+Set}} and the numeric code of its content 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Atención}
+please do not modify its implementation 
+\end{DoxyWarning}
+
+
+Definición en la línea 104 del archivo Event\+Set.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{104                                  \{}
+\DoxyCodeLine{105         std::string result = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{106         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \_nEvents; i++) \{}
+\DoxyCodeLine{107             result += std::to\_string(std::hash<std::string>\{\}(\_events[i].\mbox{\hyperlink{classEvent_a317506221f3d1189594fe7ef47bd2910}{to\_string}}()));}
+\DoxyCodeLine{108         \}}
+\DoxyCodeLine{109         result = std::to\_string(std::hash<std::string>\{\}(result));}
+\DoxyCodeLine{110         result = std::to\_string(\_nEvents) + \textcolor{stringliteral}{" "} + result;}
+\DoxyCodeLine{111         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{112     \}}
+
+\end{DoxyCode}
+Gráfico de llamadas para esta función\+:
+% FIG 1
+\mbox{\Hypertarget{classEventSet_afa17cf8b71961fe1bab9ae5bc7f4963d}\label{classEventSet_afa17cf8b71961fe1bab9ae5bc7f4963d}} 
+\index{EventSet@{EventSet}!size@{size}}
+\index{size@{size}!EventSet@{EventSet}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily int Event\+Set\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the number of events stored. 
+
+\begin{DoxyReturn}{Devuelve}
+The number of events 
+\end{DoxyReturn}
+
+
+Definición en la línea 119 del archivo Event\+Set.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{119                          \{}
+\DoxyCodeLine{120     \textcolor{keywordflow}{return} \_nEvents;}
+\DoxyCodeLine{121 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classEventSet_afc14a43734b5dc5d03289d02546c9ed9}\label{classEventSet_afc14a43734b5dc5d03289d02546c9ed9}} 
+\index{EventSet@{EventSet}!to\_string@{to\_string}}
+\index{to\_string@{to\_string}!EventSet@{EventSet}}
+\doxysubsubsection{\texorpdfstring{to\_string()}{to\_string()}}
+{\footnotesize\ttfamily std\+::string Event\+Set\+::to\+\_\+string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+transform an event\+Set to a string, 
+
+\begin{DoxyReturn}{Devuelve}
+string that contains the number of components and en event\+S\+Et serialized
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Tareas pendientes}
+\item[\mbox{\hyperlink{todo__todo000001}{Tareas pendientes}}]in order to define this function we suggest the use of (+) for string and the function to\+\_\+string(int d) \end{DoxyRefDesc}
+
+
+Definición en la línea 84 del archivo Event\+Set.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{84                                     \{}
+\DoxyCodeLine{85     \textcolor{keywordtype}{string} result;}
+\DoxyCodeLine{86     }
+\DoxyCodeLine{87     result = std::to\_string(\_nEvents) + \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{88     }
+\DoxyCodeLine{89     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \_nEvents; i++)}
+\DoxyCodeLine{90         result += \_events[i].\mbox{\hyperlink{classEventSet_afc14a43734b5dc5d03289d02546c9ed9}{to\_string}}() + \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{91     }
+\DoxyCodeLine{92     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{93 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classEventSet_a73bc5f23d807c0fcafd4e93c8b5b1652}\label{classEventSet_a73bc5f23d807c0fcafd4e93c8b5b1652}} 
+\index{EventSet@{EventSet}!write@{write}}
+\index{write@{write}!EventSet@{EventSet}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void Event\+Set\+::write (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{os }\end{DoxyParamCaption}) const}
+
+
+
+Writes the \mbox{\hyperlink{classEventSet}{Event\+Set}} in an output stream in C\+SV format. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em os} & output file stream \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 170 del archivo Event\+Set.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{170                                        \{}
+\DoxyCodeLine{171     \textcolor{keywordtype}{string} result;}
+\DoxyCodeLine{172     }
+\DoxyCodeLine{173     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \_nEvents; i++)}
+\DoxyCodeLine{174         result += \_events[i].\mbox{\hyperlink{classEventSet_afc14a43734b5dc5d03289d02546c9ed9}{to\_string}}() + \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{175     }
+\DoxyCodeLine{176     os << result << endl;}
+\DoxyCodeLine{177 \}}
+
+\end{DoxyCode}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{EventSet_8h}{Event\+Set.\+h}}\item 
+src/Event\+Set.\+cpp\end{DoxyCompactItemize}

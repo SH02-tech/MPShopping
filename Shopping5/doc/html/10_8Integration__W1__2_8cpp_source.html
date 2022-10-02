@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SHOPPING1: Fichero Fuente tests/10.Integration_W1_2.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SHOPPING1
+   &#160;<span id="projectnumber">0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_59425e443f801f1f2fd8bbe4959a3ccf.html">tests</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">10.Integration_W1_2.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * To change this license header, choose License Headers in Project Properties.</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * To change this template file, choose Tools | Templates</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * and open the template in the editor.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;gtest/gtest.h&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;MPTests.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifdef __INTEGRATION__</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;TEST_F(_01_Basics, Integrated_5_records)  {   </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    DEF_EXECUTION_ENVIRONMENT(ECommerce5);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    EXPECTED_OUTPUT(</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;[originalES(Original read from dataset)] 5 3788922744450141172</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;[filteredES(Events indexed)] 5 3788922744450141172</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;[hitsData( Report traffic)] 1 2019-10-01 00:00:00 UTC( 5.00) </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;[ammountData( Report ammount)] 1 2019-10-01 00:00:00 UTC(18.73) </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    CALL_FROM_FILE(<span class="stringliteral">&quot;&quot;</span>)&lt;&lt;<span class="stringliteral">&quot;Execution of a simple test with five records only&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    LOAD(_expected,((<span class="keywordtype">string</span>)<span class="stringliteral">&quot;./tests/validation/&quot;</span>+stestname+<span class="stringliteral">&quot;-hit.dataset&quot;</span>).c_str()); </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    LOAD(_output,((<span class="keywordtype">string</span>)<span class="stringliteral">&quot;./data/&quot;</span>+stestname+<span class="stringliteral">&quot;-hit.dataset&quot;</span>).c_str());</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    ASSERT_FALSE_R(strcmp(_expected.c_str(), _output.c_str()))&lt;&lt;<span class="stringliteral">&quot;The output file of this test with five records only is not as expected, please have a look at &quot;</span>&lt;&lt;((string)<span class="stringliteral">&quot;./tests/validation/&quot;</span>+stestname+<span class="stringliteral">&quot;-hit.dataset&quot;</span>)&lt;&lt;endl;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;TEST_F(_01_Basics, Integrated_30_records)  {   </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    DEF_EXECUTION_ENVIRONMENT(ECommerce30);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    EXPECTED_OUTPUT(</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;[originalES(Original read from dataset)] 30 4276028894166694872</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;[filteredES(Events indexed)] 30 8592007267816246823</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;[hitsData( Report traffic)] 10 beautix( 4.00) grattol( 1.00) jas( 1.00) jessnail( 1.00) kapous( 2.00) kerasys( 1.00) masura( 2.00) runail(11.00) shary( 2.00) staleks( 5.00) </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;[ammountData( Report ammount)] 10 beautix(43.82) grattol( 6.27) jas(25.71) jessnail( 1.10) kapous( 4.51) kerasys( 1.87) masura( 3.46) runail(41.94) shary( 6.04) staleks(63.33) </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    CALL_FROM_FILE(<span class="stringliteral">&quot;&quot;</span>)&lt;&lt;<span class="stringliteral">&quot;Execution of a test with 30 records only&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

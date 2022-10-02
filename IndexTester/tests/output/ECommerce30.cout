@@ -1,0 +1,38 @@
+
+Reading from ./data/ECommerce30.dataset
+
+Read 30 records from file ./data/ECommerce30.dataset
+Main Index by Brand
+30 pairs 
+amount :198.05
+
+Activity found: SUNDAY(4) MONDAY(4) TUESDAY(2) WEDNESDAY(5) THURSDAY(5) FRIDAY(1) SATURDAY(9)
+
+Events/day
+         4         4         2         5         5         1         9        30
+
+    SUNDAY    MONDAY   TUESDAY WEDNESDAY  THURSDAY    FRIDAY  SATURDAY
+
+
+Brand (traffic)
+   beautix         4
+   grattol         1
+       jas         1
+  jessnail         1
+    kapous         2
+   kerasys         1
+    masura         2
+    runail        11
+     shary         2
+   staleks         5
+
+                   30
+
+
+Brand (amount)
+     43.82      6.27     25.71      1.10      4.51      1.87      3.46     41.94      6.04     63.33    198.05
+
+   beautix   grattol       jas  jessnail    kapous   kerasys    masura    runail     shary   staleks
+
+
+Highest traffic choice (runail) with 11 hits 

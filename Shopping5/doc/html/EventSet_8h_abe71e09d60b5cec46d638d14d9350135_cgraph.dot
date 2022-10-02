@@ -1,0 +1,14 @@
+digraph "sumPrice"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="sumPrice",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="It Computes the total sum for price, on the complete EventSet."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="EventSet::at",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEventSet.html#ab8ac311a6121981191ce61d505cc069f",tooltip="get the event in a position selected, for consulting"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Event::getPrice",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEvent.html#a9ba1e8107abdbd879d00663daf64fd70",tooltip="It gives the Prcies of the event."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="EventSet::size",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEventSet.html#afa17cf8b71961fe1bab9ae5bc7f4963d",tooltip="Returns the number of events stored."];
+}

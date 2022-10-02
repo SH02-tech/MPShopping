@@ -1,0 +1,1181 @@
+\hypertarget{classMatrix}{}\doxysection{Referencia de la Clase Matrix}
+\label{classMatrix}\index{Matrix@{Matrix}}
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMatrix_a2dba13c45127354c9f75ef576f49269b}{Matrix}} ()
+\item 
+\mbox{\hyperlink{classMatrix_a806b603175d91477ca28ccf83ef589ea}{Matrix}} (const \mbox{\hyperlink{classMatrix}{Matrix}} \&orig)
+\item 
+\mbox{\hyperlink{classMatrix_a8b5252dbf34867d973d2385117a0b3b2}{Matrix}} (size\+\_\+t r, size\+\_\+t c, double def\+Value=0.\+0)
+\item 
+\mbox{\hyperlink{classMatrix_ac5e8202fb9e3ee53aa56b0fd0c57aba7}{Matrix}} (const std\+::string $\ast$row\+Labels, size\+\_\+t nrows, const std\+::string $\ast$cols\+Labels, size\+\_\+t ncols, double def\+Value=0.\+0)
+\item 
+virtual \mbox{\hyperlink{classMatrix_a9b1c3627f573d78a2f08623fdfef990f}{$\sim$\+Matrix}} ()
+\item 
+size\+\_\+t \mbox{\hyperlink{classMatrix_a5c0d89c4a0c86a901cf22234efaa79d0}{columns}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{classMatrix_a97617f3524bfa47d6ac7daa0eefc1941}{rows}} () const
+\item 
+const double \& \mbox{\hyperlink{classMatrix_aaf3cb9c7f1d0849ad15636eb5553dba1}{at}} (size\+\_\+t row, size\+\_\+t col) const
+\item 
+const double \& \mbox{\hyperlink{classMatrix_a0b1dc9bab8449403ef3a36c304fba675}{operator()}} (size\+\_\+t row, size\+\_\+t col) const
+\item 
+const double \& \mbox{\hyperlink{classMatrix_a222f9a9a2e7ea9963f6b859b58fbd528}{at}} (const std\+::string \&row\+Label, const std\+::string \&col\+Label) const
+\item 
+const double \& \mbox{\hyperlink{classMatrix_a5b88ddac319a2136bad57435c77cba6c}{operator()}} (const std\+::string \&row\+Label, const std\+::string \&col\+Label) const
+\item 
+std\+::string \mbox{\hyperlink{classMatrix_a108d25b5c593b3c915f5198f89cbc0f3}{label\+At\+Row}} (size\+\_\+t row) const
+\item 
+std\+::string \mbox{\hyperlink{classMatrix_ab5da325b9a56f331bcbf8982a1203e90}{label\+At\+Col}} (size\+\_\+t col) const
+\item 
+int \mbox{\hyperlink{classMatrix_ac0c4600f052bfdf5bea9fee577a8288b}{get\+Row\+Labels}} (std\+::string $\ast$) const
+\item 
+int \mbox{\hyperlink{classMatrix_af4d22c2d5e252f24ba6491aedd486fcb}{get\+Col\+Labels}} (std\+::string $\ast$) const
+\item 
+int \mbox{\hyperlink{classMatrix_a92266ef499f086a88d74d389e6c5d142}{row\+Index\+Of}} (const std\+::string \&label) const
+\item 
+int \mbox{\hyperlink{classMatrix_a8aeb1eded03e5c781fb8993784433dc4}{col\+Index\+Of}} (const std\+::string \&label) const
+\item 
+double \& \mbox{\hyperlink{classMatrix_a7aa79cbc38d993942f452f7fbcc02716}{at}} (size\+\_\+t row, size\+\_\+t col)
+\item 
+double \& \mbox{\hyperlink{classMatrix_a6b3e290ca2ce684e96bbbddfec0c3bc6}{operator()}} (size\+\_\+t row, size\+\_\+t col)
+\item 
+double \& \mbox{\hyperlink{classMatrix_a48ff70bcd5cad43433545ad29f986859}{at}} (const std\+::string \&row\+Label, const std\+::string \&col\+Label)
+\item 
+double \& \mbox{\hyperlink{classMatrix_a24ee6400869c4bb8740b3e42a5339df9}{operator()}} (const std\+::string \&row\+Label, const std\+::string \&col\+Label)
+\item 
+void \mbox{\hyperlink{classMatrix_a29414ab006f8124c4c24fc78a3c62529}{resize}} (size\+\_\+t nrows, size\+\_\+t ncols, double def\+Value=0.\+0)
+\item 
+void \mbox{\hyperlink{classMatrix_a9c4774837d625dd94e1ce6feb010f524}{resize}} (const std\+::string $\ast$row\+Labels, size\+\_\+t nrows, const std\+::string $\ast$col\+Labels, size\+\_\+t ncols, double vdef=0)
+\item 
+void \mbox{\hyperlink{classMatrix_ac0e2adb05e204d5a40cd129d9fb0593f}{clear}} ()
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& \mbox{\hyperlink{classMatrix_a5b9205ecc57f91cd324e8b71ced98c44}{normalize}} ()
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& \mbox{\hyperlink{classMatrix_aea5a06385f646eb4a63929fae6fa3e14}{operator=}} (const \mbox{\hyperlink{classMatrix}{Matrix}} \&m)
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& \mbox{\hyperlink{classMatrix_ae043c01c10b14ed31b380d9bfb9950bc}{operator$\ast$=}} (double val)
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}} \& \mbox{\hyperlink{classMatrix_afbed699175c2812be77981f95439fe74}{operator+=}} (double val)
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}} \mbox{\hyperlink{classMatrix_a537594e2800c06bb4875027197506d2b}{operator$\ast$}} (const \mbox{\hyperlink{classMatrix}{Matrix}} \&m) const
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}} \mbox{\hyperlink{classMatrix_a4da197b4784c20e970a7328bcc858a81}{operator$\ast$}} (double val) const
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}} \mbox{\hyperlink{classMatrix_aea4466c78eeb9f70a47208b0e0c4d6a0}{operator+}} (double val) const
+\item 
+void \mbox{\hyperlink{classMatrix_a861e34bddccbddfb2e5ce43891ac99e6}{save}} (const std\+::string \&filename) const
+\item 
+void \mbox{\hyperlink{classMatrix_af381eb54e399bd858b19ce970feca6bd}{load}} (const std\+::string \&filename)
+\end{DoxyCompactItemize}
+\doxysubsection*{Atributos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMatrix_a97abfa957604d2c208f6d6aab5916c93}\label{classMatrix_a97abfa957604d2c208f6d6aab5916c93}} 
+static const int {\bfseries npos} = -\/1
+\end{DoxyCompactItemize}
+\doxysubsection*{Amigas}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classMatrix_a060711074cb5bcaf4e75498bc040c4b7}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{classMatrix}{Matrix}} \&m)
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}} \mbox{\hyperlink{classMatrix_aa54339476c98b9465562f180f6ebc90b}{operator+}} (double ival, const \mbox{\hyperlink{classMatrix}{Matrix}} \&dch)
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}} \mbox{\hyperlink{classMatrix_a93a8834615af86c5a430d0f2b0e5eb48}{operator$\ast$}} (double ival, const \mbox{\hyperlink{classMatrix}{Matrix}} \&dch)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+
+
+Definición en la línea 16 del archivo Matrix.\+h.
+
+
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{classMatrix_a2dba13c45127354c9f75ef576f49269b}\label{classMatrix_a2dba13c45127354c9f75ef576f49269b}} 
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Matrix\+::\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor Creates a matrix with 0 rows and 0 columns 
+
+Definición en la línea 92 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{92                \{}
+\DoxyCodeLine{93    \_data = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{94    \mbox{\hyperlink{classMatrix_ac0e2adb05e204d5a40cd129d9fb0593f}{clear}}();}
+\DoxyCodeLine{95 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMatrix_a806b603175d91477ca28ccf83ef589ea}\label{classMatrix_a806b603175d91477ca28ccf83ef589ea}} 
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Matrix\+::\+Matrix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrix}{Matrix}} \&}]{orig }\end{DoxyParamCaption})}
+
+Copy constructor, makes this matrix a copy of org 
+\begin{DoxyParams}{Parámetros}
+{\em orig} & \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 111 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{111                                  \{}
+\DoxyCodeLine{112     \_data = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{113     \mbox{\hyperlink{classMatrix_ac0e2adb05e204d5a40cd129d9fb0593f}{clear}}();}
+\DoxyCodeLine{114     }
+\DoxyCodeLine{115     \textcolor{keywordtype}{string} rowLabels[orig.\mbox{\hyperlink{classMatrix_a97617f3524bfa47d6ac7daa0eefc1941}{rows}}()], colLabels[orig.\mbox{\hyperlink{classMatrix_a5c0d89c4a0c86a901cf22234efaa79d0}{columns}}()];}
+\DoxyCodeLine{116     orig.\mbox{\hyperlink{classMatrix_ac0c4600f052bfdf5bea9fee577a8288b}{getRowLabels}}(rowLabels);}
+\DoxyCodeLine{117     orig.\mbox{\hyperlink{classMatrix_af4d22c2d5e252f24ba6491aedd486fcb}{getColLabels}}(colLabels);}
+\DoxyCodeLine{118     }
+\DoxyCodeLine{119     \mbox{\hyperlink{classMatrix_a29414ab006f8124c4c24fc78a3c62529}{resize}}(rowLabels, orig.\mbox{\hyperlink{classMatrix_a97617f3524bfa47d6ac7daa0eefc1941}{rows}}(), colLabels, orig.\mbox{\hyperlink{classMatrix_a5c0d89c4a0c86a901cf22234efaa79d0}{columns}}());}
+\DoxyCodeLine{120     copy(\_data, orig.\_data, \_nrows, \_ncols);}
+\DoxyCodeLine{121 \}}
+
+\end{DoxyCode}
+Gráfico de llamadas para esta función\+:
+% FIG 0
+\mbox{\Hypertarget{classMatrix_a8b5252dbf34867d973d2385117a0b3b2}\label{classMatrix_a8b5252dbf34867d973d2385117a0b3b2}} 
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Matrix\+::\+Matrix (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{r,  }\item[{size\+\_\+t}]{c,  }\item[{double}]{def\+Value = {\ttfamily 0.0} }\end{DoxyParamCaption})}
+
+Creates a 2D unlabeled matrix with size r x c, being all its setted to the def\+Value 
+\begin{DoxyParams}{Parámetros}
+{\em r} & number of rows \\
+\hline
+{\em c} & number of cols \\
+\hline
+{\em def\+Value} & value used to initialize all the elements in the matrix \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 103 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{103                                               \{}
+\DoxyCodeLine{104     \textcolor{keywordtype}{int} \mbox{\hyperlink{classMatrix_a97617f3524bfa47d6ac7daa0eefc1941}{rows}} = (f > 0 ? f : 0);}
+\DoxyCodeLine{105     \textcolor{keywordtype}{int} cols = (c > 0 ? c : 0);}
+\DoxyCodeLine{106     }
+\DoxyCodeLine{107     \_data = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{108     \mbox{\hyperlink{classMatrix_a29414ab006f8124c4c24fc78a3c62529}{resize}}(\mbox{\hyperlink{classMatrix_a97617f3524bfa47d6ac7daa0eefc1941}{rows}}, cols, vdef);}
+\DoxyCodeLine{109 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMatrix_ac5e8202fb9e3ee53aa56b0fd0c57aba7}\label{classMatrix_ac5e8202fb9e3ee53aa56b0fd0c57aba7}} 
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Matrix\+::\+Matrix (\begin{DoxyParamCaption}\item[{const std\+::string $\ast$}]{row\+Labels,  }\item[{size\+\_\+t}]{nrows,  }\item[{const std\+::string $\ast$}]{cols\+Labels,  }\item[{size\+\_\+t}]{ncols,  }\item[{double}]{def\+Value = {\ttfamily 0.0} }\end{DoxyParamCaption})}
+
+Creates a 2D labeled matrix with size nrows x ncols, being all its setted to the def\+Value. The rows/columns are labeles using the values in row\+Labels/cols\+Labels in such a way that the row 0 is labeled with row\+Labels\mbox{[}0\mbox{]}, the row 1 is labeled with row\+Label\mbox{[}1\mbox{]} and so on. Similarly criteria is used in columns. In case of error we get the default matrix
+
+
+\begin{DoxyParams}{Parámetros}
+{\em row\+Labels} & \\
+\hline
+{\em nrows} & \\
+\hline
+{\em cols\+Labels} & \\
+\hline
+{\em ncols} & \\
+\hline
+{\em def\+Value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+It is assumed that row\+Labels/cols\+Labels have enough memory to store at least nrows/ncols labels. 
+\end{DoxyPrecond}
+
+
+Definición en la línea 123 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{123                                                                                                                  \{}
+\DoxyCodeLine{124     \_data = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{125     \mbox{\hyperlink{classMatrix_a29414ab006f8124c4c24fc78a3c62529}{resize}}(rowLabels, nrows, colsLabels, ncols, value);}
+\DoxyCodeLine{126 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMatrix_a9b1c3627f573d78a2f08623fdfef990f}\label{classMatrix_a9b1c3627f573d78a2f08623fdfef990f}} 
+\index{Matrix@{Matrix}!````~Matrix@{$\sim$Matrix}}
+\index{````~Matrix@{$\sim$Matrix}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{$\sim$Matrix()}{~Matrix()}}
+{\footnotesize\ttfamily Matrix\+::$\sim$\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destructor 
+
+Definición en la línea 154 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{154                 \{}
+\DoxyCodeLine{155     \mbox{\hyperlink{classMatrix_ac0e2adb05e204d5a40cd129d9fb0593f}{clear}}();}
+\DoxyCodeLine{156 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classMatrix_a48ff70bcd5cad43433545ad29f986859}\label{classMatrix_a48ff70bcd5cad43433545ad29f986859}} 
+\index{Matrix@{Matrix}!at@{at}}
+\index{at@{at}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily double \& Matrix\+::at (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{row\+Label,  }\item[{const std\+::string \&}]{col\+Label }\end{DoxyParamCaption})}
+
+Element at M\mbox{[}row\+Label\mbox{]}\mbox{[}col\+Label\mbox{]}. No check is done 
+\begin{DoxyParams}{Parámetros}
+{\em row} & \\
+\hline
+{\em col} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+reference to the element at M\mbox{[}row\+Label\mbox{]}\mbox{[}col\+Label\mbox{]} 
+\end{DoxyReturn}
+
+
+Definición en la línea 208 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{208                                                                           \{}
+\DoxyCodeLine{209     \textcolor{keywordtype}{int} row = \mbox{\hyperlink{classMatrix_a92266ef499f086a88d74d389e6c5d142}{rowIndexOf}}(rowLabel);}
+\DoxyCodeLine{210     \textcolor{keywordtype}{int} col = \mbox{\hyperlink{classMatrix_a8aeb1eded03e5c781fb8993784433dc4}{colIndexOf}}(colLabel);}
+\DoxyCodeLine{211     }
+\DoxyCodeLine{212     \textcolor{keywordflow}{return} \mbox{\hyperlink{classMatrix_aaf3cb9c7f1d0849ad15636eb5553dba1}{at}}(row, col);}
+\DoxyCodeLine{213 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMatrix_a222f9a9a2e7ea9963f6b859b58fbd528}\label{classMatrix_a222f9a9a2e7ea9963f6b859b58fbd528}} 
+\index{Matrix@{Matrix}!at@{at}}
+\index{at@{at}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily const double \& Matrix\+::at (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{row\+Label,  }\item[{const std\+::string \&}]{col\+Label }\end{DoxyParamCaption}) const}
+
+Element at M\mbox{[}row\+Label\mbox{]}\mbox{[}col\+Label\mbox{]}. Also check that row and col are valid positions in M 
+\begin{DoxyParams}{Parámetros}
+{\em row} & \\
+\hline
+{\em col} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+reference to the element at M\mbox{[}row\+Label\mbox{]}\mbox{[}col\+Label\mbox{]} 
+\end{DoxyReturn}
+
+
+Definición en la línea 219 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{219                                                                                       \{}
+\DoxyCodeLine{220     \textcolor{keywordtype}{int} row = \mbox{\hyperlink{classMatrix_a92266ef499f086a88d74d389e6c5d142}{rowIndexOf}}(rowLabel);}
+\DoxyCodeLine{221     \textcolor{keywordtype}{int} col = \mbox{\hyperlink{classMatrix_a8aeb1eded03e5c781fb8993784433dc4}{colIndexOf}}(colLabel);}
+\DoxyCodeLine{222     }
+\DoxyCodeLine{223     \textcolor{keywordflow}{return} \mbox{\hyperlink{classMatrix_aaf3cb9c7f1d0849ad15636eb5553dba1}{at}}(row, col);}
+\DoxyCodeLine{224 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMatrix_a7aa79cbc38d993942f452f7fbcc02716}\label{classMatrix_a7aa79cbc38d993942f452f7fbcc02716}} 
+\index{Matrix@{Matrix}!at@{at}}
+\index{at@{at}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily double \& Matrix\+::at (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{row,  }\item[{size\+\_\+t}]{col }\end{DoxyParamCaption})}
+
+Element at M\mbox{[}row\mbox{]}\mbox{[}col\mbox{]}. No check is done 
+\begin{DoxyParams}{Parámetros}
+{\em row} & \\
+\hline
+{\em col} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+reference to the element at M\mbox{[}row\mbox{]}\mbox{[}col\mbox{]} 
+\end{DoxyReturn}
+
+
+Definición en la línea 166 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{166                                       \{}
+\DoxyCodeLine{167     \textcolor{keywordflow}{if} (0<=f \&\& f<\mbox{\hyperlink{classMatrix_a97617f3524bfa47d6ac7daa0eefc1941}{rows}}() \&\& 0<=c \&\& c<\mbox{\hyperlink{classMatrix_a5c0d89c4a0c86a901cf22234efaa79d0}{columns}}())}
+\DoxyCodeLine{168         \textcolor{keywordflow}{return} \_data[f][c];}
+\DoxyCodeLine{169     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{170         \textcolor{keywordflow}{return} v\_npos;}
+\DoxyCodeLine{171     \}}
+\DoxyCodeLine{172 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMatrix_aaf3cb9c7f1d0849ad15636eb5553dba1}\label{classMatrix_aaf3cb9c7f1d0849ad15636eb5553dba1}} 
+\index{Matrix@{Matrix}!at@{at}}
+\index{at@{at}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily const double \& Matrix\+::at (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{row,  }\item[{size\+\_\+t}]{col }\end{DoxyParamCaption}) const}
+
+Element at M\mbox{[}row\mbox{]}\mbox{[}col\mbox{]}. Also check that row and col are valid positions in M 
+\begin{DoxyParams}{Parámetros}
+{\em row} & \\
+\hline
+{\em col} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+reference to the element at M\mbox{[}row\mbox{]}\mbox{[}col\mbox{]} 
+\end{DoxyReturn}
+
+
+Definición en la línea 158 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{158                                                   \{}
+\DoxyCodeLine{159     \textcolor{keywordflow}{if} (0<=f \&\& f<\mbox{\hyperlink{classMatrix_a97617f3524bfa47d6ac7daa0eefc1941}{rows}}() \&\& 0<=c \&\& c<\mbox{\hyperlink{classMatrix_a5c0d89c4a0c86a901cf22234efaa79d0}{columns}}())}
+\DoxyCodeLine{160         \textcolor{keywordflow}{return} \_data[f][c];}
+\DoxyCodeLine{161     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{162         \textcolor{keywordflow}{return} v\_npos;}
+\DoxyCodeLine{163     \}}
+\DoxyCodeLine{164 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMatrix_ac0e2adb05e204d5a40cd129d9fb0593f}\label{classMatrix_ac0e2adb05e204d5a40cd129d9fb0593f}} 
+\index{Matrix@{Matrix}!clear@{clear}}
+\index{clear@{clear}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Matrix\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Set the matrix to the defaul values 
+
+Definición en la línea 150 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{150                    \{}
+\DoxyCodeLine{151     deallocate();}
+\DoxyCodeLine{152 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMatrix_a8aeb1eded03e5c781fb8993784433dc4}\label{classMatrix_a8aeb1eded03e5c781fb8993784433dc4}} 
+\index{Matrix@{Matrix}!colIndexOf@{colIndexOf}}
+\index{colIndexOf@{colIndexOf}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{colIndexOf()}{colIndexOf()}}
+{\footnotesize\ttfamily int Matrix\+::col\+Index\+Of (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{label }\end{DoxyParamCaption}) const}
+
+Return the col number 
+\begin{DoxyParams}{Parámetros}
+{\em label} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+col associated to the label. It return Matrix\+::npos if the label is not in the \mbox{\hyperlink{classMatrix}{Matrix}} 
+\end{DoxyReturn}
+
+
+Definición en la línea 195 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{195                                                     \{}
+\DoxyCodeLine{196     \textcolor{keywordtype}{int} pos = npos;}
+\DoxyCodeLine{197     \textcolor{keywordtype}{bool} found = \textcolor{keyword}{false};}
+\DoxyCodeLine{198     }
+\DoxyCodeLine{199     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<\mbox{\hyperlink{classMatrix_a5c0d89c4a0c86a901cf22234efaa79d0}{columns}}() \&\& !found; i++)}
+\DoxyCodeLine{200         \textcolor{keywordflow}{if} (\_colLabels.\mbox{\hyperlink{classIndex_a4b4100575cd7c41b532aaee42b27458a}{at}}(i).\mbox{\hyperlink{classPair_a265336f9fccf8cfd441545158192e68c}{getKey}}() == label) \{}
+\DoxyCodeLine{201             pos = i;}
+\DoxyCodeLine{202             found = \textcolor{keyword}{true};}
+\DoxyCodeLine{203         \}}
+\DoxyCodeLine{204     }
+\DoxyCodeLine{205     \textcolor{keywordflow}{return} pos;}
+\DoxyCodeLine{206 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMatrix_a5c0d89c4a0c86a901cf22234efaa79d0}\label{classMatrix_a5c0d89c4a0c86a901cf22234efaa79d0}} 
+\index{Matrix@{Matrix}!columns@{columns}}
+\index{columns@{columns}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{columns()}{columns()}}
+{\footnotesize\ttfamily size\+\_\+t Matrix\+::columns (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Number of columns \begin{DoxyReturn}{Devuelve}
+number of columnos 
+\end{DoxyReturn}
+
+
+Definición en la línea 314 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{314                              \{}
+\DoxyCodeLine{315     \textcolor{keywordflow}{return} \_ncols;}
+\DoxyCodeLine{316 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMatrix_af4d22c2d5e252f24ba6491aedd486fcb}\label{classMatrix_af4d22c2d5e252f24ba6491aedd486fcb}} 
+\index{Matrix@{Matrix}!getColLabels@{getColLabels}}
+\index{getColLabels@{getColLabels}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{getColLabels()}{getColLabels()}}
+{\footnotesize\ttfamily int Matrix\+::get\+Col\+Labels (\begin{DoxyParamCaption}\item[{std\+::string $\ast$}]{ }\end{DoxyParamCaption}) const}
+
+Given a label, return its associated column 
+\begin{DoxyParams}{Parámetros}
+{\em the} & label \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+the number of the column 
+\end{DoxyReturn}
+
+
+Definición en la línea 310 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{310                                              \{}
+\DoxyCodeLine{311     \textcolor{keywordflow}{return} getLabels(\_colLabels,labels);}
+\DoxyCodeLine{312 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMatrix_ac0c4600f052bfdf5bea9fee577a8288b}\label{classMatrix_ac0c4600f052bfdf5bea9fee577a8288b}} 
+\index{Matrix@{Matrix}!getRowLabels@{getRowLabels}}
+\index{getRowLabels@{getRowLabels}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{getRowLabels()}{getRowLabels()}}
+{\footnotesize\ttfamily int Matrix\+::get\+Row\+Labels (\begin{DoxyParamCaption}\item[{std\+::string $\ast$}]{ }\end{DoxyParamCaption}) const}
+
+Given a label, return its associated row 
+\begin{DoxyParams}{Parámetros}
+{\em the} & label \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+the number of the row 
+\end{DoxyReturn}
+
+
+Definición en la línea 306 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{306                                               \{}
+\DoxyCodeLine{307     \textcolor{keywordflow}{return} getLabels(\_rowLabels,labels);}
+\DoxyCodeLine{308 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMatrix_ab5da325b9a56f331bcbf8982a1203e90}\label{classMatrix_ab5da325b9a56f331bcbf8982a1203e90}} 
+\index{Matrix@{Matrix}!labelAtCol@{labelAtCol}}
+\index{labelAtCol@{labelAtCol}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{labelAtCol()}{labelAtCol()}}
+{\footnotesize\ttfamily std\+::string Matrix\+::label\+At\+Col (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{col }\end{DoxyParamCaption}) const}
+
+Gives the label associated to the column col in the matrix 
+\begin{DoxyParams}{Parámetros}
+{\em col} & number of the column \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+the associated label 
+\end{DoxyReturn}
+
+
+Definición en la línea 132 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{132                                              \{}
+\DoxyCodeLine{133     \textcolor{keywordflow}{return} labelWithValuePosInIndex(\_colLabels, col);}
+\DoxyCodeLine{134 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMatrix_a108d25b5c593b3c915f5198f89cbc0f3}\label{classMatrix_a108d25b5c593b3c915f5198f89cbc0f3}} 
+\index{Matrix@{Matrix}!labelAtRow@{labelAtRow}}
+\index{labelAtRow@{labelAtRow}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{labelAtRow()}{labelAtRow()}}
+{\footnotesize\ttfamily std\+::string Matrix\+::label\+At\+Row (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{row }\end{DoxyParamCaption}) const}
+
+Gives the label associated to the row in the matrix 
+\begin{DoxyParams}{Parámetros}
+{\em row} & number of the row \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+the associated label 
+\end{DoxyReturn}
+
+
+Definición en la línea 128 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{128                                              \{}
+\DoxyCodeLine{129     \textcolor{keywordflow}{return} labelWithValuePosInIndex(\_rowLabels, row);}
+\DoxyCodeLine{130 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMatrix_af381eb54e399bd858b19ce970feca6bd}\label{classMatrix_af381eb54e399bd858b19ce970feca6bd}} 
+\index{Matrix@{Matrix}!load@{load}}
+\index{load@{load}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void Matrix\+::load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+Load a matrix from the file filename It is assumed that the file has the format above, otherwise the performace is undefined 
+\begin{DoxyParams}{Parámetros}
+{\em filename} & \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 334 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{334                                    \{}
+\DoxyCodeLine{335     ifstream fent(nf);}
+\DoxyCodeLine{336     \textcolor{keywordtype}{string} labeled, cad;}
+\DoxyCodeLine{337     \mbox{\hyperlink{classMatrix_ac0e2adb05e204d5a40cd129d9fb0593f}{clear}}();}
+\DoxyCodeLine{338     \textcolor{keywordflow}{if} (fent.is\_open()) \{}
+\DoxyCodeLine{339          fent >> cad >> labeled;}
+\DoxyCodeLine{340          fent >> \_nrows >> \_ncols;}
+\DoxyCodeLine{341          \textcolor{keywordflow}{if} (labeled == \textcolor{stringliteral}{"labeled"})\{}
+\DoxyCodeLine{342             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0;i<\_nrows;i++)\{}
+\DoxyCodeLine{343                 fent >> cad;}
+\DoxyCodeLine{344                 \_rowLabels.\mbox{\hyperlink{classIndex_aa9fb80238805162321140a1e12684594}{add}}(\mbox{\hyperlink{classPair}{Pair}}(cad,i));}
+\DoxyCodeLine{345             \}}
+\DoxyCodeLine{346              \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0;i<\_ncols;i++)\{}
+\DoxyCodeLine{347                 fent >> cad;}
+\DoxyCodeLine{348                 \_colLabels.\mbox{\hyperlink{classIndex_aa9fb80238805162321140a1e12684594}{add}}(\mbox{\hyperlink{classPair}{Pair}}(cad,i));}
+\DoxyCodeLine{349             \}}
+\DoxyCodeLine{350         \}}
+\DoxyCodeLine{351         \_data = allocate(\_nrows,\_ncols); }
+\DoxyCodeLine{352         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \_nrows; i++) \{}
+\DoxyCodeLine{353             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \_ncols; j++) \{}
+\DoxyCodeLine{354                 fent >> \_data[i][j];}
+\DoxyCodeLine{355             \}}
+\DoxyCodeLine{356         \}}
+\DoxyCodeLine{357         fent.close();}
+\DoxyCodeLine{358     \} \textcolor{keywordflow}{else} cerr << \textcolor{stringliteral}{"Fail reading "} << nf << \textcolor{stringliteral}{" file"} <<endl;}
+\DoxyCodeLine{359 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMatrix_a5b9205ecc57f91cd324e8b71ced98c44}\label{classMatrix_a5b9205ecc57f91cd324e8b71ced98c44}} 
+\index{Matrix@{Matrix}!normalize@{normalize}}
+\index{normalize@{normalize}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}} \& Matrix\+::normalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Modify the values in the matrix in such a way that for each row, the sum of all its elements is 1.\+0 \begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+
+
+Definición en la línea 436 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{436                           \{}
+\DoxyCodeLine{437     \textcolor{keyword}{const} \textcolor{keywordtype}{int} ROWS = this-\/>\mbox{\hyperlink{classMatrix_a97617f3524bfa47d6ac7daa0eefc1941}{rows}}();}
+\DoxyCodeLine{438     \textcolor{keyword}{const} \textcolor{keywordtype}{int} COLS = this-\/>\mbox{\hyperlink{classMatrix_a5c0d89c4a0c86a901cf22234efaa79d0}{columns}}();}
+\DoxyCodeLine{439     }
+\DoxyCodeLine{440     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<ROWS; i++) \{}
+\DoxyCodeLine{441         \textcolor{keywordtype}{double} sum\_row = 0;}
+\DoxyCodeLine{442         }
+\DoxyCodeLine{443         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0; j<COLS; j++)}
+\DoxyCodeLine{444             sum\_row += this-\/>\mbox{\hyperlink{classMatrix_aaf3cb9c7f1d0849ad15636eb5553dba1}{at}}(i,j);}
+\DoxyCodeLine{445         }
+\DoxyCodeLine{446         \textcolor{keywordtype}{double} refactor = (sum\_row != 0 ? 1.0/sum\_row : 0);}
+\DoxyCodeLine{447         }
+\DoxyCodeLine{448         \textcolor{keywordflow}{if} (refactor != 0)}
+\DoxyCodeLine{449             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0; j<COLS; j++)}
+\DoxyCodeLine{450                 this-\/>\mbox{\hyperlink{classMatrix_aaf3cb9c7f1d0849ad15636eb5553dba1}{at}}(i,j) *= refactor;}
+\DoxyCodeLine{451         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{452             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0; j<COLS; j++)}
+\DoxyCodeLine{453                 this-\/>\mbox{\hyperlink{classMatrix_aaf3cb9c7f1d0849ad15636eb5553dba1}{at}}(i,j) = 1.0/COLS;}
+\DoxyCodeLine{454     \}}
+\DoxyCodeLine{455     }
+\DoxyCodeLine{456     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{457 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMatrix_a24ee6400869c4bb8740b3e42a5339df9}\label{classMatrix_a24ee6400869c4bb8740b3e42a5339df9}} 
+\index{Matrix@{Matrix}!operator()@{operator()}}
+\index{operator()@{operator()}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily double \& Matrix\+::operator() (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{row\+Label,  }\item[{const std\+::string \&}]{col\+Label }\end{DoxyParamCaption})}
+
+Element at M\mbox{[}row\+Label\mbox{]}\mbox{[}col\+Label\mbox{]}. No check is done 
+\begin{DoxyParams}{Parámetros}
+{\em row} & \\
+\hline
+{\em col} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+reference to the element at M\mbox{[}row\+Label\mbox{]}\mbox{[}col\+Label\mbox{]} 
+\end{DoxyReturn}
+
+
+Definición en la línea 215 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{215                                                                                   \{}
+\DoxyCodeLine{216     \textcolor{keywordflow}{return} \mbox{\hyperlink{classMatrix_aaf3cb9c7f1d0849ad15636eb5553dba1}{at}}(rowLabel, colLabel);}
+\DoxyCodeLine{217 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMatrix_a5b88ddac319a2136bad57435c77cba6c}\label{classMatrix_a5b88ddac319a2136bad57435c77cba6c}} 
+\index{Matrix@{Matrix}!operator()@{operator()}}
+\index{operator()@{operator()}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily const double \& Matrix\+::operator() (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{row\+Label,  }\item[{const std\+::string \&}]{col\+Label }\end{DoxyParamCaption}) const}
+
+Element at M\mbox{[}row\+Label\mbox{]}\mbox{[}col\+Label\mbox{]}. ~\newline
+ 
+\begin{DoxyParams}{Parámetros}
+{\em row} & \\
+\hline
+{\em col} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+reference element at M\mbox{[}row\+Label\mbox{]}\mbox{[}col\+Label\mbox{]} 
+\end{DoxyReturn}
+
+
+Definición en la línea 226 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{226                                                                                              \{}
+\DoxyCodeLine{227     \textcolor{keywordflow}{return} \mbox{\hyperlink{classMatrix_aaf3cb9c7f1d0849ad15636eb5553dba1}{at}}(rowLabel, colLabel);}
+\DoxyCodeLine{228 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMatrix_a6b3e290ca2ce684e96bbbddfec0c3bc6}\label{classMatrix_a6b3e290ca2ce684e96bbbddfec0c3bc6}} 
+\index{Matrix@{Matrix}!operator()@{operator()}}
+\index{operator()@{operator()}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily double \& Matrix\+::operator() (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{row,  }\item[{size\+\_\+t}]{col }\end{DoxyParamCaption})}
+
+Element at M\mbox{[}row\mbox{]}\mbox{[}col\mbox{]}. No check is done 
+\begin{DoxyParams}{Parámetros}
+{\em row} & \\
+\hline
+{\em col} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+reference to the element at M\mbox{[}row\mbox{]}\mbox{[}col\mbox{]} 
+\end{DoxyReturn}
+
+
+Definición en la línea 174 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{174                                               \{}
+\DoxyCodeLine{175     \textcolor{keywordflow}{return} \mbox{\hyperlink{classMatrix_aaf3cb9c7f1d0849ad15636eb5553dba1}{at}}(f,c);}
+\DoxyCodeLine{176 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMatrix_a0b1dc9bab8449403ef3a36c304fba675}\label{classMatrix_a0b1dc9bab8449403ef3a36c304fba675}} 
+\index{Matrix@{Matrix}!operator()@{operator()}}
+\index{operator()@{operator()}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily const double \& Matrix\+::operator() (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{row,  }\item[{size\+\_\+t}]{col }\end{DoxyParamCaption}) const}
+
+Element at M\mbox{[}row\mbox{]}\mbox{[}col\mbox{]}. ~\newline
+ 
+\begin{DoxyParams}{Parámetros}
+{\em row} & \\
+\hline
+{\em col} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+reference to the element at M\mbox{[}row\mbox{]}\mbox{[}col\mbox{]} 
+\end{DoxyReturn}
+
+
+Definición en la línea 178 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{178                                                           \{}
+\DoxyCodeLine{179     \textcolor{keywordflow}{return} \mbox{\hyperlink{classMatrix_aaf3cb9c7f1d0849ad15636eb5553dba1}{at}}(f,c);}
+\DoxyCodeLine{180 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMatrix_a537594e2800c06bb4875027197506d2b}\label{classMatrix_a537594e2800c06bb4875027197506d2b}} 
+\index{Matrix@{Matrix}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}} Matrix\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrix}{Matrix}} \&}]{m }\end{DoxyParamCaption}) const}
+
+\mbox{\hyperlink{classMatrix}{Matrix}} multiplication. It check that $\ast$this and m have the proper dimensions 
+\begin{DoxyParams}{Parámetros}
+{\em m} & a matrix object ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+a new matrix containing ($\ast$this) x M @precond The dimensions must be correct B\+E\+F\+O\+RE calling this method 
+\end{DoxyReturn}
+
+
+Definición en la línea 377 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{377                                                \{}
+\DoxyCodeLine{378     \mbox{\hyperlink{classMatrix}{Matrix}} matrix\_product;}
+\DoxyCodeLine{379     }
+\DoxyCodeLine{380     \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classMatrix_a5c0d89c4a0c86a901cf22234efaa79d0}{columns}}() == m.\mbox{\hyperlink{classMatrix_a97617f3524bfa47d6ac7daa0eefc1941}{rows}}()) \{}
+\DoxyCodeLine{381         \textcolor{keywordtype}{string} rowLabels[this-\/>\_rowLabels.\mbox{\hyperlink{classIndex_a1d7170f9bdadd16f8db0b0905fdc1323}{size}}()];}
+\DoxyCodeLine{382         \textcolor{keywordtype}{string} colLabels[m.\_colLabels.\mbox{\hyperlink{classIndex_a1d7170f9bdadd16f8db0b0905fdc1323}{size}}()];}
+\DoxyCodeLine{383         }
+\DoxyCodeLine{384         \textcolor{keywordtype}{int} numRowLabels = \mbox{\hyperlink{classMatrix_ac0c4600f052bfdf5bea9fee577a8288b}{getRowLabels}}(rowLabels);}
+\DoxyCodeLine{385         \textcolor{keywordtype}{int} numColLabels = m.\mbox{\hyperlink{classMatrix_af4d22c2d5e252f24ba6491aedd486fcb}{getColLabels}}(colLabels);}
+\DoxyCodeLine{386         }
+\DoxyCodeLine{387         \textcolor{keywordflow}{if} (numRowLabels != 0 \&\& numColLabels != 0)}
+\DoxyCodeLine{388             matrix\_product.\mbox{\hyperlink{classMatrix_a29414ab006f8124c4c24fc78a3c62529}{resize}}(rowLabels, this-\/>\mbox{\hyperlink{classMatrix_a97617f3524bfa47d6ac7daa0eefc1941}{rows}}(), colLabels, m.\mbox{\hyperlink{classMatrix_a5c0d89c4a0c86a901cf22234efaa79d0}{columns}}());}
+\DoxyCodeLine{389         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{390             matrix\_product.\mbox{\hyperlink{classMatrix_a29414ab006f8124c4c24fc78a3c62529}{resize}}(this-\/>\mbox{\hyperlink{classMatrix_a97617f3524bfa47d6ac7daa0eefc1941}{rows}}(), m.\mbox{\hyperlink{classMatrix_a5c0d89c4a0c86a901cf22234efaa79d0}{columns}}());}
+\DoxyCodeLine{391         }
+\DoxyCodeLine{392         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<matrix\_product.\mbox{\hyperlink{classMatrix_a97617f3524bfa47d6ac7daa0eefc1941}{rows}}(); i++)}
+\DoxyCodeLine{393             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0; j<matrix\_product.\mbox{\hyperlink{classMatrix_a5c0d89c4a0c86a901cf22234efaa79d0}{columns}}(); j++)}
+\DoxyCodeLine{394                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k=0; k<this-\/>\mbox{\hyperlink{classMatrix_a5c0d89c4a0c86a901cf22234efaa79d0}{columns}}(); k++)}
+\DoxyCodeLine{395                     matrix\_product(i,j) += this-\/>\mbox{\hyperlink{classMatrix_aaf3cb9c7f1d0849ad15636eb5553dba1}{at}}(i,k) * m.\mbox{\hyperlink{classMatrix_aaf3cb9c7f1d0849ad15636eb5553dba1}{at}}(k,j);}
+\DoxyCodeLine{396     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{397         matrix\_product.\mbox{\hyperlink{classMatrix_a29414ab006f8124c4c24fc78a3c62529}{resize}}(3,3);}
+\DoxyCodeLine{398         matrix\_product.setValues(npos);}
+\DoxyCodeLine{399     \}}
+\DoxyCodeLine{400     }
+\DoxyCodeLine{401     \textcolor{keywordflow}{return} matrix\_product;}
+\DoxyCodeLine{402 \}}
+
+\end{DoxyCode}
+Gráfico de llamadas para esta función\+:
+% FIG 1
+\mbox{\Hypertarget{classMatrix_a4da197b4784c20e970a7328bcc858a81}\label{classMatrix_a4da197b4784c20e970a7328bcc858a81}} 
+\index{Matrix@{Matrix}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}} Matrix\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{double}]{val }\end{DoxyParamCaption}) const}
+
+Multiply the matrix by a constant val 
+\begin{DoxyParams}{Parámetros}
+{\em val} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+a new matrix with the values M x val 
+\end{DoxyReturn}
+
+
+Definición en la línea 412 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{412                                          \{}
+\DoxyCodeLine{413     \mbox{\hyperlink{classMatrix}{Matrix}} product(*\textcolor{keyword}{this});}
+\DoxyCodeLine{414     }
+\DoxyCodeLine{415     product *= val;}
+\DoxyCodeLine{416     }
+\DoxyCodeLine{417     \textcolor{keywordflow}{return} product;}
+\DoxyCodeLine{418 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMatrix_ae043c01c10b14ed31b380d9bfb9950bc}\label{classMatrix_ae043c01c10b14ed31b380d9bfb9950bc}} 
+\index{Matrix@{Matrix}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}} \& Matrix\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{double}]{val }\end{DoxyParamCaption})}
+
+Multiply each element in the matrix by val 
+\begin{DoxyParams}{Parámetros}
+{\em val} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+reference to the matrix 
+\end{DoxyReturn}
+
+
+Definición en la línea 361 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{361                                       \{}
+\DoxyCodeLine{362     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<this-\/>\mbox{\hyperlink{classMatrix_a97617f3524bfa47d6ac7daa0eefc1941}{rows}}(); i++)}
+\DoxyCodeLine{363         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0; j<this-\/>\mbox{\hyperlink{classMatrix_a5c0d89c4a0c86a901cf22234efaa79d0}{columns}}(); j++)}
+\DoxyCodeLine{364             this-\/>\mbox{\hyperlink{classMatrix_aaf3cb9c7f1d0849ad15636eb5553dba1}{at}}(i,j) *= val;}
+\DoxyCodeLine{365     }
+\DoxyCodeLine{366     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{367 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMatrix_aea4466c78eeb9f70a47208b0e0c4d6a0}\label{classMatrix_aea4466c78eeb9f70a47208b0e0c4d6a0}} 
+\index{Matrix@{Matrix}!operator+@{operator+}}
+\index{operator+@{operator+}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}} Matrix\+::operator+ (\begin{DoxyParamCaption}\item[{double}]{val }\end{DoxyParamCaption}) const}
+
+Add val to each element 
+\begin{DoxyParams}{Parámetros}
+{\em val} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+a new matrix with values M+val 
+\end{DoxyReturn}
+
+
+Definición en la línea 404 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{404                                          \{}
+\DoxyCodeLine{405     \mbox{\hyperlink{classMatrix}{Matrix}} sum(*\textcolor{keyword}{this});}
+\DoxyCodeLine{406     }
+\DoxyCodeLine{407     sum += val;}
+\DoxyCodeLine{408     }
+\DoxyCodeLine{409     \textcolor{keywordflow}{return} sum;}
+\DoxyCodeLine{410 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMatrix_afbed699175c2812be77981f95439fe74}\label{classMatrix_afbed699175c2812be77981f95439fe74}} 
+\index{Matrix@{Matrix}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}} \& Matrix\+::operator+= (\begin{DoxyParamCaption}\item[{double}]{val }\end{DoxyParamCaption})}
+
+Add a constan value to each element in the matrix 
+\begin{DoxyParams}{Parámetros}
+{\em val} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+reference to the matrix 
+\end{DoxyReturn}
+
+
+Definición en la línea 369 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{369                                       \{}
+\DoxyCodeLine{370     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<this-\/>\mbox{\hyperlink{classMatrix_a97617f3524bfa47d6ac7daa0eefc1941}{rows}}(); i++)}
+\DoxyCodeLine{371         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0; j<this-\/>\mbox{\hyperlink{classMatrix_a5c0d89c4a0c86a901cf22234efaa79d0}{columns}}(); j++)}
+\DoxyCodeLine{372             this-\/>\mbox{\hyperlink{classMatrix_aaf3cb9c7f1d0849ad15636eb5553dba1}{at}}(i,j) += val;}
+\DoxyCodeLine{373     }
+\DoxyCodeLine{374     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{375 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMatrix_aea5a06385f646eb4a63929fae6fa3e14}\label{classMatrix_aea5a06385f646eb4a63929fae6fa3e14}} 
+\index{Matrix@{Matrix}!operator=@{operator=}}
+\index{operator=@{operator=}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}} \& Matrix\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrix}{Matrix}} \&}]{m }\end{DoxyParamCaption})}
+
+Assign new contents to the matrix, replacing its current contents, and modifying its size accordingly. 
+\begin{DoxyParams}{Parámetros}
+{\em m} & the source matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+reference to the matrix 
+\end{DoxyReturn}
+
+
+Definición en la línea 261 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{261                                           \{    }
+\DoxyCodeLine{262     \textcolor{keywordflow}{if} (m.\_data != this-\/>\_data) \{}
+\DoxyCodeLine{263         this-\/>\mbox{\hyperlink{classMatrix_ac0e2adb05e204d5a40cd129d9fb0593f}{clear}}();}
+\DoxyCodeLine{264         }
+\DoxyCodeLine{265         \textcolor{keywordflow}{if} (m.\_data != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{266             \textcolor{keywordtype}{string} rowLabels[m.\mbox{\hyperlink{classMatrix_a97617f3524bfa47d6ac7daa0eefc1941}{rows}}()], colLabels[m.\mbox{\hyperlink{classMatrix_a5c0d89c4a0c86a901cf22234efaa79d0}{columns}}()];}
+\DoxyCodeLine{267             m.\mbox{\hyperlink{classMatrix_ac0c4600f052bfdf5bea9fee577a8288b}{getRowLabels}}(rowLabels);}
+\DoxyCodeLine{268             m.\mbox{\hyperlink{classMatrix_af4d22c2d5e252f24ba6491aedd486fcb}{getColLabels}}(colLabels);}
+\DoxyCodeLine{269 }
+\DoxyCodeLine{270             this-\/>\mbox{\hyperlink{classMatrix_a29414ab006f8124c4c24fc78a3c62529}{resize}}(rowLabels, m.\mbox{\hyperlink{classMatrix_a97617f3524bfa47d6ac7daa0eefc1941}{rows}}(), colLabels, m.\mbox{\hyperlink{classMatrix_a5c0d89c4a0c86a901cf22234efaa79d0}{columns}}());}
+\DoxyCodeLine{271             copy(this-\/>\_data, m.\_data, \_nrows, \_ncols);}
+\DoxyCodeLine{272         \}}
+\DoxyCodeLine{273     \}}
+\DoxyCodeLine{274     }
+\DoxyCodeLine{275     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{276 \}}
+
+\end{DoxyCode}
+Gráfico de llamadas para esta función\+:
+% FIG 2
+\mbox{\Hypertarget{classMatrix_a9c4774837d625dd94e1ce6feb010f524}\label{classMatrix_a9c4774837d625dd94e1ce6feb010f524}} 
+\index{Matrix@{Matrix}!resize@{resize}}
+\index{resize@{resize}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{resize()}{resize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Matrix\+::resize (\begin{DoxyParamCaption}\item[{const std\+::string $\ast$}]{row\+Labels,  }\item[{size\+\_\+t}]{nrows,  }\item[{const std\+::string $\ast$}]{col\+Labels,  }\item[{size\+\_\+t}]{ncols,  }\item[{double}]{vdef = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Change the size of the matrix to nrows x ncols initializing all its value to vdef. The rows/columns are labeled with row\+Labels/col\+Labels. In case of error set the default matrix 
+\begin{DoxyParams}{Parámetros}
+{\em nrows} & \\
+\hline
+{\em ncols} & \\
+\hline
+{\em vdef} & vauled used by default it is used the value 0.\+0\\
+\hline
+{\em row\+Labels} & string array containing the label of the rows (this string is assumed to have length nrows) \\
+\hline
+{\em col\+Labels} & string array containing the label of the columns (this string is assumed to have length ncols) \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 144 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{144                                                                                                                       \{}
+\DoxyCodeLine{145     \mbox{\hyperlink{classMatrix_a29414ab006f8124c4c24fc78a3c62529}{resize}}(nrows, ncols, value);    }
+\DoxyCodeLine{146     setLabels(\_rowLabels, rowLabels, nrows);}
+\DoxyCodeLine{147     setLabels(\_colLabels, colLabels, ncols);}
+\DoxyCodeLine{148 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMatrix_a29414ab006f8124c4c24fc78a3c62529}\label{classMatrix_a29414ab006f8124c4c24fc78a3c62529}} 
+\index{Matrix@{Matrix}!resize@{resize}}
+\index{resize@{resize}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{resize()}{resize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Matrix\+::resize (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{nrows,  }\item[{size\+\_\+t}]{ncols,  }\item[{double}]{def\+Value = {\ttfamily 0.0} }\end{DoxyParamCaption})}
+
+Change the size of the matrix to nrows x ncols initializing all its value to def\+Value 
+\begin{DoxyParams}{Parámetros}
+{\em nrows} & \\
+\hline
+{\em ncols} & \\
+\hline
+{\em def\+Value} & by default it is used the value 0.\+0 \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 136 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{136                                                             \{}
+\DoxyCodeLine{137     \mbox{\hyperlink{classMatrix_ac0e2adb05e204d5a40cd129d9fb0593f}{clear}}();}
+\DoxyCodeLine{138     \_data = allocate(nrows, ncols);}
+\DoxyCodeLine{139     \_nrows = nrows;}
+\DoxyCodeLine{140     \_ncols = ncols;}
+\DoxyCodeLine{141     setValues(value);}
+\DoxyCodeLine{142 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMatrix_a92266ef499f086a88d74d389e6c5d142}\label{classMatrix_a92266ef499f086a88d74d389e6c5d142}} 
+\index{Matrix@{Matrix}!rowIndexOf@{rowIndexOf}}
+\index{rowIndexOf@{rowIndexOf}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{rowIndexOf()}{rowIndexOf()}}
+{\footnotesize\ttfamily int Matrix\+::row\+Index\+Of (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{label }\end{DoxyParamCaption}) const}
+
+Return the row number 
+\begin{DoxyParams}{Parámetros}
+{\em label} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+row associated to the label. It return Matrix\+::npos if the label is not in the \mbox{\hyperlink{classMatrix}{Matrix}} 
+\end{DoxyReturn}
+
+
+Definición en la línea 182 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{182                                                     \{}
+\DoxyCodeLine{183     \textcolor{keywordtype}{int} pos = npos;}
+\DoxyCodeLine{184     \textcolor{keywordtype}{bool} found = \textcolor{keyword}{false};}
+\DoxyCodeLine{185     }
+\DoxyCodeLine{186     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<\mbox{\hyperlink{classMatrix_a97617f3524bfa47d6ac7daa0eefc1941}{rows}}() \&\& !found; i++)}
+\DoxyCodeLine{187         \textcolor{keywordflow}{if} (\_rowLabels.\mbox{\hyperlink{classIndex_a4b4100575cd7c41b532aaee42b27458a}{at}}(i).\mbox{\hyperlink{classPair_a265336f9fccf8cfd441545158192e68c}{getKey}}() == label) \{}
+\DoxyCodeLine{188             pos = i;}
+\DoxyCodeLine{189             found = \textcolor{keyword}{true};}
+\DoxyCodeLine{190         \}}
+\DoxyCodeLine{191     }
+\DoxyCodeLine{192     \textcolor{keywordflow}{return} pos;}
+\DoxyCodeLine{193 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMatrix_a97617f3524bfa47d6ac7daa0eefc1941}\label{classMatrix_a97617f3524bfa47d6ac7daa0eefc1941}} 
+\index{Matrix@{Matrix}!rows@{rows}}
+\index{rows@{rows}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{rows()}{rows()}}
+{\footnotesize\ttfamily size\+\_\+t Matrix\+::rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Number of rows \begin{DoxyReturn}{Devuelve}
+number of rows 
+\end{DoxyReturn}
+
+
+Definición en la línea 318 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{318                           \{}
+\DoxyCodeLine{319     \textcolor{keywordflow}{return} \_nrows;}
+\DoxyCodeLine{320 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMatrix_a861e34bddccbddfb2e5ce43891ac99e6}\label{classMatrix_a861e34bddccbddfb2e5ce43891ac99e6}} 
+\index{Matrix@{Matrix}!save@{save}}
+\index{save@{save}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily void Matrix\+::save (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption}) const}
+
+\begin{DoxyVerb}   Save the matrix in a file in the following format
+\end{DoxyVerb}
+
+
+\#matrix labeled$\vert$unlabeled number\+\_\+of\+\_\+rows number\+\_\+of\+\_\+columns \mbox{[}labelr1 labelr2 label\+\_\+nrows\mbox{]} \mbox{[}labelc1 labelc2 label\+\_\+ncols\mbox{]} \mbox{[}0\mbox{]}\mbox{[}0\mbox{]}....m\mbox{[}0\mbox{]}\mbox{[}ncols\mbox{]} m\mbox{[}1\mbox{]}\mbox{[}0\mbox{]}....m\mbox{[}1\mbox{]}\mbox{[}ncols\mbox{]} ... m\mbox{[}nrows\mbox{]}\mbox{[}0\mbox{]} ...m\mbox{[}nrows\mbox{]}\mbox{[}ncols\mbox{]} \begin{DoxyVerb}        * 
+   where the first line use the magic word "#matrix" and indicates whether the matrix is labeled or unlabeled
+   in the case the matrix has no labels at rows and columns the third and four lines are empty
+
+   For example
+\end{DoxyVerb}
+
+
+\#matrix labeled 2 2 A B X Y 1 2 3 4
+
+\#matrix unlabeled 2 2 1.\+2 2.\+2 3.\+2 4.\+2
+
+
+\begin{DoxyParams}{Parámetros}
+{\em filename} & name of the file \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 322 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{322                                         \{}
+\DoxyCodeLine{323     ofstream fsal(nf);}
+\DoxyCodeLine{324     \textcolor{keywordflow}{if} (fsal.is\_open()) \{}
+\DoxyCodeLine{325         fsal << \textcolor{stringliteral}{"\#matrix "}; }
+\DoxyCodeLine{326         \textcolor{keywordflow}{if} (\_rowLabels.\mbox{\hyperlink{classIndex_a1d7170f9bdadd16f8db0b0905fdc1323}{size}}()==0)}
+\DoxyCodeLine{327             fsal << \textcolor{stringliteral}{"unlabeled"}<< endl;}
+\DoxyCodeLine{328         \textcolor{keywordflow}{else} fsal << \textcolor{stringliteral}{"labeled"} << endl;}
+\DoxyCodeLine{329         fsal << *\textcolor{keyword}{this};}
+\DoxyCodeLine{330         fsal.close();}
+\DoxyCodeLine{331     \} \textcolor{keywordflow}{else} cerr << \textcolor{stringliteral}{"Fail creating "} << nf << \textcolor{stringliteral}{" file"} <<endl;}
+\DoxyCodeLine{332 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentación de las funciones relacionadas y clases amigas}
+\mbox{\Hypertarget{classMatrix_a93a8834615af86c5a430d0f2b0e5eb48}\label{classMatrix_a93a8834615af86c5a430d0f2b0e5eb48}} 
+\index{Matrix@{Matrix}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$}{operator*}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}} operator$\ast$ (\begin{DoxyParamCaption}\item[{double}]{ival,  }\item[{const \mbox{\hyperlink{classMatrix}{Matrix}} \&}]{dch }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Return a new matrix obtained by computing\+: val $\ast$ M 
+\begin{DoxyParams}{Parámetros}
+{\em ival} & \\
+\hline
+{\em M} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+resulting matrix 
+\end{DoxyReturn}
+
+
+Definición en la línea 428 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{428                                                   \{}
+\DoxyCodeLine{429     \mbox{\hyperlink{classMatrix}{Matrix}} product(dch);}
+\DoxyCodeLine{430     }
+\DoxyCodeLine{431     product *= ival;}
+\DoxyCodeLine{432     }
+\DoxyCodeLine{433     \textcolor{keywordflow}{return} product;}
+\DoxyCodeLine{434 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMatrix_aa54339476c98b9465562f180f6ebc90b}\label{classMatrix_aa54339476c98b9465562f180f6ebc90b}} 
+\index{Matrix@{Matrix}!operator+@{operator+}}
+\index{operator+@{operator+}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{operator+}{operator+}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}} operator+ (\begin{DoxyParamCaption}\item[{double}]{ival,  }\item[{const \mbox{\hyperlink{classMatrix}{Matrix}} \&}]{dch }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Return a new matrix obtained by computing\+: val + M
+
+
+\begin{DoxyParams}{Parámetros}
+{\em ival} & \\
+\hline
+{\em dch} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+resulting matrix 
+\end{DoxyReturn}
+
+
+Definición en la línea 420 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{420                                                   \{}
+\DoxyCodeLine{421     \mbox{\hyperlink{classMatrix}{Matrix}} sum(dch);}
+\DoxyCodeLine{422     }
+\DoxyCodeLine{423     sum += ival;}
+\DoxyCodeLine{424     }
+\DoxyCodeLine{425     \textcolor{keywordflow}{return} sum;}
+\DoxyCodeLine{426 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMatrix_a060711074cb5bcaf4e75498bc040c4b7}\label{classMatrix_a060711074cb5bcaf4e75498bc040c4b7}} 
+\index{Matrix@{Matrix}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classMatrix}{Matrix}} \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Insert the data representing the matrix into the ostream os with the following format
+
+number\+\_\+of\+\_\+rows number\+\_\+of\+\_\+columns \mbox{[}labelr1 labelr2 label\+\_\+nrows\mbox{]} \mbox{[}labelc1 labelc2 label\+\_\+ncols\mbox{]} m\mbox{[}0\mbox{]}\mbox{[}0\mbox{]}....m\mbox{[}0\mbox{]}\mbox{[}ncols\mbox{]} m\mbox{[}1\mbox{]}\mbox{[}0\mbox{]}....m\mbox{[}1\mbox{]}\mbox{[}ncols\mbox{]} ... m\mbox{[}nrows\mbox{]}\mbox{[}0\mbox{]} ...m\mbox{[}nrows\mbox{]}\mbox{[}ncols\mbox{]}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em os} & output stream \\
+\hline
+{\em m} & the matrix object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{Matrix_8h}{Matrix.\+h}}\item 
+src/Matrix.\+cpp\end{DoxyCompactItemize}

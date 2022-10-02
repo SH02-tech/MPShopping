@@ -1,0 +1,456 @@
+\hypertarget{classIndex}{}\doxysection{Referencia de la Clase Index}
+\label{classIndex}\index{Index@{Index}}
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classIndex_a0f3ab2b3c2f7c2304e2881204cfb7b42}{Index}} (int on\+Brand=0)
+\begin{DoxyCompactList}\small\item\em Constructor defining the type of index to be created. Depending on the type, the values of the pairs will be set using users or brands. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classIndex_a193d79170a1effb5d401a627249e52d9}{Index}} (const \mbox{\hyperlink{classIndex}{Index}} \&orig)
+\begin{DoxyCompactList}\small\item\em Copy constructor, a new object is created from the parameter object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classIndex_a1d7170f9bdadd16f8db0b0905fdc1323}{size}} () const
+\begin{DoxyCompactList}\small\item\em Gets the size of the index. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classIndex_a10fb1c71d064c2b3118d4a11a3adda05}{is\+Empty}} ()
+\begin{DoxyCompactList}\small\item\em Detects whether an index is empty or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIndex_a3b2c7f89af619efa0857084100fff2f8}{build}} (const \mbox{\hyperlink{classEventSet}{Event\+Set}} \&ev\+Set, int on\+Brand)
+\begin{DoxyCompactList}\small\item\em Build the index using the Brand o the user\+ID as searching key according to the on\+Brand value. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classIndex_a060c365a178c347c5f97ccc89688e672}{get\+I\+On\+Which}} () const
+\begin{DoxyCompactList}\small\item\em Informs on which field is mounted the index, 1 Brand 0 user\+ID. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classPair}{Pair}} \& \mbox{\hyperlink{classIndex_a4b4100575cd7c41b532aaee42b27458a}{at}} (int pos) const
+\begin{DoxyCompactList}\small\item\em get the \mbox{\hyperlink{classPair}{Pair}} in a position selected, for consulting \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classIndex_a734ad3d7b0f08e98616a9ec4207cae27}\label{classIndex_a734ad3d7b0f08e98616a9ec4207cae27}} 
+void \mbox{\hyperlink{classIndex_a734ad3d7b0f08e98616a9ec4207cae27}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clears the index, setting the number of entries to 0. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPair}{Pair}} \& \mbox{\hyperlink{classIndex_a4dd5e32738fa2130e60a42b2cb970499}{at}} (int pos)
+\begin{DoxyCompactList}\small\item\em get the \mbox{\hyperlink{classPair}{Pair}} in a position selected, for modification \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classIndex_a4a5393a32896f664f2f3e78cf9982103}{lower\+\_\+bound}} (const std\+::string \&key) const
+\begin{DoxyCompactList}\small\item\em Returns the position to the first element in the \mbox{\hyperlink{classIndex}{Index}} which is not considered to go before key (i.\+e., either it is the first element equal to the key or it is strictly bigger), look at the example. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classIndex_ae0a2965afa0cd0a99498b19c0c02a76f}{upper\+\_\+bound}} (const std\+::string \&key) const
+\begin{DoxyCompactList}\small\item\em Returns the position to the first element in the \mbox{\hyperlink{classIndex}{Index}} which is considered to go after the key look at the example. example\+: // 10 20 30 30 40 50 60 70 upper\+\_\+bound(30) ........$^\wedge$ upper\+\_\+bound(35) ........$^\wedge$. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classIndex_aa9fb80238805162321140a1e12684594}{add}} (const \mbox{\hyperlink{classPair}{Pair}} \&pair)
+\begin{DoxyCompactList}\small\item\em Inserts a new entry in the index, in a way that the index remains in ascending order of searching key. procedure\+: use the method upper\+\_\+bound (see description) that provides the exact position where to insert. Once the position is found, the method has to make room by moving all the posterior records one position in the index. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classIndex_aeea7830632af653704db479f3a29f9a5}\label{classIndex_aeea7830632af653704db479f3a29f9a5}} 
+void \mbox{\hyperlink{classIndex_aeea7830632af653704db479f3a29f9a5}{print}} () const
+\begin{DoxyCompactList}\small\item\em Displays the information about the \mbox{\hyperlink{classIndex}{Index}} on screen. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classIndex_a308675e8e969267bc2402a96d01816b2}\label{classIndex_a308675e8e969267bc2402a96d01816b2}} 
+std\+::string {\bfseries to\+\_\+string} () const
+\item 
+\mbox{\Hypertarget{classIndex_a5bb42666a31fe412df613b397d9e9b7b}\label{classIndex_a5bb42666a31fe412df613b397d9e9b7b}} 
+std\+::string {\bfseries report\+Data} () const
+\item 
+\mbox{\hyperlink{classIndex}{Index}} \& \mbox{\hyperlink{classIndex_a7f07befff13bb6563764b5162ddec638}{operator=}} (const \mbox{\hyperlink{classIndex}{Index}} \&one)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+
+
+Definición en la línea 15 del archivo Index.\+h.
+
+
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{classIndex_a0f3ab2b3c2f7c2304e2881204cfb7b42}\label{classIndex_a0f3ab2b3c2f7c2304e2881204cfb7b42}} 
+\index{Index@{Index}!Index@{Index}}
+\index{Index@{Index}!Index@{Index}}
+\doxysubsubsection{\texorpdfstring{Index()}{Index()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Index\+::\+Index (\begin{DoxyParamCaption}\item[{int}]{on\+Brand = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Constructor defining the type of index to be created. Depending on the type, the values of the pairs will be set using users or brands. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em type} & Type of the index
+\begin{DoxyItemize}
+\item Value 0 indicates an index over the users
+\item Value 1 indicates an index over the brands 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 20 del archivo Index.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{20                         \{}
+\DoxyCodeLine{21     \_entries = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{22     \_nEntries = 0;}
+\DoxyCodeLine{23     \_onBrand = 0;}
+\DoxyCodeLine{24     \_capacity = 0;}
+\DoxyCodeLine{25     setIOnWhich(onBrand);}
+\DoxyCodeLine{26 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classIndex_a193d79170a1effb5d401a627249e52d9}\label{classIndex_a193d79170a1effb5d401a627249e52d9}} 
+\index{Index@{Index}!Index@{Index}}
+\index{Index@{Index}!Index@{Index}}
+\doxysubsubsection{\texorpdfstring{Index()}{Index()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Index\+::\+Index (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classIndex}{Index}} \&}]{orig }\end{DoxyParamCaption})}
+
+
+
+Copy constructor, a new object is created from the parameter object. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em org} & the \mbox{\hyperlink{classIndex}{Index}} we want a copy from \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 28 del archivo Index.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{28                               \{}
+\DoxyCodeLine{29     \_entries = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{30     \_nEntries = \_capacity = 0;}
+\DoxyCodeLine{31     \_onBrand = orig.\mbox{\hyperlink{classIndex_a060c365a178c347c5f97ccc89688e672}{getIOnWhich}}();}
+\DoxyCodeLine{32     }
+\DoxyCodeLine{33     copy(orig);}
+\DoxyCodeLine{34 \}}
+
+\end{DoxyCode}
+Gráfico de llamadas para esta función\+:
+% FIG 0
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classIndex_aa9fb80238805162321140a1e12684594}\label{classIndex_aa9fb80238805162321140a1e12684594}} 
+\index{Index@{Index}!add@{add}}
+\index{add@{add}!Index@{Index}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily int Index\+::add (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPair}{Pair}} \&}]{pair }\end{DoxyParamCaption})}
+
+
+
+Inserts a new entry in the index, in a way that the index remains in ascending order of searching key. procedure\+: use the method upper\+\_\+bound (see description) that provides the exact position where to insert. Once the position is found, the method has to make room by moving all the posterior records one position in the index. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em an} & entry in the index. The name has to be correct \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+1 when insertion is successful, 0 if it fails 
+\end{DoxyReturn}
+
+
+Definición en la línea 98 del archivo Index.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{98                                 \{   }
+\DoxyCodeLine{99     }
+\DoxyCodeLine{100     \textcolor{keywordflow}{if} (\_nEntries == \_capacity)}
+\DoxyCodeLine{101         reallocate(2*\_capacity+1);}
+\DoxyCodeLine{102     }
+\DoxyCodeLine{103     \textcolor{keywordtype}{int} successful = 1;}
+\DoxyCodeLine{104     }
+\DoxyCodeLine{105     \textcolor{keywordtype}{int} pos = \mbox{\hyperlink{classIndex_ae0a2965afa0cd0a99498b19c0c02a76f}{upper\_bound}}(pair.\mbox{\hyperlink{classPair_a265336f9fccf8cfd441545158192e68c}{getKey}}());}
+\DoxyCodeLine{106     }
+\DoxyCodeLine{107     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=\mbox{\hyperlink{classIndex_a4a5393a32896f664f2f3e78cf9982103}{lower\_bound}}(pair.\mbox{\hyperlink{classPair_a265336f9fccf8cfd441545158192e68c}{getKey}}()); i<pos \&\& successful == 1; i++)}
+\DoxyCodeLine{108         \textcolor{keywordflow}{if} (\_entries[i].to\_string().compare(pair.\mbox{\hyperlink{classPair_a5d585945bacfe7f4a99d4966909e6e63}{to\_string}}()) == 0)}
+\DoxyCodeLine{109             successful = 0;}
+\DoxyCodeLine{110     }
+\DoxyCodeLine{111     \textcolor{keywordflow}{if} (successful == 1) \{}
+\DoxyCodeLine{112         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=\_nEntries; i>pos; i-\/-\/)}
+\DoxyCodeLine{113             \_entries[i] = \_entries[i-\/1];}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115         \_entries[pos] = pair;}
+\DoxyCodeLine{116         \_nEntries++;}
+\DoxyCodeLine{117     \}}
+\DoxyCodeLine{118     }
+\DoxyCodeLine{119     \textcolor{keywordflow}{return} successful;}
+\DoxyCodeLine{120 \}}
+
+\end{DoxyCode}
+Gráfico de llamadas para esta función\+:
+% FIG 1
+\mbox{\Hypertarget{classIndex_a4dd5e32738fa2130e60a42b2cb970499}\label{classIndex_a4dd5e32738fa2130e60a42b2cb970499}} 
+\index{Index@{Index}!at@{at}}
+\index{at@{at}!Index@{Index}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPair}{Pair}} \& Index\+::at (\begin{DoxyParamCaption}\item[{int}]{pos }\end{DoxyParamCaption})}
+
+
+
+get the \mbox{\hyperlink{classPair}{Pair}} in a position selected, for modification 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em pos,position} & in the \mbox{\hyperlink{classIndex}{Index}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+the selected \mbox{\hyperlink{classPair}{Pair}} in the \mbox{\hyperlink{classIndex}{Index}} 
+\end{DoxyReturn}
+
+
+Definición en la línea 169 del archivo Index.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{169                         \{}
+\DoxyCodeLine{170     \textcolor{keywordflow}{return} (0 <= pos \&\& pos < \_nEntries ? \_entries[pos] : NULL\_PAIR);}
+\DoxyCodeLine{171 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classIndex_a4b4100575cd7c41b532aaee42b27458a}\label{classIndex_a4b4100575cd7c41b532aaee42b27458a}} 
+\index{Index@{Index}!at@{at}}
+\index{at@{at}!Index@{Index}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classPair}{Pair}} \& Index\+::at (\begin{DoxyParamCaption}\item[{int}]{pos }\end{DoxyParamCaption}) const}
+
+
+
+get the \mbox{\hyperlink{classPair}{Pair}} in a position selected, for consulting 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em pos,position} & in the \mbox{\hyperlink{classIndex}{Index}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+the selected \mbox{\hyperlink{classPair}{Pair}} in the \mbox{\hyperlink{classIndex}{Index}} 
+\end{DoxyReturn}
+
+
+Definición en la línea 165 del archivo Index.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{165                                     \{}
+\DoxyCodeLine{166     \textcolor{keywordflow}{return} (0 <= pos \&\& pos < \_nEntries ? \_entries[pos] : NULL\_PAIR);}
+\DoxyCodeLine{167 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classIndex_a3b2c7f89af619efa0857084100fff2f8}\label{classIndex_a3b2c7f89af619efa0857084100fff2f8}} 
+\index{Index@{Index}!build@{build}}
+\index{build@{build}!Index@{Index}}
+\doxysubsubsection{\texorpdfstring{build()}{build()}}
+{\footnotesize\ttfamily void Index\+::build (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classEventSet}{Event\+Set}} \&}]{ev\+Set,  }\item[{int}]{on\+Brand }\end{DoxyParamCaption})}
+
+
+
+Build the index using the Brand o the user\+ID as searching key according to the on\+Brand value. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em ev\+Set} & origin \\
+\hline
+{\em on\+Brand} & if 1 then build an index by brand, otherwise by User \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 122 del archivo Index.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{122                                                      \{}
+\DoxyCodeLine{123     \mbox{\hyperlink{classIndex_a734ad3d7b0f08e98616a9ec4207cae27}{clear}}();}
+\DoxyCodeLine{124     }
+\DoxyCodeLine{125     setIOnWhich(onBrand);}
+\DoxyCodeLine{126     \textcolor{keywordtype}{string} field;}
+\DoxyCodeLine{127     }
+\DoxyCodeLine{128     \textcolor{keywordflow}{if} (onBrand == 2)}
+\DoxyCodeLine{129         field = \textcolor{stringliteral}{"Session"};}
+\DoxyCodeLine{130     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (onBrand == 0)}
+\DoxyCodeLine{131         field = \textcolor{stringliteral}{"UserID"};}
+\DoxyCodeLine{132     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{133         field = \textcolor{stringliteral}{"Brand"};}
+\DoxyCodeLine{134     }
+\DoxyCodeLine{135     }
+\DoxyCodeLine{136     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} pos=0; pos<evSet.\mbox{\hyperlink{classEventSet_afa17cf8b71961fe1bab9ae5bc7f4963d}{size}}(); pos++) \{}
+\DoxyCodeLine{137         \mbox{\hyperlink{classPair}{Pair}} one(evSet.\mbox{\hyperlink{classEventSet_ab8ac311a6121981191ce61d505cc069f}{at}}(pos).\mbox{\hyperlink{classEvent_aa0f2e1910272a7014e97794b7fc73d9a}{getField}}(field), pos);}
+\DoxyCodeLine{138         }
+\DoxyCodeLine{139         \textcolor{keywordflow}{if} (field == \textcolor{stringliteral}{"UserID"} || field == \textcolor{stringliteral}{"Session"})}
+\DoxyCodeLine{140             \mbox{\hyperlink{classIndex_aa9fb80238805162321140a1e12684594}{add}}(one);}
+\DoxyCodeLine{141         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!evSet.\mbox{\hyperlink{classEventSet_ab8ac311a6121981191ce61d505cc069f}{at}}(pos).\mbox{\hyperlink{classEvent_aace1f28b7c4dca4c943c46a85b74764a}{getBrand}}().empty())}
+\DoxyCodeLine{142             \mbox{\hyperlink{classIndex_aa9fb80238805162321140a1e12684594}{add}}(one);}
+\DoxyCodeLine{143             }
+\DoxyCodeLine{144     \}}
+\DoxyCodeLine{145 \}}
+
+\end{DoxyCode}
+Gráfico de llamadas para esta función\+:
+% FIG 2
+\mbox{\Hypertarget{classIndex_a060c365a178c347c5f97ccc89688e672}\label{classIndex_a060c365a178c347c5f97ccc89688e672}} 
+\index{Index@{Index}!getIOnWhich@{getIOnWhich}}
+\index{getIOnWhich@{getIOnWhich}!Index@{Index}}
+\doxysubsubsection{\texorpdfstring{getIOnWhich()}{getIOnWhich()}}
+{\footnotesize\ttfamily int Index\+::get\+I\+On\+Which (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Informs on which field is mounted the index, 1 Brand 0 user\+ID. 
+
+\begin{DoxyReturn}{Devuelve}
+the number 0,1 
+\end{DoxyReturn}
+
+
+Definición en la línea 94 del archivo Index.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{94                              \{}
+\DoxyCodeLine{95     \textcolor{keywordflow}{return} \_onBrand;}
+\DoxyCodeLine{96 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classIndex_a10fb1c71d064c2b3118d4a11a3adda05}\label{classIndex_a10fb1c71d064c2b3118d4a11a3adda05}} 
+\index{Index@{Index}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!Index@{Index}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily bool Index\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Detects whether an index is empty or not. 
+
+\begin{DoxyReturn}{Devuelve}
+true if the index has no elements, false otherwise 
+\end{DoxyReturn}
+
+
+Definición en la línea 79 del archivo Index.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{79 \{  \textcolor{keywordflow}{return} \mbox{\hyperlink{classIndex_a1d7170f9bdadd16f8db0b0905fdc1323}{size}}()==0; \}}
+
+\end{DoxyCode}
+Gráfico de llamadas para esta función\+:
+% FIG 3
+\mbox{\Hypertarget{classIndex_a4a5393a32896f664f2f3e78cf9982103}\label{classIndex_a4a5393a32896f664f2f3e78cf9982103}} 
+\index{Index@{Index}!lower\_bound@{lower\_bound}}
+\index{lower\_bound@{lower\_bound}!Index@{Index}}
+\doxysubsubsection{\texorpdfstring{lower\_bound()}{lower\_bound()}}
+{\footnotesize\ttfamily int Index\+::lower\+\_\+bound (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption}) const}
+
+
+
+Returns the position to the first element in the \mbox{\hyperlink{classIndex}{Index}} which is not considered to go before key (i.\+e., either it is the first element equal to the key or it is strictly bigger), look at the example. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em key} & the searching key a string example\+: // 10 20 30 30 40 50 60 70 low\+\_\+bound(30) ....$^\wedge$ low\+\_\+bound(35) ..........$^\wedge$ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+a position in the \mbox{\hyperlink{classIndex}{Index}} 
+\end{DoxyReturn}
+
+
+Definición en la línea 147 del archivo Index.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{147                                                \{}
+\DoxyCodeLine{148     \textcolor{keywordtype}{int} pos=0;}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150     \textcolor{keywordflow}{while} (\mbox{\hyperlink{classIndex_a4b4100575cd7c41b532aaee42b27458a}{at}}(pos).getKey().compare(key) < 0 \&\& pos < \mbox{\hyperlink{classIndex_a1d7170f9bdadd16f8db0b0905fdc1323}{size}}())}
+\DoxyCodeLine{151         pos++;}
+\DoxyCodeLine{152     }
+\DoxyCodeLine{153     \textcolor{keywordflow}{return} pos;}
+\DoxyCodeLine{154 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classIndex_a7f07befff13bb6563764b5162ddec638}\label{classIndex_a7f07befff13bb6563764b5162ddec638}} 
+\index{Index@{Index}!operator=@{operator=}}
+\index{operator=@{operator=}!Index@{Index}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classIndex}{Index}} \& Index\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classIndex}{Index}} \&}]{one }\end{DoxyParamCaption})}
+
+Assignment operator overload. This operator copies the content of one \mbox{\hyperlink{classIndex}{Index}} into this. 
+\begin{DoxyParams}{Parámetros}
+{\em one} & \mbox{\hyperlink{classIndex}{Index}} to be copied \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Reference to this, in order to chain the operator 
+\end{DoxyReturn}
+
+
+Definición en la línea 178 del archivo Index.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{178                                         \{}
+\DoxyCodeLine{179     }
+\DoxyCodeLine{180     \textcolor{keywordflow}{if} (\textcolor{keyword}{this} != \&one) \{}
+\DoxyCodeLine{181         copy(one);}
+\DoxyCodeLine{182     \}}
+\DoxyCodeLine{183     }
+\DoxyCodeLine{184     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{185 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classIndex_a1d7170f9bdadd16f8db0b0905fdc1323}\label{classIndex_a1d7170f9bdadd16f8db0b0905fdc1323}} 
+\index{Index@{Index}!size@{size}}
+\index{size@{size}!Index@{Index}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily int Index\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the size of the index. 
+
+\begin{DoxyReturn}{Devuelve}
+int representing the size of the index 
+\end{DoxyReturn}
+
+
+Definición en la línea 86 del archivo Index.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{86                       \{}
+\DoxyCodeLine{87     \textcolor{keywordflow}{return} \_nEntries;}
+\DoxyCodeLine{88 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classIndex_ae0a2965afa0cd0a99498b19c0c02a76f}\label{classIndex_ae0a2965afa0cd0a99498b19c0c02a76f}} 
+\index{Index@{Index}!upper\_bound@{upper\_bound}}
+\index{upper\_bound@{upper\_bound}!Index@{Index}}
+\doxysubsubsection{\texorpdfstring{upper\_bound()}{upper\_bound()}}
+{\footnotesize\ttfamily int Index\+::upper\+\_\+bound (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption}) const}
+
+
+
+Returns the position to the first element in the \mbox{\hyperlink{classIndex}{Index}} which is considered to go after the key look at the example. example\+: // 10 20 30 30 40 50 60 70 upper\+\_\+bound(30) ........$^\wedge$ upper\+\_\+bound(35) ........$^\wedge$. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em key} & String representing the searching key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+a position in the \mbox{\hyperlink{classIndex}{Index}} 
+\end{DoxyReturn}
+
+
+Definición en la línea 156 del archivo Index.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{156                                                \{}
+\DoxyCodeLine{157     \textcolor{keywordtype}{int} pos = \mbox{\hyperlink{classIndex_a4a5393a32896f664f2f3e78cf9982103}{lower\_bound}}(key);}
+\DoxyCodeLine{158     }
+\DoxyCodeLine{159     \textcolor{keywordflow}{while} (\mbox{\hyperlink{classIndex_a4b4100575cd7c41b532aaee42b27458a}{at}}(pos).getKey().compare(key) == 0 \&\& pos < \_nEntries)}
+\DoxyCodeLine{160         pos++;}
+\DoxyCodeLine{161     }
+\DoxyCodeLine{162     \textcolor{keywordflow}{return} pos;}
+\DoxyCodeLine{163 \}}
+
+\end{DoxyCode}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+include/Index.\+h\item 
+src/Index.\+cpp\end{DoxyCompactItemize}

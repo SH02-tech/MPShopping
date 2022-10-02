@@ -1,0 +1,554 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SHOPPING1: Fichero Fuente src/Matrix.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SHOPPING1
+   &#160;<span id="projectnumber">0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Matrix.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* </span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:   matrix.cpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Author: MP-team </span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * @warning To be implemented by students. Follow the instructions given in the headers</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Matrix_8h.html">Matrix.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;assert.h&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;iomanip&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keywordtype">double</span> v_npos = Matrix::npos;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span> c_npos = Matrix::npos;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">void</span> copy(<span class="keywordtype">double</span> **dest, <span class="keywordtype">double</span> **org, <span class="keywordtype">size_t</span> nrows, <span class="keywordtype">size_t</span> ncols) {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;nrows; i++)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j=0; j&lt;ncols; j++)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            dest[i][j] = org[i][j];</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keywordtype">double</span> ** allocate(<span class="keywordtype">size_t</span> r, <span class="keywordtype">size_t</span> c) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">double</span> ** block;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// allocate memory into block</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    block = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">if</span> (r&gt;0 &amp;&amp; c&gt;0) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        block = <span class="keyword">new</span> <span class="keywordtype">double</span>*[r];</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;r; i++)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            block[i] = <span class="keyword">new</span> <span class="keywordtype">double</span>[c];</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    } </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">return</span> block;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keywordtype">string</span> labelWithValuePosInIndex(<span class="keyword">const</span> <a class="code" href="classIndex.html">Index</a> &amp; idx, <span class="keywordtype">size_t</span> p) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">string</span> salida;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">bool</span> enc = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; idx.<a class="code" href="classIndex.html#a1d7170f9bdadd16f8db0b0905fdc1323">size</a>() &amp;&amp; !enc; i++) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">if</span> (idx.<a class="code" href="classIndex.html#a4b4100575cd7c41b532aaee42b27458a">at</a>(i).<a class="code" href="classPair.html#ae792131d5d5d921c6ec972ee928e3f05">getPos</a>() == p) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            salida = idx.<a class="code" href="classIndex.html#a4b4100575cd7c41b532aaee42b27458a">at</a>(i).<a class="code" href="classPair.html#a265336f9fccf8cfd441545158192e68c">getKey</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            enc = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> salida;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keywordtype">void</span> Matrix::deallocate() {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">if</span> (_data != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;rows(); i++) {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordflow">if</span> (_data[i] != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keyword">delete</span>[] _data[i];</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                _data[i] = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keyword">delete</span>[] _data;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        _data = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    _nrows = 0;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    _ncols = 0;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    _rowLabels.clear();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    _colLabels.clear();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="classMatrix.html#a2dba13c45127354c9f75ef576f49269b">   92</a></span>&#160;<a class="code" href="classMatrix.html#a2dba13c45127354c9f75ef576f49269b">Matrix::Matrix</a>() {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;   _data = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;   clear();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keywordtype">void</span> Matrix::setValues(<span class="keywordtype">double</span> valor) {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;_nrows; i++)</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j=0; j&lt;_ncols; j++)</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            _data[i][j] = valor;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="classMatrix.html#a8b5252dbf34867d973d2385117a0b3b2">  103</a></span>&#160;<a class="code" href="classMatrix.html#a2dba13c45127354c9f75ef576f49269b">Matrix::Matrix</a>(<span class="keywordtype">size_t</span> f, <span class="keywordtype">size_t</span> c, <span class="keywordtype">double</span> vdef) {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">int</span> rows = (f &gt; 0 ? f : 0);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">int</span> cols = (c &gt; 0 ? c : 0);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    _data = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    resize(rows, cols, vdef);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="classMatrix.html#a806b603175d91477ca28ccf83ef589ea">  111</a></span>&#160;<a class="code" href="classMatrix.html#a2dba13c45127354c9f75ef576f49269b">Matrix::Matrix</a>(<span class="keyword">const</span> <a class="code" href="classMatrix.html">Matrix</a>&amp; orig) {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    _data = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    clear();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordtype">string</span> rowLabels[orig.<a class="code" href="classMatrix.html#a97617f3524bfa47d6ac7daa0eefc1941">rows</a>()], colLabels[orig.<a class="code" href="classMatrix.html#a5c0d89c4a0c86a901cf22234efaa79d0">columns</a>()];</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    orig.<a class="code" href="classMatrix.html#ac0c4600f052bfdf5bea9fee577a8288b">getRowLabels</a>(rowLabels);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    orig.<a class="code" href="classMatrix.html#af4d22c2d5e252f24ba6491aedd486fcb">getColLabels</a>(colLabels);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    resize(rowLabels, orig.<a class="code" href="classMatrix.html#a97617f3524bfa47d6ac7daa0eefc1941">rows</a>(), colLabels, orig.<a class="code" href="classMatrix.html#a5c0d89c4a0c86a901cf22234efaa79d0">columns</a>());</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    copy(_data, orig._data, _nrows, _ncols);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="classMatrix.html#ac5e8202fb9e3ee53aa56b0fd0c57aba7">  123</a></span>&#160;<a class="code" href="classMatrix.html#a2dba13c45127354c9f75ef576f49269b">Matrix::Matrix</a>(<span class="keyword">const</span> std::string *rowLabels, <span class="keywordtype">size_t</span> nrows, <span class="keyword">const</span> std::string * colsLabels, <span class="keywordtype">size_t</span> ncols, <span class="keywordtype">double</span> value) {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    _data = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    resize(rowLabels, nrows, colsLabels, ncols, value);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;}</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="classMatrix.html#a108d25b5c593b3c915f5198f89cbc0f3">  128</a></span>&#160;std::string <a class="code" href="classMatrix.html#a108d25b5c593b3c915f5198f89cbc0f3">Matrix::labelAtRow</a>(<span class="keywordtype">size_t</span> row)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">return</span> labelWithValuePosInIndex(_rowLabels, row);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="classMatrix.html#ab5da325b9a56f331bcbf8982a1203e90">  132</a></span>&#160;std::string <a class="code" href="classMatrix.html#ab5da325b9a56f331bcbf8982a1203e90">Matrix::labelAtCol</a>(<span class="keywordtype">size_t</span> col)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">return</span> labelWithValuePosInIndex(_colLabels, col);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;}</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="classMatrix.html#a29414ab006f8124c4c24fc78a3c62529">  136</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMatrix.html#a29414ab006f8124c4c24fc78a3c62529">Matrix::resize</a>(<span class="keywordtype">size_t</span> nrows, <span class="keywordtype">size_t</span> ncols, <span class="keywordtype">double</span> value) {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    clear();</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    _data = allocate(nrows, ncols);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    _nrows = nrows;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    _ncols = ncols;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    setValues(value);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;}</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="classMatrix.html#a9c4774837d625dd94e1ce6feb010f524">  144</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMatrix.html#a29414ab006f8124c4c24fc78a3c62529">Matrix::resize</a>(<span class="keyword">const</span> std::string * rowLabels, <span class="keywordtype">size_t</span> nrows, <span class="keyword">const</span> std::string * colLabels, <span class="keywordtype">size_t</span> ncols, <span class="keywordtype">double</span> value) {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    resize(nrows, ncols, value);    </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    setLabels(_rowLabels, rowLabels, nrows);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    setLabels(_colLabels, colLabels, ncols);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;}</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="classMatrix.html#ac0e2adb05e204d5a40cd129d9fb0593f">  150</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMatrix.html#ac0e2adb05e204d5a40cd129d9fb0593f">Matrix::clear</a>() {</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    deallocate();</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;}</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno"><a class="line" href="classMatrix.html#a9b1c3627f573d78a2f08623fdfef990f">  154</a></span>&#160;<a class="code" href="classMatrix.html#a9b1c3627f573d78a2f08623fdfef990f">Matrix::~Matrix</a>() {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    clear();</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;}</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="classMatrix.html#aaf3cb9c7f1d0849ad15636eb5553dba1">  158</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span> &amp; <a class="code" href="classMatrix.html#aaf3cb9c7f1d0849ad15636eb5553dba1">Matrix::at</a>(<span class="keywordtype">size_t</span> f, <span class="keywordtype">size_t</span> c)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordflow">if</span> (0&lt;=f &amp;&amp; f&lt;rows() &amp;&amp; 0&lt;=c &amp;&amp; c&lt;columns())</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keywordflow">return</span> _data[f][c];</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordflow">return</span> v_npos;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    }</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;}</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno"><a class="line" href="classMatrix.html#a7aa79cbc38d993942f452f7fbcc02716">  166</a></span>&#160;<span class="keywordtype">double</span> &amp; <a class="code" href="classMatrix.html#aaf3cb9c7f1d0849ad15636eb5553dba1">Matrix::at</a>(<span class="keywordtype">size_t</span> f, <span class="keywordtype">size_t</span> c) {</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordflow">if</span> (0&lt;=f &amp;&amp; f&lt;rows() &amp;&amp; 0&lt;=c &amp;&amp; c&lt;columns())</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">return</span> _data[f][c];</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keywordflow">return</span> v_npos;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    }</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;}</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
+<div class="line"><a name="l00174"></a><span class="lineno"><a class="line" href="classMatrix.html#a6b3e290ca2ce684e96bbbddfec0c3bc6">  174</a></span>&#160;<span class="keywordtype">double</span> &amp; <a class="code" href="classMatrix.html#a0b1dc9bab8449403ef3a36c304fba675">Matrix::operator()</a>(<span class="keywordtype">size_t</span> f, <span class="keywordtype">size_t</span> c) {</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">return</span> at(f,c);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;}</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
+<div class="line"><a name="l00178"></a><span class="lineno"><a class="line" href="classMatrix.html#a0b1dc9bab8449403ef3a36c304fba675">  178</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span> &amp; <a class="code" href="classMatrix.html#a0b1dc9bab8449403ef3a36c304fba675">Matrix::operator()</a>(<span class="keywordtype">size_t</span> f, <span class="keywordtype">size_t</span> c)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordflow">return</span> at(f,c);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;}</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
+<div class="line"><a name="l00182"></a><span class="lineno"><a class="line" href="classMatrix.html#a92266ef499f086a88d74d389e6c5d142">  182</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classMatrix.html#a92266ef499f086a88d74d389e6c5d142">Matrix::rowIndexOf</a>(<span class="keyword">const</span> std::string &amp; label)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordtype">int</span> pos = npos;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordtype">bool</span> found = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;rows() &amp;&amp; !found; i++)</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keywordflow">if</span> (_rowLabels.at(i).getKey() == label) {</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            pos = i;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            found = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        }</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">return</span> pos;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;}</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno"><a class="line" href="classMatrix.html#a8aeb1eded03e5c781fb8993784433dc4">  195</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classMatrix.html#a8aeb1eded03e5c781fb8993784433dc4">Matrix::colIndexOf</a>(<span class="keyword">const</span> std::string &amp; label)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordtype">int</span> pos = npos;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordtype">bool</span> found = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;columns() &amp;&amp; !found; i++)</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keywordflow">if</span> (_colLabels.at(i).getKey() == label) {</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            pos = i;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            found = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        }</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keywordflow">return</span> pos;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;}</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno"><a class="line" href="classMatrix.html#a48ff70bcd5cad43433545ad29f986859">  208</a></span>&#160;<span class="keywordtype">double</span> &amp; <a class="code" href="classMatrix.html#aaf3cb9c7f1d0849ad15636eb5553dba1">Matrix::at</a>(<span class="keyword">const</span> std::string &amp; rowLabel, <span class="keyword">const</span> std::string &amp; colLabel) {</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordtype">int</span> row = rowIndexOf(rowLabel);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordtype">int</span> col = colIndexOf(colLabel);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    </div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordflow">return</span> at(row, col);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;}</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
+<div class="line"><a name="l00215"></a><span class="lineno"><a class="line" href="classMatrix.html#a24ee6400869c4bb8740b3e42a5339df9">  215</a></span>&#160;<span class="keywordtype">double</span> &amp; <a class="code" href="classMatrix.html#a0b1dc9bab8449403ef3a36c304fba675">Matrix::operator()</a>(<span class="keyword">const</span> std::string &amp; rowLabel, <span class="keyword">const</span> std::string &amp; colLabel) {</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keywordflow">return</span> at(rowLabel, colLabel);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;}</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
+<div class="line"><a name="l00219"></a><span class="lineno"><a class="line" href="classMatrix.html#a222f9a9a2e7ea9963f6b859b58fbd528">  219</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span> &amp; <a class="code" href="classMatrix.html#aaf3cb9c7f1d0849ad15636eb5553dba1">Matrix::at</a>(<span class="keyword">const</span> std::string &amp; rowLabel, <span class="keyword">const</span> std::string &amp; colLabel)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordtype">int</span> row = rowIndexOf(rowLabel);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keywordtype">int</span> col = colIndexOf(colLabel);</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    </div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordflow">return</span> at(row, col);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;}</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
+<div class="line"><a name="l00226"></a><span class="lineno"><a class="line" href="classMatrix.html#a5b88ddac319a2136bad57435c77cba6c">  226</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span> &amp; <a class="code" href="classMatrix.html#a0b1dc9bab8449403ef3a36c304fba675">Matrix::operator()</a>(<span class="keyword">const</span> std::string &amp; rowLabel, <span class="keyword">const</span> std::string &amp; colLabel)<span class="keyword">const </span>{</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keywordflow">return</span> at(rowLabel, colLabel);</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;}</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;ostream &amp; <a class="code" href="Matrix_8h.html#a060711074cb5bcaf4e75498bc040c4b7">operator&lt;&lt;</a>(ostream &amp; flujo, <span class="keyword">const</span> <a class="code" href="classMatrix.html">Matrix</a>&amp; m) {</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> WIDTH = 5;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    </div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ROWS = m.<a class="code" href="classMatrix.html#a97617f3524bfa47d6ac7daa0eefc1941">rows</a>();</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> COLS = m.<a class="code" href="classMatrix.html#a5c0d89c4a0c86a901cf22234efaa79d0">columns</a>();</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        </div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    flujo &lt;&lt; ROWS &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; COLS &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    </div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;ROWS; i++)</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        flujo &lt;&lt; m._rowLabels.<a class="code" href="classIndex.html#a4b4100575cd7c41b532aaee42b27458a">at</a>(i).<a class="code" href="classPair.html#a265336f9fccf8cfd441545158192e68c">getKey</a>() &lt;&lt; setw(WIDTH) &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span>;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    </div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    flujo &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    </div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j=0;j&lt;COLS; j++)</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        flujo &lt;&lt; m._colLabels.<a class="code" href="classIndex.html#a4b4100575cd7c41b532aaee42b27458a">at</a>(j).<a class="code" href="classPair.html#a265336f9fccf8cfd441545158192e68c">getKey</a>() &lt;&lt; setw(WIDTH) &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span>;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    </div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    flujo &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    </div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;ROWS; i++) {</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        </div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j=0; j&lt;COLS; j++)</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            flujo &lt;&lt; setprecision(5) &lt;&lt; (double)m(i,j) &lt;&lt; setw(WIDTH) &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span>;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        </div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        flujo &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    }</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    </div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    flujo &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    </div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="keywordflow">return</span> flujo;    </div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;}</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
+<div class="line"><a name="l00261"></a><span class="lineno"><a class="line" href="classMatrix.html#aea5a06385f646eb4a63929fae6fa3e14">  261</a></span>&#160;<a class="code" href="classMatrix.html">Matrix</a> &amp; <a class="code" href="classMatrix.html#aea5a06385f646eb4a63929fae6fa3e14">Matrix::operator=</a>(<span class="keyword">const</span> <a class="code" href="classMatrix.html">Matrix</a>&amp; m) {    </div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordflow">if</span> (m._data != this-&gt;_data) {</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        this-&gt;clear();</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        </div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        <span class="keywordflow">if</span> (m._data != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            <span class="keywordtype">string</span> rowLabels[m.<a class="code" href="classMatrix.html#a97617f3524bfa47d6ac7daa0eefc1941">rows</a>()], colLabels[m.<a class="code" href="classMatrix.html#a5c0d89c4a0c86a901cf22234efaa79d0">columns</a>()];</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            m.<a class="code" href="classMatrix.html#ac0c4600f052bfdf5bea9fee577a8288b">getRowLabels</a>(rowLabels);</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            m.<a class="code" href="classMatrix.html#af4d22c2d5e252f24ba6491aedd486fcb">getColLabels</a>(colLabels);</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            this-&gt;resize(rowLabels, m.<a class="code" href="classMatrix.html#a97617f3524bfa47d6ac7daa0eefc1941">rows</a>(), colLabels, m.<a class="code" href="classMatrix.html#a5c0d89c4a0c86a901cf22234efaa79d0">columns</a>());</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            copy(this-&gt;_data, m._data, _nrows, _ncols);</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        }</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    }</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    </div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;}</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; </div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="keywordtype">bool</span> Matrix::setLabels(<a class="code" href="classIndex.html">Index</a> &amp; idx, <span class="keyword">const</span> <span class="keywordtype">string</span> * labels, <span class="keywordtype">int</span> nlabels){</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    idx.<a class="code" href="classIndex.html#a734ad3d7b0f08e98616a9ec4207cae27">clear</a>();</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keywordtype">int</span> lb,ub;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="keywordtype">bool</span> correct = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt; nlabels &amp;&amp; correct; i++){</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        lb = idx.<a class="code" href="classIndex.html#a4a5393a32896f664f2f3e78cf9982103">lower_bound</a>(labels[i]);</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        ub = idx.<a class="code" href="classIndex.html#ae0a2965afa0cd0a99498b19c0c02a76f">upper_bound</a>(labels[i]);</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <span class="keywordflow">if</span> (lb==ub) { <span class="comment">// it is NOT in the set</span></div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            <a class="code" href="classPair.html">Pair</a> one(labels[i], i);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;            idx.<a class="code" href="classIndex.html#aa9fb80238805162321140a1e12684594">add</a>(one);</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;            correct = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;         }</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    }</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="keywordflow">if</span> (!correct) idx.<a class="code" href="classIndex.html#a734ad3d7b0f08e98616a9ec4207cae27">clear</a>();</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    </div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="keywordflow">return</span> correct;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;}</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="keywordtype">int</span> Matrix::getLabels(<span class="keyword">const</span> <a class="code" href="classIndex.html">Index</a> &amp; idx, <span class="keywordtype">string</span> * labels)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="keywordflow">if</span> (idx.<a class="code" href="classIndex.html#a1d7170f9bdadd16f8db0b0905fdc1323">size</a>() &gt; 0) {</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; idx.<a class="code" href="classIndex.html#a1d7170f9bdadd16f8db0b0905fdc1323">size</a>(); i++) {</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            labels[i] = idx.<a class="code" href="classIndex.html#a4b4100575cd7c41b532aaee42b27458a">at</a>(i).<a class="code" href="classPair.html#a265336f9fccf8cfd441545158192e68c">getKey</a>();</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        }</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    }</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="keywordflow">return</span> idx.<a class="code" href="classIndex.html#a1d7170f9bdadd16f8db0b0905fdc1323">size</a>();</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;}</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
+<div class="line"><a name="l00306"></a><span class="lineno"><a class="line" href="classMatrix.html#ac0c4600f052bfdf5bea9fee577a8288b">  306</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classMatrix.html#ac0c4600f052bfdf5bea9fee577a8288b">Matrix::getRowLabels</a>(<span class="keywordtype">string</span> * labels)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="keywordflow">return</span> getLabels(_rowLabels,labels);</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;}</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
+<div class="line"><a name="l00310"></a><span class="lineno"><a class="line" href="classMatrix.html#af4d22c2d5e252f24ba6491aedd486fcb">  310</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classMatrix.html#af4d22c2d5e252f24ba6491aedd486fcb">Matrix::getColLabels</a>(<span class="keywordtype">string</span> *labels)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="keywordflow">return</span> getLabels(_colLabels,labels);</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;}</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
+<div class="line"><a name="l00314"></a><span class="lineno"><a class="line" href="classMatrix.html#a5c0d89c4a0c86a901cf22234efaa79d0">  314</a></span>&#160;<span class="keywordtype">size_t</span> <a class="code" href="classMatrix.html#a5c0d89c4a0c86a901cf22234efaa79d0">Matrix::columns</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="keywordflow">return</span> _ncols;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;}</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
+<div class="line"><a name="l00318"></a><span class="lineno"><a class="line" href="classMatrix.html#a97617f3524bfa47d6ac7daa0eefc1941">  318</a></span>&#160;<span class="keywordtype">size_t</span> <a class="code" href="classMatrix.html#a97617f3524bfa47d6ac7daa0eefc1941">Matrix::rows</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="keywordflow">return</span> _nrows;</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;}</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
+<div class="line"><a name="l00322"></a><span class="lineno"><a class="line" href="classMatrix.html#a861e34bddccbddfb2e5ce43891ac99e6">  322</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMatrix.html#a861e34bddccbddfb2e5ce43891ac99e6">Matrix::save</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp; nf)<span class="keyword"> const</span>{</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    ofstream fsal(nf);</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keywordflow">if</span> (fsal.is_open()) {</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        fsal &lt;&lt; <span class="stringliteral">&quot;#matrix &quot;</span>; </div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <span class="keywordflow">if</span> (_rowLabels.size()==0)</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            fsal &lt;&lt; <span class="stringliteral">&quot;unlabeled&quot;</span>&lt;&lt; endl;</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="keywordflow">else</span> fsal &lt;&lt; <span class="stringliteral">&quot;labeled&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        fsal &lt;&lt; *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        fsal.close();</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    } <span class="keywordflow">else</span> cerr &lt;&lt; <span class="stringliteral">&quot;Fail creating &quot;</span> &lt;&lt; nf &lt;&lt; <span class="stringliteral">&quot; file&quot;</span> &lt;&lt;endl;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;}</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
+<div class="line"><a name="l00334"></a><span class="lineno"><a class="line" href="classMatrix.html#af381eb54e399bd858b19ce970feca6bd">  334</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMatrix.html#af381eb54e399bd858b19ce970feca6bd">Matrix::load</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp; nf) {</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    ifstream fent(nf);</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <span class="keywordtype">string</span> labeled, cad;</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    clear();</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="keywordflow">if</span> (fent.is_open()) {</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;         fent &gt;&gt; cad &gt;&gt; labeled;</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;         fent &gt;&gt; _nrows &gt;&gt; _ncols;</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;         <span class="keywordflow">if</span> (labeled == <span class="stringliteral">&quot;labeled&quot;</span>){</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0;i&lt;_nrows;i++){</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                fent &gt;&gt; cad;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                _rowLabels.add(<a class="code" href="classPair.html">Pair</a>(cad,i));</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;            }</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;             <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0;i&lt;_ncols;i++){</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                fent &gt;&gt; cad;</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                _colLabels.add(<a class="code" href="classPair.html">Pair</a>(cad,i));</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            }</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        }</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        _data = allocate(_nrows,_ncols); </div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; _nrows; i++) {</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; _ncols; j++) {</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                fent &gt;&gt; _data[i][j];</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;            }</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        }</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        fent.close();</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    } <span class="keywordflow">else</span> cerr &lt;&lt; <span class="stringliteral">&quot;Fail reading &quot;</span> &lt;&lt; nf &lt;&lt; <span class="stringliteral">&quot; file&quot;</span> &lt;&lt;endl;</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;}</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
+<div class="line"><a name="l00361"></a><span class="lineno"><a class="line" href="classMatrix.html#ae043c01c10b14ed31b380d9bfb9950bc">  361</a></span>&#160;<a class="code" href="classMatrix.html">Matrix</a> &amp; <a class="code" href="classMatrix.html#ae043c01c10b14ed31b380d9bfb9950bc">Matrix::operator*=</a>(<span class="keywordtype">double</span> val) {</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;this-&gt;rows(); i++)</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j=0; j&lt;this-&gt;columns(); j++)</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;            this-&gt;at(i,j) *= val;</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    </div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;}</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160; </div>
+<div class="line"><a name="l00369"></a><span class="lineno"><a class="line" href="classMatrix.html#afbed699175c2812be77981f95439fe74">  369</a></span>&#160;<a class="code" href="classMatrix.html">Matrix</a> &amp; <a class="code" href="classMatrix.html#afbed699175c2812be77981f95439fe74">Matrix::operator+=</a>(<span class="keywordtype">double</span> val) {</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;this-&gt;rows(); i++)</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j=0; j&lt;this-&gt;columns(); j++)</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            this-&gt;at(i,j) += val;</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    </div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;}</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; </div>
+<div class="line"><a name="l00377"></a><span class="lineno"><a class="line" href="classMatrix.html#a537594e2800c06bb4875027197506d2b">  377</a></span>&#160;<a class="code" href="classMatrix.html">Matrix</a> <a class="code" href="classMatrix.html#a537594e2800c06bb4875027197506d2b">Matrix::operator*</a>(<span class="keyword">const</span> <a class="code" href="classMatrix.html">Matrix</a> &amp; m)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <a class="code" href="classMatrix.html">Matrix</a> matrix_product;</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    </div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <span class="keywordflow">if</span> (this-&gt;columns() == m.<a class="code" href="classMatrix.html#a97617f3524bfa47d6ac7daa0eefc1941">rows</a>()) {</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        <span class="keywordtype">string</span> rowLabels[this-&gt;_rowLabels.size()];</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        <span class="keywordtype">string</span> colLabels[m._colLabels.<a class="code" href="classIndex.html#a1d7170f9bdadd16f8db0b0905fdc1323">size</a>()];</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        </div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        <span class="keywordtype">int</span> numRowLabels = getRowLabels(rowLabels);</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        <span class="keywordtype">int</span> numColLabels = m.<a class="code" href="classMatrix.html#af4d22c2d5e252f24ba6491aedd486fcb">getColLabels</a>(colLabels);</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        </div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        <span class="keywordflow">if</span> (numRowLabels != 0 &amp;&amp; numColLabels != 0)</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            matrix_product.<a class="code" href="classMatrix.html#a29414ab006f8124c4c24fc78a3c62529">resize</a>(rowLabels, this-&gt;rows(), colLabels, m.<a class="code" href="classMatrix.html#a5c0d89c4a0c86a901cf22234efaa79d0">columns</a>());</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;            matrix_product.<a class="code" href="classMatrix.html#a29414ab006f8124c4c24fc78a3c62529">resize</a>(this-&gt;rows(), m.<a class="code" href="classMatrix.html#a5c0d89c4a0c86a901cf22234efaa79d0">columns</a>());</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        </div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;matrix_product.<a class="code" href="classMatrix.html#a97617f3524bfa47d6ac7daa0eefc1941">rows</a>(); i++)</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j=0; j&lt;matrix_product.<a class="code" href="classMatrix.html#a5c0d89c4a0c86a901cf22234efaa79d0">columns</a>(); j++)</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k=0; k&lt;this-&gt;columns(); k++)</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                    matrix_product(i,j) += this-&gt;at(i,k) * m.<a class="code" href="classMatrix.html#aaf3cb9c7f1d0849ad15636eb5553dba1">at</a>(k,j);</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        matrix_product.<a class="code" href="classMatrix.html#a29414ab006f8124c4c24fc78a3c62529">resize</a>(3,3);</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        matrix_product.setValues(npos);</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    }</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    </div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    <span class="keywordflow">return</span> matrix_product;</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;}</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160; </div>
+<div class="line"><a name="l00404"></a><span class="lineno"><a class="line" href="classMatrix.html#aea4466c78eeb9f70a47208b0e0c4d6a0">  404</a></span>&#160;<a class="code" href="classMatrix.html">Matrix</a> <a class="code" href="classMatrix.html#aea4466c78eeb9f70a47208b0e0c4d6a0">Matrix::operator+</a>(<span class="keywordtype">double</span> val)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    <a class="code" href="classMatrix.html">Matrix</a> sum(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    </div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    sum += val;</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    </div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    <span class="keywordflow">return</span> sum;</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;}</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160; </div>
+<div class="line"><a name="l00412"></a><span class="lineno"><a class="line" href="classMatrix.html#a4da197b4784c20e970a7328bcc858a81">  412</a></span>&#160;<a class="code" href="classMatrix.html">Matrix</a> <a class="code" href="classMatrix.html#a537594e2800c06bb4875027197506d2b">Matrix::operator*</a>(<span class="keywordtype">double</span> val)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    <a class="code" href="classMatrix.html">Matrix</a> product(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    </div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    product *= val;</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    </div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    <span class="keywordflow">return</span> product;</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;}</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160; </div>
+<div class="line"><a name="l00420"></a><span class="lineno"><a class="line" href="Matrix_8h.html#aeb7968a741cfe7a297c0a10785803feb">  420</a></span>&#160;<a class="code" href="classMatrix.html">Matrix</a> <a class="code" href="Matrix_8h.html#aeb7968a741cfe7a297c0a10785803feb">operator+</a>(<span class="keywordtype">double</span> ival, <span class="keyword">const</span> <a class="code" href="classMatrix.html">Matrix</a> &amp; dch) {</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    <a class="code" href="classMatrix.html">Matrix</a> sum(dch);</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    </div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    sum += ival;</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    </div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    <span class="keywordflow">return</span> sum;</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;}</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160; </div>
+<div class="line"><a name="l00428"></a><span class="lineno"><a class="line" href="Matrix_8h.html#ae84220ea75d9470383219750f0c9efde">  428</a></span>&#160;<a class="code" href="classMatrix.html">Matrix</a> <a class="code" href="Matrix_8h.html#ae84220ea75d9470383219750f0c9efde">operator*</a>(<span class="keywordtype">double</span> ival, <span class="keyword">const</span> <a class="code" href="classMatrix.html">Matrix</a> &amp; dch) {</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    <a class="code" href="classMatrix.html">Matrix</a> product(dch);</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    </div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    product *= ival;</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    </div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    <span class="keywordflow">return</span> product;</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;}</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160; </div>
+<div class="line"><a name="l00436"></a><span class="lineno"><a class="line" href="classMatrix.html#a5b9205ecc57f91cd324e8b71ced98c44">  436</a></span>&#160;<a class="code" href="classMatrix.html">Matrix</a> &amp; <a class="code" href="classMatrix.html#a5b9205ecc57f91cd324e8b71ced98c44">Matrix::normalize</a>(){</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ROWS = this-&gt;rows();</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> COLS = this-&gt;columns();</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    </div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;ROWS; i++) {</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        <span class="keywordtype">double</span> sum_row = 0;</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;        </div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j=0; j&lt;COLS; j++)</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;            sum_row += this-&gt;at(i,j);</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;        </div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;        <span class="keywordtype">double</span> refactor = (sum_row != 0 ? 1.0/sum_row : 0);</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;        </div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;        <span class="keywordflow">if</span> (refactor != 0)</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j=0; j&lt;COLS; j++)</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;                this-&gt;at(i,j) *= refactor;</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j=0; j&lt;COLS; j++)</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;                this-&gt;at(i,j) = 1.0/COLS;</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;    }</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;    </div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassMatrix_html"><div class="ttname"><a href="classMatrix.html">Matrix</a></div><div class="ttdef"><b>Definition:</b> <a href="Matrix_8h_source.html#l00016">Matrix.h:16</a></div></div>
+<div class="ttc" id="aclassMatrix_html_ae043c01c10b14ed31b380d9bfb9950bc"><div class="ttname"><a href="classMatrix.html#ae043c01c10b14ed31b380d9bfb9950bc">Matrix::operator*=</a></div><div class="ttdeci">Matrix &amp; operator*=(double val)</div><div class="ttdef"><b>Definition:</b> <a href="Matrix_8cpp_source.html#l00361">Matrix.cpp:361</a></div></div>
+<div class="ttc" id="aclassPair_html_a265336f9fccf8cfd441545158192e68c"><div class="ttname"><a href="classPair.html#a265336f9fccf8cfd441545158192e68c">Pair::getKey</a></div><div class="ttdeci">const std::string &amp; getKey() const</div><div class="ttdoc">Get the key value from the Pair.</div><div class="ttdef"><b>Definition:</b> <a href="Pair_8cpp_source.html#l00026">Pair.cpp:26</a></div></div>
+<div class="ttc" id="aclassMatrix_html_afbed699175c2812be77981f95439fe74"><div class="ttname"><a href="classMatrix.html#afbed699175c2812be77981f95439fe74">Matrix::operator+=</a></div><div class="ttdeci">Matrix &amp; operator+=(double val)</div><div class="ttdef"><b>Definition:</b> <a href="Matrix_8cpp_source.html#l00369">Matrix.cpp:369</a></div></div>
+<div class="ttc" id="aclassMatrix_html_a861e34bddccbddfb2e5ce43891ac99e6"><div class="ttname"><a href="classMatrix.html#a861e34bddccbddfb2e5ce43891ac99e6">Matrix::save</a></div><div class="ttdeci">void save(const std::string &amp;filename) const</div><div class="ttdef"><b>Definition:</b> <a href="Matrix_8cpp_source.html#l00322">Matrix.cpp:322</a></div></div>
+<div class="ttc" id="aclassMatrix_html_a537594e2800c06bb4875027197506d2b"><div class="ttname"><a href="classMatrix.html#a537594e2800c06bb4875027197506d2b">Matrix::operator*</a></div><div class="ttdeci">Matrix operator*(const Matrix &amp;m) const</div><div class="ttdef"><b>Definition:</b> <a href="Matrix_8cpp_source.html#l00377">Matrix.cpp:377</a></div></div>
+<div class="ttc" id="aclassMatrix_html_aea4466c78eeb9f70a47208b0e0c4d6a0"><div class="ttname"><a href="classMatrix.html#aea4466c78eeb9f70a47208b0e0c4d6a0">Matrix::operator+</a></div><div class="ttdeci">Matrix operator+(double val) const</div><div class="ttdef"><b>Definition:</b> <a href="Matrix_8cpp_source.html#l00404">Matrix.cpp:404</a></div></div>
+<div class="ttc" id="aclassMatrix_html_a8aeb1eded03e5c781fb8993784433dc4"><div class="ttname"><a href="classMatrix.html#a8aeb1eded03e5c781fb8993784433dc4">Matrix::colIndexOf</a></div><div class="ttdeci">int colIndexOf(const std::string &amp;label) const</div><div class="ttdef"><b>Definition:</b> <a href="Matrix_8cpp_source.html#l00195">Matrix.cpp:195</a></div></div>
+<div class="ttc" id="aclassMatrix_html_aaf3cb9c7f1d0849ad15636eb5553dba1"><div class="ttname"><a href="classMatrix.html#aaf3cb9c7f1d0849ad15636eb5553dba1">Matrix::at</a></div><div class="ttdeci">const double &amp; at(size_t row, size_t col) const</div><div class="ttdef"><b>Definition:</b> <a href="Matrix_8cpp_source.html#l00158">Matrix.cpp:158</a></div></div>
+<div class="ttc" id="aMatrix_8h_html_aeb7968a741cfe7a297c0a10785803feb"><div class="ttname"><a href="Matrix_8h.html#aeb7968a741cfe7a297c0a10785803feb">operator+</a></div><div class="ttdeci">Matrix operator+(double ival, const Matrix &amp;M)</div><div class="ttdef"><b>Definition:</b> <a href="Matrix_8cpp_source.html#l00420">Matrix.cpp:420</a></div></div>
+<div class="ttc" id="aclassMatrix_html_a92266ef499f086a88d74d389e6c5d142"><div class="ttname"><a href="classMatrix.html#a92266ef499f086a88d74d389e6c5d142">Matrix::rowIndexOf</a></div><div class="ttdeci">int rowIndexOf(const std::string &amp;label) const</div><div class="ttdef"><b>Definition:</b> <a href="Matrix_8cpp_source.html#l00182">Matrix.cpp:182</a></div></div>
+<div class="ttc" id="aMatrix_8h_html"><div class="ttname"><a href="Matrix_8h.html">Matrix.h</a></div></div>
+<div class="ttc" id="aclassIndex_html_ae0a2965afa0cd0a99498b19c0c02a76f"><div class="ttname"><a href="classIndex.html#ae0a2965afa0cd0a99498b19c0c02a76f">Index::upper_bound</a></div><div class="ttdeci">int upper_bound(const std::string &amp;key) const</div><div class="ttdoc">Returns the position to the first element in the Index which is considered to go after the key look a...</div><div class="ttdef"><b>Definition:</b> <a href="Index_8cpp_source.html#l00156">Index.cpp:156</a></div></div>
+<div class="ttc" id="aclassIndex_html"><div class="ttname"><a href="classIndex.html">Index</a></div><div class="ttdef"><b>Definition:</b> <a href="Index_8h_source.html#l00015">Index.h:15</a></div></div>
+<div class="ttc" id="aclassIndex_html_a4b4100575cd7c41b532aaee42b27458a"><div class="ttname"><a href="classIndex.html#a4b4100575cd7c41b532aaee42b27458a">Index::at</a></div><div class="ttdeci">const Pair &amp; at(int pos) const</div><div class="ttdoc">get the Pair in a position selected, for consulting</div><div class="ttdef"><b>Definition:</b> <a href="Index_8cpp_source.html#l00165">Index.cpp:165</a></div></div>
+<div class="ttc" id="aclassMatrix_html_af381eb54e399bd858b19ce970feca6bd"><div class="ttname"><a href="classMatrix.html#af381eb54e399bd858b19ce970feca6bd">Matrix::load</a></div><div class="ttdeci">void load(const std::string &amp;filename)</div><div class="ttdef"><b>Definition:</b> <a href="Matrix_8cpp_source.html#l00334">Matrix.cpp:334</a></div></div>
+<div class="ttc" id="aclassMatrix_html_a9b1c3627f573d78a2f08623fdfef990f"><div class="ttname"><a href="classMatrix.html#a9b1c3627f573d78a2f08623fdfef990f">Matrix::~Matrix</a></div><div class="ttdeci">virtual ~Matrix()</div><div class="ttdef"><b>Definition:</b> <a href="Matrix_8cpp_source.html#l00154">Matrix.cpp:154</a></div></div>
+<div class="ttc" id="aclassMatrix_html_a5c0d89c4a0c86a901cf22234efaa79d0"><div class="ttname"><a href="classMatrix.html#a5c0d89c4a0c86a901cf22234efaa79d0">Matrix::columns</a></div><div class="ttdeci">size_t columns() const</div><div class="ttdef"><b>Definition:</b> <a href="Matrix_8cpp_source.html#l00314">Matrix.cpp:314</a></div></div>
+<div class="ttc" id="aclassIndex_html_aa9fb80238805162321140a1e12684594"><div class="ttname"><a href="classIndex.html#aa9fb80238805162321140a1e12684594">Index::add</a></div><div class="ttdeci">int add(const Pair &amp;pair)</div><div class="ttdoc">Inserts a new entry in the index, in a way that the index remains in ascending order of searching key...</div><div class="ttdef"><b>Definition:</b> <a href="Index_8cpp_source.html#l00098">Index.cpp:98</a></div></div>
+<div class="ttc" id="aclassPair_html_ae792131d5d5d921c6ec972ee928e3f05"><div class="ttname"><a href="classPair.html#ae792131d5d5d921c6ec972ee928e3f05">Pair::getPos</a></div><div class="ttdeci">const int getPos() const</div><div class="ttdoc">Get the position value from the Pair.</div><div class="ttdef"><b>Definition:</b> <a href="Pair_8cpp_source.html#l00030">Pair.cpp:30</a></div></div>
+<div class="ttc" id="aclassIndex_html_a1d7170f9bdadd16f8db0b0905fdc1323"><div class="ttname"><a href="classIndex.html#a1d7170f9bdadd16f8db0b0905fdc1323">Index::size</a></div><div class="ttdeci">int size() const</div><div class="ttdoc">Gets the size of the index.</div><div class="ttdef"><b>Definition:</b> <a href="Index_8cpp_source.html#l00086">Index.cpp:86</a></div></div>
+<div class="ttc" id="aclassIndex_html_a4a5393a32896f664f2f3e78cf9982103"><div class="ttname"><a href="classIndex.html#a4a5393a32896f664f2f3e78cf9982103">Index::lower_bound</a></div><div class="ttdeci">int lower_bound(const std::string &amp;key) const</div><div class="ttdoc">Returns the position to the first element in the Index which is not considered to go before key (i....</div><div class="ttdef"><b>Definition:</b> <a href="Index_8cpp_source.html#l00147">Index.cpp:147</a></div></div>
+<div class="ttc" id="aclassMatrix_html_a29414ab006f8124c4c24fc78a3c62529"><div class="ttname"><a href="classMatrix.html#a29414ab006f8124c4c24fc78a3c62529">Matrix::resize</a></div><div class="ttdeci">void resize(size_t nrows, size_t ncols, double defValue=0.0)</div><div class="ttdef"><b>Definition:</b> <a href="Matrix_8cpp_source.html#l00136">Matrix.cpp:136</a></div></div>
+<div class="ttc" id="aclassMatrix_html_af4d22c2d5e252f24ba6491aedd486fcb"><div class="ttname"><a href="classMatrix.html#af4d22c2d5e252f24ba6491aedd486fcb">Matrix::getColLabels</a></div><div class="ttdeci">int getColLabels(std::string *) const</div><div class="ttdef"><b>Definition:</b> <a href="Matrix_8cpp_source.html#l00310">Matrix.cpp:310</a></div></div>
+<div class="ttc" id="aclassPair_html"><div class="ttname"><a href="classPair.html">Pair</a></div><div class="ttdef"><b>Definition:</b> <a href="Pair_8h_source.html#l00013">Pair.h:13</a></div></div>
+<div class="ttc" id="aMatrix_8h_html_a060711074cb5bcaf4e75498bc040c4b7"><div class="ttname"><a href="Matrix_8h.html#a060711074cb5bcaf4e75498bc040c4b7">operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, const Matrix &amp;m)</div></div>
+<div class="ttc" id="aclassMatrix_html_aea5a06385f646eb4a63929fae6fa3e14"><div class="ttname"><a href="classMatrix.html#aea5a06385f646eb4a63929fae6fa3e14">Matrix::operator=</a></div><div class="ttdeci">Matrix &amp; operator=(const Matrix &amp;m)</div><div class="ttdef"><b>Definition:</b> <a href="Matrix_8cpp_source.html#l00261">Matrix.cpp:261</a></div></div>
+<div class="ttc" id="aclassMatrix_html_a2dba13c45127354c9f75ef576f49269b"><div class="ttname"><a href="classMatrix.html#a2dba13c45127354c9f75ef576f49269b">Matrix::Matrix</a></div><div class="ttdeci">Matrix()</div><div class="ttdef"><b>Definition:</b> <a href="Matrix_8cpp_source.html#l00092">Matrix.cpp:92</a></div></div>
+<div class="ttc" id="aclassMatrix_html_ab5da325b9a56f331bcbf8982a1203e90"><div class="ttname"><a href="classMatrix.html#ab5da325b9a56f331bcbf8982a1203e90">Matrix::labelAtCol</a></div><div class="ttdeci">std::string labelAtCol(size_t col) const</div><div class="ttdef"><b>Definition:</b> <a href="Matrix_8cpp_source.html#l00132">Matrix.cpp:132</a></div></div>
+<div class="ttc" id="aclassMatrix_html_a108d25b5c593b3c915f5198f89cbc0f3"><div class="ttname"><a href="classMatrix.html#a108d25b5c593b3c915f5198f89cbc0f3">Matrix::labelAtRow</a></div><div class="ttdeci">std::string labelAtRow(size_t row) const</div><div class="ttdef"><b>Definition:</b> <a href="Matrix_8cpp_source.html#l00128">Matrix.cpp:128</a></div></div>
+<div class="ttc" id="aclassMatrix_html_a5b9205ecc57f91cd324e8b71ced98c44"><div class="ttname"><a href="classMatrix.html#a5b9205ecc57f91cd324e8b71ced98c44">Matrix::normalize</a></div><div class="ttdeci">Matrix &amp; normalize()</div><div class="ttdef"><b>Definition:</b> <a href="Matrix_8cpp_source.html#l00436">Matrix.cpp:436</a></div></div>
+<div class="ttc" id="aclassMatrix_html_ac0e2adb05e204d5a40cd129d9fb0593f"><div class="ttname"><a href="classMatrix.html#ac0e2adb05e204d5a40cd129d9fb0593f">Matrix::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdef"><b>Definition:</b> <a href="Matrix_8cpp_source.html#l00150">Matrix.cpp:150</a></div></div>
+<div class="ttc" id="aMatrix_8h_html_ae84220ea75d9470383219750f0c9efde"><div class="ttname"><a href="Matrix_8h.html#ae84220ea75d9470383219750f0c9efde">operator*</a></div><div class="ttdeci">Matrix operator*(double ival, const Matrix &amp;M)</div><div class="ttdef"><b>Definition:</b> <a href="Matrix_8cpp_source.html#l00428">Matrix.cpp:428</a></div></div>
+<div class="ttc" id="aclassMatrix_html_a97617f3524bfa47d6ac7daa0eefc1941"><div class="ttname"><a href="classMatrix.html#a97617f3524bfa47d6ac7daa0eefc1941">Matrix::rows</a></div><div class="ttdeci">size_t rows() const</div><div class="ttdef"><b>Definition:</b> <a href="Matrix_8cpp_source.html#l00318">Matrix.cpp:318</a></div></div>
+<div class="ttc" id="aclassMatrix_html_ac0c4600f052bfdf5bea9fee577a8288b"><div class="ttname"><a href="classMatrix.html#ac0c4600f052bfdf5bea9fee577a8288b">Matrix::getRowLabels</a></div><div class="ttdeci">int getRowLabels(std::string *) const</div><div class="ttdef"><b>Definition:</b> <a href="Matrix_8cpp_source.html#l00306">Matrix.cpp:306</a></div></div>
+<div class="ttc" id="aclassMatrix_html_a0b1dc9bab8449403ef3a36c304fba675"><div class="ttname"><a href="classMatrix.html#a0b1dc9bab8449403ef3a36c304fba675">Matrix::operator()</a></div><div class="ttdeci">const double &amp; operator()(size_t row, size_t col) const</div><div class="ttdef"><b>Definition:</b> <a href="Matrix_8cpp_source.html#l00178">Matrix.cpp:178</a></div></div>
+<div class="ttc" id="aclassIndex_html_a734ad3d7b0f08e98616a9ec4207cae27"><div class="ttname"><a href="classIndex.html#a734ad3d7b0f08e98616a9ec4207cae27">Index::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Clears the index, setting the number of entries to 0.</div><div class="ttdef"><b>Definition:</b> <a href="Index_8cpp_source.html#l00090">Index.cpp:90</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

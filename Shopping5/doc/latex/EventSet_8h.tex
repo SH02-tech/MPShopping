@@ -1,0 +1,197 @@
+\hypertarget{EventSet_8h}{}\doxysection{Referencia del Archivo include/\+Event\+Set.h}
+\label{EventSet_8h}\index{include/EventSet.h@{include/EventSet.h}}
+{\ttfamily \#include \char`\"{}Date\+Time.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Event.\+h\char`\"{}}\newline
+Dependencia gráfica adjunta para Event\+Set.\+h\+:
+% FIG 0
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:
+% FIG 1
+\doxysubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classEventSet}{Event\+Set}}
+\end{DoxyCompactItemize}
+\doxysubsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{EventSet_8h_a2a50d99dc5d43eb57bdcb2c4c29bc76e}\label{EventSet_8h_a2a50d99dc5d43eb57bdcb2c4c29bc76e}} 
+\#define {\bfseries M\+A\+X\+E\+V\+E\+NT}~500
+\end{DoxyCompactItemize}
+\doxysubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{EventSet_8h_abe71e09d60b5cec46d638d14d9350135}{sum\+Price}} (const \mbox{\hyperlink{classEventSet}{Event\+Set}} \&ev\+Set)
+\begin{DoxyCompactList}\small\item\em It Computes the total sum for price, on the complete \mbox{\hyperlink{classEventSet}{Event\+Set}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{EventSet_8h_a791b97200f877bd1c151572877ee5891}{find\+Unique}} (const \mbox{\hyperlink{classEventSet}{Event\+Set}} \&es, const std\+::string \&field, std\+::string values\mbox{[}$\,$\mbox{]}, int \&n\+\_\+values)
+\begin{DoxyCompactList}\small\item\em It explores all the \mbox{\hyperlink{classEventSet}{Event\+Set}} and builds a string\mbox{[}\mbox{]} composed of all different values taken by the field {\itshape field}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEventSet}{Event\+Set}} \mbox{\hyperlink{EventSet_8h_ad8fd6256f4d913aabdfa023926874cb3}{raw\+Filter\+Events}} (const \mbox{\hyperlink{classEventSet}{Event\+Set}} \&es, const std\+::string \&field, const std\+::string \&value)
+\begin{DoxyCompactList}\small\item\em Extract a subset of the \mbox{\hyperlink{classEventSet}{Event\+Set}} composed only of those events in which the given {\itshape field} matches the given {\itshape value}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{EventSet_8h_afe9c596c081a7b8686b57d8bdadb3bb4}\label{EventSet_8h_afe9c596c081a7b8686b57d8bdadb3bb4}} 
+\mbox{\hyperlink{classEvent}{Event}} {\bfseries N\+U\+L\+L\+\_\+\+E\+V\+E\+NT}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+\begin{DoxyAuthor}{Autor}
+M\+P-\/\+Team D\+E\+C\+S\+AI 
+\end{DoxyAuthor}
+\begin{DoxyNote}{Nota}
+To be implemented by students 
+\end{DoxyNote}
+
+
+\doxysubsection{Documentación de las funciones}
+\mbox{\Hypertarget{EventSet_8h_a791b97200f877bd1c151572877ee5891}\label{EventSet_8h_a791b97200f877bd1c151572877ee5891}} 
+\index{EventSet.h@{EventSet.h}!findUnique@{findUnique}}
+\index{findUnique@{findUnique}!EventSet.h@{EventSet.h}}
+\doxysubsubsection{\texorpdfstring{findUnique()}{findUnique()}}
+{\footnotesize\ttfamily void find\+Unique (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classEventSet}{Event\+Set}} \&}]{es,  }\item[{const std\+::string \&}]{field,  }\item[{std\+::string}]{values\mbox{[}$\,$\mbox{]},  }\item[{int \&}]{n\+\_\+values }\end{DoxyParamCaption})}
+
+
+
+It explores all the \mbox{\hyperlink{classEventSet}{Event\+Set}} and builds a string\mbox{[}\mbox{]} composed of all different values taken by the field {\itshape field}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em field} & The field of the event \\
+\hline
+{\em values} & Array of values (as string) which is made up of all different values of the field {\itshape field} \\
+\hline
+{\em n\+\_\+values} & Number of different values found \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 204 del archivo Event\+Set.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{204                                                                                                 \{}
+\DoxyCodeLine{205     \mbox{\hyperlink{classEventSet}{EventSet}} auxES;}
+\DoxyCodeLine{206     }
+\DoxyCodeLine{207     }
+\DoxyCodeLine{208     \textcolor{keywordflow}{if} (field == \textcolor{stringliteral}{"DateTime"}) \{}
+\DoxyCodeLine{209         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<es.\mbox{\hyperlink{classEventSet_afa17cf8b71961fe1bab9ae5bc7f4963d}{size}}(); i++) \{}
+\DoxyCodeLine{210             \mbox{\hyperlink{classEvent}{Event}} one = es.\mbox{\hyperlink{classEventSet_ab8ac311a6121981191ce61d505cc069f}{at}}(i);}
+\DoxyCodeLine{211             \mbox{\hyperlink{classDateTime}{DateTime}} date = one.\mbox{\hyperlink{classEvent_ad89e0d4c55a2ede8980489d8d0de7704}{getDateTime}}();}
+\DoxyCodeLine{212             \textcolor{keywordtype}{string} line;}
+\DoxyCodeLine{213         }
+\DoxyCodeLine{214             line += to\_string(date.\mbox{\hyperlink{classDateTime_af0eb582fdc2b0964ecf255df53396712}{year}}()) + \textcolor{stringliteral}{"-\/"} + to\_string(date.\mbox{\hyperlink{classDateTime_a294643a8ce6bd0cca6cda71890e7456c}{month}}());}
+\DoxyCodeLine{215             line += \textcolor{stringliteral}{"-\/"} + to\_string(date.\mbox{\hyperlink{classDateTime_a2d1b93811c0d81597963162b726d26f3}{day}}()) + \textcolor{stringliteral}{" 00:00:00 UTC"};}
+\DoxyCodeLine{216             }
+\DoxyCodeLine{217             one.\mbox{\hyperlink{classEvent_ae549abc198ea2737dcaf426eadd9f70e}{setDateTime}}(line);}
+\DoxyCodeLine{218 }
+\DoxyCodeLine{219             auxES.\mbox{\hyperlink{classEventSet_acfb9e40b46c649bef5082f5577d733a6}{add}}(one);}
+\DoxyCodeLine{220         \}}
+\DoxyCodeLine{221     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{222         auxES = es;}
+\DoxyCodeLine{223     \}}
+\DoxyCodeLine{224     }
+\DoxyCodeLine{225     n\_values = 0;}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<auxES.\mbox{\hyperlink{classEventSet_afa17cf8b71961fe1bab9ae5bc7f4963d}{size}}(); i++) \{}
+\DoxyCodeLine{228         std::string data = auxES.\mbox{\hyperlink{classEventSet_ab8ac311a6121981191ce61d505cc069f}{at}}(i).\mbox{\hyperlink{classEvent_aa0f2e1910272a7014e97794b7fc73d9a}{getField}}(field);}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{230         \textcolor{keywordflow}{if} (findString(values, n\_values, data) == -\/1) \{}
+\DoxyCodeLine{231             values[n\_values] = data;}
+\DoxyCodeLine{232             n\_values++;}
+\DoxyCodeLine{233         \}}
+\DoxyCodeLine{234     \}}
+\DoxyCodeLine{235 \}}
+
+\end{DoxyCode}
+Gráfico de llamadas para esta función\+:
+% FIG 2
+\mbox{\Hypertarget{EventSet_8h_ad8fd6256f4d913aabdfa023926874cb3}\label{EventSet_8h_ad8fd6256f4d913aabdfa023926874cb3}} 
+\index{EventSet.h@{EventSet.h}!rawFilterEvents@{rawFilterEvents}}
+\index{rawFilterEvents@{rawFilterEvents}!EventSet.h@{EventSet.h}}
+\doxysubsubsection{\texorpdfstring{rawFilterEvents()}{rawFilterEvents()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEventSet}{Event\+Set}} raw\+Filter\+Events (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classEventSet}{Event\+Set}} \&}]{es,  }\item[{const std\+::string \&}]{field,  }\item[{const std\+::string \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Extract a subset of the \mbox{\hyperlink{classEventSet}{Event\+Set}} composed only of those events in which the given {\itshape field} matches the given {\itshape value}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em field} & The name of the field of the event. According to \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{Ver también}
+\mbox{\hyperlink{Event_8h}{Event.\+h}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parámetros}
+{\em value} & The value of the field that will be used to partition the \mbox{\hyperlink{classEventSet}{Event\+Set}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+An \mbox{\hyperlink{classEventSet}{Event\+Set}} which is a subset of the current one in which all events have {\itshape field} == {\itshape value} 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Obsoleto}
+\item[\mbox{\hyperlink{deprecated__deprecated000001}{Obsoleto}}]\end{DoxyRefDesc}
+
+
+Definición en la línea 152 del archivo Event\+Set.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{152                                                                                              \{}
+\DoxyCodeLine{153     \mbox{\hyperlink{classEventSet}{EventSet}} matchedEvents;}
+\DoxyCodeLine{154     }
+\DoxyCodeLine{155     \textcolor{keywordflow}{if} (field != \textcolor{stringliteral}{"DateTime"})}
+\DoxyCodeLine{156         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<es.\mbox{\hyperlink{classEventSet_afa17cf8b71961fe1bab9ae5bc7f4963d}{size}}(); i++)}
+\DoxyCodeLine{157             \textcolor{keywordflow}{if} (es.\mbox{\hyperlink{classEventSet_ab8ac311a6121981191ce61d505cc069f}{at}}(i).\mbox{\hyperlink{classEvent_aa0f2e1910272a7014e97794b7fc73d9a}{getField}}(field) == value)}
+\DoxyCodeLine{158                 matchedEvents.\mbox{\hyperlink{classEventSet_acfb9e40b46c649bef5082f5577d733a6}{add}}(es.\mbox{\hyperlink{classEventSet_ab8ac311a6121981191ce61d505cc069f}{at}}(i));}
+\DoxyCodeLine{159             \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{160                 }
+\DoxyCodeLine{161             \}}
+\DoxyCodeLine{162     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{163         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<es.\mbox{\hyperlink{classEventSet_afa17cf8b71961fe1bab9ae5bc7f4963d}{size}}(); i++)}
+\DoxyCodeLine{164             \textcolor{keywordflow}{if} (es.\mbox{\hyperlink{classEventSet_ab8ac311a6121981191ce61d505cc069f}{at}}(i).\mbox{\hyperlink{classEvent_ad89e0d4c55a2ede8980489d8d0de7704}{getDateTime}}().\mbox{\hyperlink{classDateTime_ab29a27908ce1e547fe907dc23e5bbe62}{sameDay}}(\mbox{\hyperlink{classDateTime}{DateTime}}(value)))}
+\DoxyCodeLine{165                 matchedEvents.\mbox{\hyperlink{classEventSet_acfb9e40b46c649bef5082f5577d733a6}{add}}(es.\mbox{\hyperlink{classEventSet_ab8ac311a6121981191ce61d505cc069f}{at}}(i));}
+\DoxyCodeLine{166     }
+\DoxyCodeLine{167     \textcolor{keywordflow}{return} matchedEvents;}
+\DoxyCodeLine{168 \}}
+
+\end{DoxyCode}
+Gráfico de llamadas para esta función\+:
+% FIG 3
+\mbox{\Hypertarget{EventSet_8h_abe71e09d60b5cec46d638d14d9350135}\label{EventSet_8h_abe71e09d60b5cec46d638d14d9350135}} 
+\index{EventSet.h@{EventSet.h}!sumPrice@{sumPrice}}
+\index{sumPrice@{sumPrice}!EventSet.h@{EventSet.h}}
+\doxysubsubsection{\texorpdfstring{sumPrice()}{sumPrice()}}
+{\footnotesize\ttfamily float sum\+Price (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classEventSet}{Event\+Set}} \&}]{ev\+Set }\end{DoxyParamCaption})}
+
+
+
+It Computes the total sum for price, on the complete \mbox{\hyperlink{classEventSet}{Event\+Set}}. 
+
+\begin{DoxyReturn}{Devuelve}
+the total computed 
+\end{DoxyReturn}
+
+
+Definición en la línea 237 del archivo Event\+Set.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{237                                        \{}
+\DoxyCodeLine{238     \textcolor{keywordtype}{float} total = 0;}
+\DoxyCodeLine{239     }
+\DoxyCodeLine{240     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<evSet.\mbox{\hyperlink{classEventSet_afa17cf8b71961fe1bab9ae5bc7f4963d}{size}}(); i++) \{}
+\DoxyCodeLine{241         \textcolor{keywordtype}{float} price = evSet.\mbox{\hyperlink{classEventSet_ab8ac311a6121981191ce61d505cc069f}{at}}(i).\mbox{\hyperlink{classEvent_a9ba1e8107abdbd879d00663daf64fd70}{getPrice}}();}
+\DoxyCodeLine{242         }
+\DoxyCodeLine{243         \textcolor{keywordflow}{if} (price > 0)}
+\DoxyCodeLine{244             total += price;}
+\DoxyCodeLine{245     \}}
+\DoxyCodeLine{246     }
+\DoxyCodeLine{247     \textcolor{keywordflow}{return} total;}
+\DoxyCodeLine{248 \}}
+
+\end{DoxyCode}
+Gráfico de llamadas para esta función\+:
+% FIG 4

@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SHOPPING1: Fichero Fuente tests/02.UnitEvent.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SHOPPING1
+   &#160;<span id="projectnumber">0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_59425e443f801f1f2fd8bbe4959a3ccf.html">tests</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">02.UnitEvent.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * To change this license header, choose License Headers in Project Properties.</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * To change this template file, choose Tools | Templates</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * and open the template in the editor.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="DateTime_8h.html">DateTime.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Event_8h.html">Event.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;gtest/gtest.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;MPTests.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#define TODAY &quot;2021-02-04 16:59:00 UTC&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#define ANYEVENT &quot;2021-02-04 17:57:00 UTC,view,1,2,3,4,5.000000,6,7&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;TEST_F(_01_Basics, Event_ConstructorBase) {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="classEvent.html">Event</a> e;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    SKIP_ASSERT_STREQ_R(e.<a class="code" href="classEvent.html#a317506221f3d1189594fe7ef47bd2910">to_string</a>().c_str(), <a class="code" href="Event_8h.html#accd4a0a042864fce6535ea2a882f33e0">EVENT_DEFAULT</a>.c_str())&lt;&lt; <span class="stringliteral">&quot;A newly created instance of Event gives the default event&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    ASSERT_TRUE(e.<a class="code" href="classEvent.html#ae0da185c1abc7223f0bd0184e0937c24">isEmpty</a>()) &lt;&lt; <span class="stringliteral">&quot;A newly created instance of Event is consdered empty&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classEvent.html">Event</a> e2(ANYEVENT);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    SKIP_ASSERT_STREQ_R(e2.to_string().c_str(),ANYEVENT)&lt;&lt; <span class="stringliteral">&quot;A newly create instance of Event, initializaed with a string. gives the same string&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    ASSERT_FALSE(e2.isEmpty()) &lt;&lt; <span class="stringliteral">&quot;Setting the productid of an event to a good value X gives X&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;TEST_F(_01_Basics, Event_Setters_getters) {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classEvent.html">Event</a> e;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    std::string es=<a class="code" href="Event_8h.html#accd4a0a042864fce6535ea2a882f33e0">EVENT_DEFAULT</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    e.<a class="code" href="classEvent.html#ae549abc198ea2737dcaf426eadd9f70e">setDateTime</a>(TODAY);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    SKIP_ASSERT_STREQ_R(e.<a class="code" href="classEvent.html#ad89e0d4c55a2ede8980489d8d0de7704">getDateTime</a>().<a class="code" href="classDateTime.html#a246ab4f7cd93e15135efb69363d97d83">to_string</a>().c_str(),TODAY) &lt;&lt; <span class="stringliteral">&quot;Setting the datetime of an event to TODAY gives TODAY&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    std::string s=<span class="stringliteral">&quot;purchase&quot;</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    e.<a class="code" href="classEvent.html#a90bf72790cc9b1fe934b14f17e222f18">setType</a>(s);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    SKIP_ASSERT_STREQ_R(e.<a class="code" href="classEvent.html#a7f966c9815e450ac8492ac9f3cf32ad0">getType</a>().c_str(),s.c_str()) &lt;&lt; <span class="stringliteral">&quot;Setting the type of an event to a good value X gives X&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    s=<span class="stringliteral">&quot;CCCC&quot;</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    e.<a class="code" href="classEvent.html#ab00ca66554ef75c2fd8b0b8805524d2a">setProductID</a>(s);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    SKIP_ASSERT_STREQ_R(e.<a class="code" href="classEvent.html#a9e3c39325a53b88ed7d0b6e98ecffcc1">getProductID</a>().c_str(),s.c_str()) &lt;&lt; <span class="stringliteral">&quot;Setting the productid of an event to a good value X gives X&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    s=<span class="stringliteral">&quot;CCCC&quot;</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    e.<a class="code" href="classEvent.html#a10fede2dbb18673bf86e455ed8b98c31">setCategoryID</a>(s);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    SKIP_ASSERT_STREQ_R(e.<a class="code" href="classEvent.html#a1eb50acf4d222ed52a302e7accf2e9d4">getCategoryID</a>().c_str(),s.c_str()) &lt;&lt; <span class="stringliteral">&quot;Setting the categoryID of an event to a good value X gives X&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    s=<span class="stringliteral">&quot;CCCC&quot;</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    e.<a class="code" href="classEvent.html#a1c7711a852b24e2380f7f691fb9aa262">setCategoryCode</a>(s);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    SKIP_ASSERT_STREQ_R(e.<a class="code" href="classEvent.html#a0bd74cd81f6c91fedce73cee73220660">getCategoryCode</a>().c_str(),s.c_str()) &lt;&lt; <span class="stringliteral">&quot;Setting the category code of an event to a good value X gives X&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    s=<span class="stringliteral">&quot;CCCC&quot;</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    e.<a class="code" href="classEvent.html#a5ae5a8a653c19d79e0c7157ea0f8a151">setBrand</a>(s);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    SKIP_ASSERT_STREQ_R(e.<a class="code" href="classEvent.html#aace1f28b7c4dca4c943c46a85b74764a">getBrand</a>().c_str(),s.c_str()) &lt;&lt; <span class="stringliteral">&quot;Setting the brand of an event to a good value X gives X&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">double</span> d=3.1415;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    e.<a class="code" href="classEvent.html#ac637a16105e0c1416e7ad3b030ee3a59">setPrice</a>(d);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    SKIP_ASSERT_EQ_R(e.<a class="code" href="classEvent.html#a9ba1e8107abdbd879d00663daf64fd70">getPrice</a>(),d) &lt;&lt; <span class="stringliteral">&quot;Setting the price of an event to a good value X gives X&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}    </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;TEST_F(_02_Intermediate, Event_getField) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="classEvent.html">Event</a> e;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    SKIP_ASSERT_STREQ_R(e.<a class="code" href="classEvent.html#ad89e0d4c55a2ede8980489d8d0de7704">getDateTime</a>().<a class="code" href="classDateTime.html#a246ab4f7cd93e15135efb69363d97d83">to_string</a>().c_str(),e.<a class="code" href="classEvent.html#aa0f2e1910272a7014e97794b7fc73d9a">getField</a>(<span class="stringliteral">&quot;DateTime&quot;</span>).c_str())&lt;&lt;<span class="stringliteral">&quot;getField(\&quot;DateTime\&quot;) on any Event, must be equal to getDateTime()&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    SKIP_ASSERT_STREQ_R(<span class="stringliteral">&quot;-1.000000&quot;</span>, e.<a class="code" href="classEvent.html#aa0f2e1910272a7014e97794b7fc73d9a">getField</a>(<span class="stringliteral">&quot;Price&quot;</span>).c_str())&lt;&lt; <span class="stringliteral">&quot;In any row, querying the Event for field \&quot;Price\&quot; will produce the same string than getDateTime&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    SKIP_ASSERT_STREQ_R(<a class="code" href="Event_8h.html#ab602a7440a5bf2a7a3e6e411432576fe">EMPTY_FIELD</a>, e.<a class="code" href="classEvent.html#aa0f2e1910272a7014e97794b7fc73d9a">getField</a>(<span class="stringliteral">&quot;UserID&quot;</span>).c_str())&lt;&lt; <span class="stringliteral">&quot;In any case, querying the Event for field \&quot;UserID\&quot; will produce the same string than the former getUserID()&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    SKIP_ASSERT_STRNE_R(<span class="stringliteral">&quot;&quot;</span>, e.<a class="code" href="classEvent.html#aa0f2e1910272a7014e97794b7fc73d9a">getField</a>(<span class="stringliteral">&quot;UserID&quot;</span>).c_str())&lt;&lt; <span class="stringliteral">&quot;In any row, querying the EventS a mandatory field cannot give an empty string&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    SKIP_ASSERT_STREQ_R(<span class="stringliteral">&quot;&quot;</span>, e.<a class="code" href="classEvent.html#aa0f2e1910272a7014e97794b7fc73d9a">getField</a>(<span class="stringliteral">&quot;Brand&quot;</span>).c_str())&lt;&lt; <span class="stringliteral">&quot;In any row, querying  an optional field will produce the same string than the former event added to the EvenSet&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;TEST_F(_03_Advanced, Event_setType_Bad_Values) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="classEvent.html">Event</a> e(ANYEVENT);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    std::string es=<a class="code" href="Event_8h.html#accd4a0a042864fce6535ea2a882f33e0">EVENT_DEFAULT</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    std::string s=<span class="stringliteral">&quot;CCCC&quot;</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    e.<a class="code" href="classEvent.html#a90bf72790cc9b1fe934b14f17e222f18">setType</a>(s);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    SKIP_ASSERT_STREQ_R(<span class="stringliteral">&quot;view&quot;</span>, e.<a class="code" href="classEvent.html#a7f966c9815e450ac8492ac9f3cf32ad0">getType</a>().c_str()) &lt;&lt; <span class="stringliteral">&quot;Setting the type of an event to a good value X gives X&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    SKIP_ASSERT_FALSE_R(e.<a class="code" href="classEvent.html#ae0da185c1abc7223f0bd0184e0937c24">isEmpty</a>()) &lt;&lt; <span class="stringliteral">&quot;Setting the type of an event to a good value X gives X&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}    </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;TEST_F(_03_Advanced, Event_Others_Bad_Values) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="classEvent.html">Event</a> e(ANYEVENT);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    std::string es=<a class="code" href="Event_8h.html#accd4a0a042864fce6535ea2a882f33e0">EVENT_DEFAULT</a>,s;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    s=<span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    e.<a class="code" href="classEvent.html#ab00ca66554ef75c2fd8b0b8805524d2a">setProductID</a>(s);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    SKIP_ASSERT_STREQ_R(e.<a class="code" href="classEvent.html#a9e3c39325a53b88ed7d0b6e98ecffcc1">getProductID</a>().c_str(),<a class="code" href="Event_8h.html#ab602a7440a5bf2a7a3e6e411432576fe">EMPTY_FIELD</a>) &lt;&lt; <span class="stringliteral">&quot;Setting the productid of an event to a good value X gives X&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    SKIP_ASSERT_TRUE_R(e.<a class="code" href="classEvent.html#ae0da185c1abc7223f0bd0184e0937c24">isEmpty</a>()) &lt;&lt; <span class="stringliteral">&quot;Setting the productid of an event to a good value X gives X&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">double</span> d=-3.1415;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    e.<a class="code" href="classEvent.html#ac637a16105e0c1416e7ad3b030ee3a59">setPrice</a>(d);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    SKIP_ASSERT_EQ_R(e.<a class="code" href="classEvent.html#a9ba1e8107abdbd879d00663daf64fd70">getPrice</a>(),-1) &lt;&lt; <span class="stringliteral">&quot;Setting the productid of an event to a good value X gives X&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}    </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassEvent_html_a1eb50acf4d222ed52a302e7accf2e9d4"><div class="ttname"><a href="classEvent.html#a1eb50acf4d222ed52a302e7accf2e9d4">Event::getCategoryID</a></div><div class="ttdeci">std::string getCategoryID() const</div><div class="ttdoc">It gives the Category ID of the event.</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cpp_source.html#l00039">Event.cpp:39</a></div></div>
+<div class="ttc" id="aclassEvent_html_ab00ca66554ef75c2fd8b0b8805524d2a"><div class="ttname"><a href="classEvent.html#ab00ca66554ef75c2fd8b0b8805524d2a">Event::setProductID</a></div><div class="ttdeci">void setProductID(const std::string &amp;prod_id)</div><div class="ttdoc">It sets the Product ID of the event. If the value provided is the empty string &quot;&quot;,...</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cpp_source.html#l00083">Event.cpp:83</a></div></div>
+<div class="ttc" id="aclassDateTime_html_a246ab4f7cd93e15135efb69363d97d83"><div class="ttname"><a href="classDateTime.html#a246ab4f7cd93e15135efb69363d97d83">DateTime::to_string</a></div><div class="ttdeci">std::string to_string() const</div><div class="ttdoc">transform a dataTime to a string following the format: 2019-10-01 00:15:06 UTC</div><div class="ttdef"><b>Definition:</b> <a href="DateTime_8cpp_source.html#l00151">DateTime.cpp:151</a></div></div>
+<div class="ttc" id="aclassEvent_html_ad89e0d4c55a2ede8980489d8d0de7704"><div class="ttname"><a href="classEvent.html#ad89e0d4c55a2ede8980489d8d0de7704">Event::getDateTime</a></div><div class="ttdeci">DateTime getDateTime() const</div><div class="ttdoc">It gives the date of the event.</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cpp_source.html#l00027">Event.cpp:27</a></div></div>
+<div class="ttc" id="aDateTime_8h_html"><div class="ttname"><a href="DateTime_8h.html">DateTime.h</a></div></div>
+<div class="ttc" id="aclassEvent_html_ac637a16105e0c1416e7ad3b030ee3a59"><div class="ttname"><a href="classEvent.html#ac637a16105e0c1416e7ad3b030ee3a59">Event::setPrice</a></div><div class="ttdeci">void setPrice(double price)</div><div class="ttdoc">Sets the price of the product in the event.</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cpp_source.html#l00102">Event.cpp:102</a></div></div>
+<div class="ttc" id="aclassEvent_html_a9ba1e8107abdbd879d00663daf64fd70"><div class="ttname"><a href="classEvent.html#a9ba1e8107abdbd879d00663daf64fd70">Event::getPrice</a></div><div class="ttdeci">double getPrice() const</div><div class="ttdoc">It gives the Prcies of the event.</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cpp_source.html#l00051">Event.cpp:51</a></div></div>
+<div class="ttc" id="aclassEvent_html_a317506221f3d1189594fe7ef47bd2910"><div class="ttname"><a href="classEvent.html#a317506221f3d1189594fe7ef47bd2910">Event::to_string</a></div><div class="ttdeci">std::string to_string() const</div><div class="ttdoc">transform an event to a string, using separator</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cpp_source.html#l00189">Event.cpp:189</a></div></div>
+<div class="ttc" id="aclassEvent_html_aace1f28b7c4dca4c943c46a85b74764a"><div class="ttname"><a href="classEvent.html#aace1f28b7c4dca4c943c46a85b74764a">Event::getBrand</a></div><div class="ttdeci">std::string getBrand() const</div><div class="ttdoc">It gives the Brand of the event.</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cpp_source.html#l00047">Event.cpp:47</a></div></div>
+<div class="ttc" id="aclassEvent_html"><div class="ttname"><a href="classEvent.html">Event</a></div><div class="ttdoc">It stores every logged event of a web marketplace as it appears in https://www.kaggle....</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00041">Event.h:41</a></div></div>
+<div class="ttc" id="aclassEvent_html_ae0da185c1abc7223f0bd0184e0937c24"><div class="ttname"><a href="classEvent.html#ae0da185c1abc7223f0bd0184e0937c24">Event::isEmpty</a></div><div class="ttdeci">bool isEmpty() const</div><div class="ttdoc">verifies if the object is considered empty, when some of the fields are set to the default values</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cpp_source.html#l00179">Event.cpp:179</a></div></div>
+<div class="ttc" id="aEvent_8h_html_ab602a7440a5bf2a7a3e6e411432576fe"><div class="ttname"><a href="Event_8h.html#ab602a7440a5bf2a7a3e6e411432576fe">EMPTY_FIELD</a></div><div class="ttdeci">const char EMPTY_FIELD[]</div><div class="ttdoc">Value assigned to any field which is found empty in the data.</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00014">Event.h:14</a></div></div>
+<div class="ttc" id="aEvent_8h_html"><div class="ttname"><a href="Event_8h.html">Event.h</a></div></div>
+<div class="ttc" id="aclassEvent_html_a9e3c39325a53b88ed7d0b6e98ecffcc1"><div class="ttname"><a href="classEvent.html#a9e3c39325a53b88ed7d0b6e98ecffcc1">Event::getProductID</a></div><div class="ttdeci">std::string getProductID() const</div><div class="ttdoc">It gives the Product ID of the event.</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cpp_source.html#l00035">Event.cpp:35</a></div></div>
+<div class="ttc" id="aclassEvent_html_a10fede2dbb18673bf86e455ed8b98c31"><div class="ttname"><a href="classEvent.html#a10fede2dbb18673bf86e455ed8b98c31">Event::setCategoryID</a></div><div class="ttdeci">void setCategoryID(const std::string &amp;cat_id)</div><div class="ttdoc">It sets the Category ID of the event. Empty strings &quot;&quot; are allowed.</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cpp_source.html#l00090">Event.cpp:90</a></div></div>
+<div class="ttc" id="aclassEvent_html_a90bf72790cc9b1fe934b14f17e222f18"><div class="ttname"><a href="classEvent.html#a90bf72790cc9b1fe934b14f17e222f18">Event::setType</a></div><div class="ttdeci">void setType(const std::string &amp;type)</div><div class="ttdoc">Sets the type of the event among the valid types in VALID_TYPES if it is not, then it assumes a defau...</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cpp_source.html#l00067">Event.cpp:67</a></div></div>
+<div class="ttc" id="aclassEvent_html_aa0f2e1910272a7014e97794b7fc73d9a"><div class="ttname"><a href="classEvent.html#aa0f2e1910272a7014e97794b7fc73d9a">Event::getField</a></div><div class="ttdeci">std::string getField(const std::string &amp;field) const</div><div class="ttdoc">Given the name of a field of Event, field, it returns, always as a string, the value of the specified...</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cpp_source.html#l00203">Event.cpp:203</a></div></div>
+<div class="ttc" id="aclassEvent_html_a0bd74cd81f6c91fedce73cee73220660"><div class="ttname"><a href="classEvent.html#a0bd74cd81f6c91fedce73cee73220660">Event::getCategoryCode</a></div><div class="ttdeci">std::string getCategoryCode() const</div><div class="ttdoc">It gives the Category Code of the event.</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cpp_source.html#l00043">Event.cpp:43</a></div></div>
+<div class="ttc" id="aclassEvent_html_a5ae5a8a653c19d79e0c7157ea0f8a151"><div class="ttname"><a href="classEvent.html#a5ae5a8a653c19d79e0c7157ea0f8a151">Event::setBrand</a></div><div class="ttdeci">void setBrand(const std::string &amp;brand)</div><div class="ttdoc">It sets the Brand of the event. Empty strings &quot;&quot; are allowed.</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cpp_source.html#l00098">Event.cpp:98</a></div></div>
+<div class="ttc" id="aEvent_8h_html_accd4a0a042864fce6535ea2a882f33e0"><div class="ttname"><a href="Event_8h.html#accd4a0a042864fce6535ea2a882f33e0">EVENT_DEFAULT</a></div><div class="ttdeci">const std::string EVENT_DEFAULT</div><div class="ttdoc">A constant that defines an EMPTY event.</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00016">Event.h:16</a></div></div>
+<div class="ttc" id="aclassEvent_html_a1c7711a852b24e2380f7f691fb9aa262"><div class="ttname"><a href="classEvent.html#a1c7711a852b24e2380f7f691fb9aa262">Event::setCategoryCode</a></div><div class="ttdeci">void setCategoryCode(const std::string &amp;cat_cod)</div><div class="ttdoc">It sets the Category ID of the event. Empty strings &quot;&quot; are allowed.</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cpp_source.html#l00094">Event.cpp:94</a></div></div>
+<div class="ttc" id="aclassEvent_html_a7f966c9815e450ac8492ac9f3cf32ad0"><div class="ttname"><a href="classEvent.html#a7f966c9815e450ac8492ac9f3cf32ad0">Event::getType</a></div><div class="ttdeci">std::string getType() const</div><div class="ttdoc">It gives the type of the event.</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cpp_source.html#l00031">Event.cpp:31</a></div></div>
+<div class="ttc" id="aclassEvent_html_ae549abc198ea2737dcaf426eadd9f70e"><div class="ttname"><a href="classEvent.html#ae549abc198ea2737dcaf426eadd9f70e">Event::setDateTime</a></div><div class="ttdeci">void setDateTime(const std::string &amp;Datetime)</div><div class="ttdoc">Sets the date and time of the event.</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cpp_source.html#l00063">Event.cpp:63</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

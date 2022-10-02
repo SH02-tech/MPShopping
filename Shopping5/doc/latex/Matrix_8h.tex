@@ -1,0 +1,128 @@
+\hypertarget{Matrix_8h}{}\doxysection{Referencia del Archivo include/\+Matrix.h}
+\label{Matrix_8h}\index{include/Matrix.h@{include/Matrix.h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}Index.\+h\char`\"{}}\newline
+Dependencia gráfica adjunta para Matrix.\+h\+:
+% FIG 0
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:
+% FIG 1
+\doxysubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classMatrix}{Matrix}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}} \mbox{\hyperlink{Matrix_8h_aeb7968a741cfe7a297c0a10785803feb}{operator+}} (double ival, const \mbox{\hyperlink{classMatrix}{Matrix}} \&M)
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}} \mbox{\hyperlink{Matrix_8h_ae84220ea75d9470383219750f0c9efde}{operator$\ast$}} (double ival, const \mbox{\hyperlink{classMatrix}{Matrix}} \&M)
+\item 
+std\+::ostream \& \mbox{\hyperlink{Matrix_8h_a060711074cb5bcaf4e75498bc040c4b7}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{classMatrix}{Matrix}} \&m)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{Matrix_8h_ad954f15079e5d26bb8de568dfa704dda}\label{Matrix_8h_ad954f15079e5d26bb8de568dfa704dda}} 
+double {\bfseries v\+\_\+npos}
+\item 
+\mbox{\Hypertarget{Matrix_8h_a513e956990047761f5b110e215e1ea9c}\label{Matrix_8h_a513e956990047761f5b110e215e1ea9c}} 
+const double {\bfseries c\+\_\+npos}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+\begin{DoxyAuthor}{Autor}
+M\+P-\/\+Team D\+E\+C\+S\+AI 
+\end{DoxyAuthor}
+\begin{DoxyNote}{Nota}
+To be implemented by students 
+\end{DoxyNote}
+
+
+\doxysubsection{Documentación de las funciones}
+\mbox{\Hypertarget{Matrix_8h_ae84220ea75d9470383219750f0c9efde}\label{Matrix_8h_ae84220ea75d9470383219750f0c9efde}} 
+\index{Matrix.h@{Matrix.h}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Matrix.h@{Matrix.h}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}} operator$\ast$ (\begin{DoxyParamCaption}\item[{double}]{ival,  }\item[{const \mbox{\hyperlink{classMatrix}{Matrix}} \&}]{dch }\end{DoxyParamCaption})}
+
+Return a new matrix obtained by computing\+: val $\ast$ M 
+\begin{DoxyParams}{Parámetros}
+{\em ival} & \\
+\hline
+{\em M} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+resulting matrix 
+\end{DoxyReturn}
+
+
+Definición en la línea 428 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{428                                                   \{}
+\DoxyCodeLine{429     \mbox{\hyperlink{classMatrix}{Matrix}} product(dch);}
+\DoxyCodeLine{430     }
+\DoxyCodeLine{431     product *= ival;}
+\DoxyCodeLine{432     }
+\DoxyCodeLine{433     \textcolor{keywordflow}{return} product;}
+\DoxyCodeLine{434 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Matrix_8h_aeb7968a741cfe7a297c0a10785803feb}\label{Matrix_8h_aeb7968a741cfe7a297c0a10785803feb}} 
+\index{Matrix.h@{Matrix.h}!operator+@{operator+}}
+\index{operator+@{operator+}!Matrix.h@{Matrix.h}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}} operator+ (\begin{DoxyParamCaption}\item[{double}]{ival,  }\item[{const \mbox{\hyperlink{classMatrix}{Matrix}} \&}]{dch }\end{DoxyParamCaption})}
+
+Return a new matrix obtained by computing\+: val + M
+
+
+\begin{DoxyParams}{Parámetros}
+{\em ival} & \\
+\hline
+{\em dch} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+resulting matrix 
+\end{DoxyReturn}
+
+
+Definición en la línea 420 del archivo Matrix.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{420                                                   \{}
+\DoxyCodeLine{421     \mbox{\hyperlink{classMatrix}{Matrix}} sum(dch);}
+\DoxyCodeLine{422     }
+\DoxyCodeLine{423     sum += ival;}
+\DoxyCodeLine{424     }
+\DoxyCodeLine{425     \textcolor{keywordflow}{return} sum;}
+\DoxyCodeLine{426 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Matrix_8h_a060711074cb5bcaf4e75498bc040c4b7}\label{Matrix_8h_a060711074cb5bcaf4e75498bc040c4b7}} 
+\index{Matrix.h@{Matrix.h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Matrix.h@{Matrix.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classMatrix}{Matrix}} \&}]{m }\end{DoxyParamCaption})}
+
+Insert the data representing the matrix into the ostream os with the following format
+
+number\+\_\+of\+\_\+rows number\+\_\+of\+\_\+columns \mbox{[}labelr1 labelr2 label\+\_\+nrows\mbox{]} \mbox{[}labelc1 labelc2 label\+\_\+ncols\mbox{]} m\mbox{[}0\mbox{]}\mbox{[}0\mbox{]}....m\mbox{[}0\mbox{]}\mbox{[}ncols\mbox{]} m\mbox{[}1\mbox{]}\mbox{[}0\mbox{]}....m\mbox{[}1\mbox{]}\mbox{[}ncols\mbox{]} ... m\mbox{[}nrows\mbox{]}\mbox{[}0\mbox{]} ...m\mbox{[}nrows\mbox{]}\mbox{[}ncols\mbox{]}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em os} & output stream \\
+\hline
+{\em m} & the matrix object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}

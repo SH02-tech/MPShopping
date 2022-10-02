@@ -1,0 +1,418 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SHOPPING1: Fichero Fuente tests/05.UnitIndex.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SHOPPING1
+   &#160;<span id="projectnumber">0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_59425e443f801f1f2fd8bbe4959a3ccf.html">tests</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">05.UnitIndex.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * To change this license header, choose License Headers in Project Properties.</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * To change this template file, choose Tools | Templates</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * and open the template in the editor.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="DateTime_8h.html">DateTime.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Event_8h.html">Event.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="EventSet_8h.html">EventSet.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;Index.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;gtest/gtest.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;datatools.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;MPTests.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#define NOPS 4</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define MAXUSERS NOPS</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define MAXBRANDS NOPS</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define NUSER(number, B, U) (number / B)</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#define NBRAND(number, B, U) (number % B)</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define USER(number, B, U) &quot;User_&quot; + format(&quot;%03d&quot;, NUSER(number, B, U))</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#define BRAND(number, B, U) &quot;Brand_&quot; +format(&quot;%03d&quot;, NBRAND(number, B, U))</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<a class="code" href="classEventSet.html">EventSet</a> &amp; IndexBuild(<a class="code" href="classEventSet.html">EventSet</a> &amp;es, <span class="keywordtype">int</span> B, <span class="keywordtype">int</span> U) {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classEvent.html">Event</a> one;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">string</span> date;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    date = <span class="stringliteral">&quot;2021-03-01 10:32:00 UTC&quot;</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; B * U; i++) {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        date[8] = STR(1 + NBRAND(i, B, U))[0];</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        date[9] = STR(1 + NBRAND(i, B, U))[1];</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        one.<a class="code" href="classEvent.html#ae549abc198ea2737dcaf426eadd9f70e">setDateTime</a>(date);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        one.<a class="code" href="classEvent.html#a5ae5a8a653c19d79e0c7157ea0f8a151">setBrand</a>(BRAND(i, B, NUSERS)); </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        one.<a class="code" href="classEvent.html#ac637a16105e0c1416e7ad3b030ee3a59">setPrice</a>(1 + i % B); </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        one.<a class="code" href="classEvent.html#ae4a647d47f0a00fd1421d349f73d7f14">setUserID</a>(USER(i, B, U)); </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        one.<a class="code" href="classEvent.html#ab00ca66554ef75c2fd8b0b8805524d2a">setProductID</a>((<span class="keywordtype">string</span>) <span class="stringliteral">&quot;Product_&quot;</span> + std::to_string(i % B) + <span class="stringliteral">&quot;_&quot;</span> + std::to_string(i / B)); <span class="comment">// Each brand has exactly 2 products</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        one.<a class="code" href="classEvent.html#a7f27f15e469fd53b6e8cfc4f70f242c8">setSession</a>((<span class="keywordtype">string</span>) <span class="stringliteral">&quot;Session_&quot;</span> + std::to_string(i / U) + <span class="stringliteral">&quot;_&quot;</span> + std::to_string(i));</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        one.<a class="code" href="classEvent.html#a90bf72790cc9b1fe934b14f17e222f18">setType</a>(<a class="code" href="Event_8h.html#ac6d9035308945276f9fa837f67f5921e">VALID_TYPES</a>[(i / ((B * U) / 4)) % 4]);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        es.<a class="code" href="classEventSet.html#acfb9e40b46c649bef5082f5577d733a6">add</a>(one);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">return</span> es;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordtype">string</span> printIndex(<span class="keyword">const</span> <a class="code" href="classEventSet.html">EventSet</a> &amp;es, <span class="keyword">const</span> <a class="code" href="classIndex.html">Index</a> &amp;in) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">string</span> res = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; in.<a class="code" href="classIndex.html#a1d7170f9bdadd16f8db0b0905fdc1323">size</a>(); i++) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        res += es.<a class="code" href="classEventSet.html#ab8ac311a6121981191ce61d505cc069f">at</a>(in.<a class="code" href="classIndex.html#a4b4100575cd7c41b532aaee42b27458a">at</a>(i).<a class="code" href="classPair.html#ae792131d5d5d921c6ec972ee928e3f05">getPos</a>()).<a class="code" href="classEvent.html#a317506221f3d1189594fe7ef47bd2910">to_string</a>() + <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;TEST_F(_01_Basics, Index_Constructors) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="classIndex.html">Index</a> i;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    SKIP_ASSERT_EQ_R(0, i.<a class="code" href="classIndex.html#a1d7170f9bdadd16f8db0b0905fdc1323">size</a>()) &lt;&lt; <span class="stringliteral">&quot; A newly created instance of Index must have size = 0&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    SKIP_ASSERT_STREQ_R(<span class="stringliteral">&quot;: On brand? 0&quot;</span>, i.to_string().c_str()) &lt;&lt; <span class="stringliteral">&quot; A newly created instance of Index must write as \&quot;: On brand? 0\&quot;&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;TEST_F(_02_Intermediate, Index_3x3_just_build) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="classEventSet.html">EventSet</a> es;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="classIndex.html">Index</a> ies;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">string</span> hashexpected, hashreal, uniques[MAXEVENT];</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    es = IndexBuild(es, 3, 3);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    ies.<a class="code" href="classIndex.html#a3b2c7f89af619efa0857084100fff2f8">build</a>(es, 0);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    hashreal = ies.reportData();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    ies.<a class="code" href="classIndex.html#a3b2c7f89af619efa0857084100fff2f8">build</a>(es, 0);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    hashexpected = ies.reportData();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    SKIP_ASSERT_STREQ_R(hashexpected.c_str(), hashreal.c_str()) &lt;&lt; <span class="stringliteral">&quot;In any case, building the same index twice gives the same result&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    ies.<a class="code" href="classIndex.html#a3b2c7f89af619efa0857084100fff2f8">build</a>(es, 0);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    hashexpected = <span class="stringliteral">&quot;: On brand? 0 : User_000 0 : User_000 1 : User_000 2 : User_001 3 : User_001 4 : User_001 5 : User_002 6 : User_002 7 : User_002 8&quot;</span>; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    hashreal = ies.to_string();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    CLEANUP(hashreal);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    SKIP_ASSERT_STREQ_R(hashexpected.c_str(), hashreal.c_str()) &lt;&lt; <span class="stringliteral">&quot;The index by user built within experiment 3x3 differs from the expected one&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    ies.<a class="code" href="classIndex.html#a3b2c7f89af619efa0857084100fff2f8">build</a>(es, 1);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    hashexpected = <span class="stringliteral">&quot;: On brand? 1 : Brand_000 0 : Brand_000 3 : Brand_000 6 : Brand_001 1 : Brand_001 4 : Brand_001 7 : Brand_002 2 : Brand_002 5 : Brand_002 8&quot;</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    hashreal = ies.to_string();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    CLEANUP(hashreal);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    SKIP_ASSERT_STREQ_R(hashexpected.c_str(), hashreal.c_str()) &lt;&lt; <span class="stringliteral">&quot;The index by brand built within experiment 3x3 differs from the expected one&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;TEST_F(_01_Basics, Index_getIOnWhich) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="classEventSet.html">EventSet</a> es;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">string</span> hashexpected, hashreal, uniques[MAXEVENT];</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">int</span> key;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    es = IndexBuild(es, 10, 10);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    key = 0;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="classIndex.html">Index</a> ies_0(key);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    SKIP_ASSERT_EQ_R(key, ies_0.getIOnWhich()) &lt;&lt; <span class="stringliteral">&quot;Building an index by Users reports 0&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    key = 1;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="classIndex.html">Index</a> ies_1(key);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    SKIP_ASSERT_EQ_R(key, ies_1.getIOnWhich()) &lt;&lt; <span class="stringliteral">&quot;Building an index by brand reports 1&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;TEST_F(_01_Basics, Index_clear) {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="classEventSet.html">EventSet</a> es;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="classIndex.html">Index</a> ies;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">string</span> hashexpected, hashreal, uniques[MAXEVENT];</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    hashexpected = ies.reportData();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    ies.<a class="code" href="classIndex.html#a734ad3d7b0f08e98616a9ec4207cae27">clear</a>();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    hashreal = ies.reportData();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    SKIP_ASSERT_EQ_R(0, ies.<a class="code" href="classIndex.html#a1d7170f9bdadd16f8db0b0905fdc1323">size</a>()) &lt;&lt; <span class="stringliteral">&quot;Clearing a brand new instance of Index leaves it empty&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    es = IndexBuild(es, 10, 10);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    ies.<a class="code" href="classIndex.html#a3b2c7f89af619efa0857084100fff2f8">build</a>(es, 1);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    ies.<a class="code" href="classIndex.html#a734ad3d7b0f08e98616a9ec4207cae27">clear</a>();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    SKIP_ASSERT_EQ_R(0, ies.<a class="code" href="classIndex.html#a1d7170f9bdadd16f8db0b0905fdc1323">size</a>()) &lt;&lt; <span class="stringliteral">&quot;Clearing an instance of Index with existing records leaves it empty&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;TEST_F(_02_Intermediate, Index_B_BxU_build_at) {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="classEventSet.html">EventSet</a> es;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="classIndex.html">Index</a> ies;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordtype">string</span> hashexpected, hashreal, uniques[MAXEVENT];</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordtype">int</span> B = MAXBRANDS, U = MAXUSERS;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    es = IndexBuild(es, B, U);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    ies.<a class="code" href="classIndex.html#a3b2c7f89af619efa0857084100fff2f8">build</a>(es, 1);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">int</span> i = 0;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> b = 0; b &lt; B - 1; b++) {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> u = 0; u &lt; U - 1; i++, u++) {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            SKIP_ASSERT_STREQ_R(ies.<a class="code" href="classIndex.html#a4b4100575cd7c41b532aaee42b27458a">at</a>(i).<a class="code" href="classPair.html#a265336f9fccf8cfd441545158192e68c">getKey</a>().c_str(), ies.<a class="code" href="classIndex.html#a4b4100575cd7c41b532aaee42b27458a">at</a>(i + 1).<a class="code" href="classPair.html#a265336f9fccf8cfd441545158192e68c">getKey</a>().c_str()) &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot; The index by brand built within experiment BxU is the same key during U consecutive positions&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            SKIP_ASSERT_EQ_R(ies.<a class="code" href="classIndex.html#a4b4100575cd7c41b532aaee42b27458a">at</a>(i).<a class="code" href="classPair.html#ae792131d5d5d921c6ec972ee928e3f05">getPos</a>(), ies.<a class="code" href="classIndex.html#a4b4100575cd7c41b532aaee42b27458a">at</a>(i + 1).<a class="code" href="classPair.html#ae792131d5d5d921c6ec972ee928e3f05">getPos</a>() - B) &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot; The index by brand built within experiment BxU two consecutive indexes of the same brand differ in B units&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        SKIP_ASSERT_STRNE_R(ies.<a class="code" href="classIndex.html#a4b4100575cd7c41b532aaee42b27458a">at</a>(i).<a class="code" href="classPair.html#a265336f9fccf8cfd441545158192e68c">getKey</a>().c_str(), ies.<a class="code" href="classIndex.html#a4b4100575cd7c41b532aaee42b27458a">at</a>(i + 1).<a class="code" href="classPair.html#a265336f9fccf8cfd441545158192e68c">getKey</a>().c_str()) &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot; The index by user built within experiment BxU changes the key at point U&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        i++;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;TEST_F(_02_Intermediate, Index_U_BxU_build_at) {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <a class="code" href="classEventSet.html">EventSet</a> es;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <a class="code" href="classIndex.html">Index</a> ies;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordtype">string</span> hashexpected, hashreal, uniques[MAXEVENT];</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordtype">int</span> B = MAXBRANDS, U = MAXUSERS;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    es = IndexBuild(es, B, U);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    ies.<a class="code" href="classIndex.html#a3b2c7f89af619efa0857084100fff2f8">build</a>(es, 0);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordtype">int</span> i = 0;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> u = 0; u &lt; U - 1; u++) {</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> b = 0; b &lt; B - 1; i++, b++) {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            SKIP_ASSERT_STREQ_R(ies.<a class="code" href="classIndex.html#a4b4100575cd7c41b532aaee42b27458a">at</a>(i).<a class="code" href="classPair.html#a265336f9fccf8cfd441545158192e68c">getKey</a>().c_str(), ies.<a class="code" href="classIndex.html#a4b4100575cd7c41b532aaee42b27458a">at</a>(i + 1).<a class="code" href="classPair.html#a265336f9fccf8cfd441545158192e68c">getKey</a>().c_str()) &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot; The index by user built within experiment BxU is the same key during B consecutive positions&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            SKIP_ASSERT_EQ_R(ies.<a class="code" href="classIndex.html#a4b4100575cd7c41b532aaee42b27458a">at</a>(i).<a class="code" href="classPair.html#ae792131d5d5d921c6ec972ee928e3f05">getPos</a>(), ies.<a class="code" href="classIndex.html#a4b4100575cd7c41b532aaee42b27458a">at</a>(i + 1).<a class="code" href="classPair.html#ae792131d5d5d921c6ec972ee928e3f05">getPos</a>() - 1) &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot; The index by user built within experiment BxU indexes B consecutive positions for the same key&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        }</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        SKIP_ASSERT_STRNE_R(ies.<a class="code" href="classIndex.html#a4b4100575cd7c41b532aaee42b27458a">at</a>(i).<a class="code" href="classPair.html#a265336f9fccf8cfd441545158192e68c">getKey</a>().c_str(), ies.<a class="code" href="classIndex.html#a4b4100575cd7c41b532aaee42b27458a">at</a>(i + 1).<a class="code" href="classPair.html#a265336f9fccf8cfd441545158192e68c">getKey</a>().c_str()) &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot; The index by user built within experiment BxU changes the key at point B&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        i++;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;}</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;TEST_F(_03_Advanced, Index_U_BxU_bounds) {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <a class="code" href="classEventSet.html">EventSet</a> es;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <a class="code" href="classIndex.html">Index</a> ies;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordtype">string</span> hashexpected, hashreal, uniques[MAXEVENT], user;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">int</span> B = MAXBRANDS, U = MAXUSERS;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    es = IndexBuild(es, B, U);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    ies.<a class="code" href="classIndex.html#a3b2c7f89af619efa0857084100fff2f8">build</a>(es, 0);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordtype">int</span> lb = 0, ub;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> u = 0; u &lt; 1 <span class="comment">/* U + 1 */</span>; u++) {</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        user = (string) <span class="stringliteral">&quot;User_&quot;</span> + format(<span class="stringliteral">&quot;%03d&quot;</span>, u);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        lb = u*B;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        ub = std::min((u + 1) * B, B * U);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        ASSERT_EQ_R(u*B, ies.<a class="code" href="classIndex.html#a4a5393a32896f664f2f3e78cf9982103">lower_bound</a>(user)) &lt;&lt; lb &lt;&lt; <span class="stringliteral">&quot; The index by user built within experiment BxU lower bounds User u with u*B&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        ASSERT_EQ_R(std::min((u + 1) * B, B * U), ies.<a class="code" href="classIndex.html#ae0a2965afa0cd0a99498b19c0c02a76f">upper_bound</a>(user)) &lt;&lt; lb &lt;&lt; <span class="stringliteral">&quot; The index by user built within experiment BxU upper bounds User u with (u+1)*B&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    }</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;}</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;TEST_F(_03_Advanced, Index_B_BxU_bounds) {</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <a class="code" href="classEventSet.html">EventSet</a> es;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <a class="code" href="classIndex.html">Index</a> ies;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordtype">string</span> hashexpected, hashreal, uniques[MAXEVENT], brand;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordtype">int</span> B = MAXBRANDS, U = MAXUSERS;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    es = IndexBuild(es, B, U);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    ies.<a class="code" href="classIndex.html#a3b2c7f89af619efa0857084100fff2f8">build</a>(es, 1);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordtype">int</span> lb = 0, ub;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> b = 0; b &lt; 1 <span class="comment">/* B + 1 */</span>; b++) {</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        brand = (string) <span class="stringliteral">&quot;Brand_&quot;</span> + format(<span class="stringliteral">&quot;%03d&quot;</span>, b);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        lb = b*U;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        ub = std::min((b + 1) * U, B * U);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        ASSERT_EQ_R(b*U, ies.<a class="code" href="classIndex.html#a4a5393a32896f664f2f3e78cf9982103">lower_bound</a>(brand)) &lt;&lt; lb &lt;&lt; <span class="stringliteral">&quot; The index by brand built within experiment BxU lower bounds Brand b with b*U&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        ASSERT_EQ_R(std::min((b + 1) * U, B * U), ies.<a class="code" href="classIndex.html#ae0a2965afa0cd0a99498b19c0c02a76f">upper_bound</a>(brand)) &lt;&lt; lb &lt;&lt; <span class="stringliteral">&quot; The index by brand built within experiment BxU upper bounds Brand b with (b+1)*U&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    }</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;}</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;TEST_F(_03_Advanced, Index_add) {</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <a class="code" href="classEventSet.html">EventSet</a> es;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <a class="code" href="classIndex.html">Index</a> ies;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordtype">string</span> toadd, hashexpected, hashreal, uniques[MAXEVENT], brand;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordtype">int</span> B = MAXBRANDS, U = MAXUSERS, sizebefore, sizeafter,</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            lowerbound, upperbound;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <a class="code" href="classPair.html">Pair</a> p;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    es = IndexBuild(es, B, U);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    ies.<a class="code" href="classIndex.html#a3b2c7f89af619efa0857084100fff2f8">build</a>(es, 1);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    sizebefore = ies.<a class="code" href="classIndex.html#a1d7170f9bdadd16f8db0b0905fdc1323">size</a>();</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordtype">int</span> lb, ub;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    toadd = <span class="stringliteral">&quot;ZZZZZ&quot;</span>;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    p.<a class="code" href="classPair.html#a50030329aed221d2942db296448f155a">setKey</a>(toadd);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    p.<a class="code" href="classPair.html#af20b1906372d2c140fa0a858baa7cfc8">setPos</a>(B * U);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    upperbound = ies.<a class="code" href="classIndex.html#ae0a2965afa0cd0a99498b19c0c02a76f">upper_bound</a>(toadd);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    ies.<a class="code" href="classIndex.html#aa9fb80238805162321140a1e12684594">add</a>(p);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    sizeafter = ies.<a class="code" href="classIndex.html#a1d7170f9bdadd16f8db0b0905fdc1323">size</a>();</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    SKIP_ASSERT_EQ_R(sizebefore + 1, sizeafter) &lt;&lt; <span class="stringliteral">&quot;Inserting any pair in any index increases its size in one&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    lowerbound = ies.<a class="code" href="classIndex.html#a4a5393a32896f664f2f3e78cf9982103">lower_bound</a>(toadd);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    SKIP_ASSERT_EQ_R(lowerbound, upperbound) &lt;&lt; <span class="stringliteral">&quot;Adding a  key at the end of the index places the new key in its previous upperbound&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    toadd = <span class="stringliteral">&quot;AAAAA&quot;</span>;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    p.<a class="code" href="classPair.html#a50030329aed221d2942db296448f155a">setKey</a>(toadd);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    p.<a class="code" href="classPair.html#af20b1906372d2c140fa0a858baa7cfc8">setPos</a>(B * U);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    ies.<a class="code" href="classIndex.html#aa9fb80238805162321140a1e12684594">add</a>(p);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    lowerbound = ies.<a class="code" href="classIndex.html#a4a5393a32896f664f2f3e78cf9982103">lower_bound</a>(toadd);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    SKIP_ASSERT_EQ_R(0, lowerbound) &lt;&lt; <span class="stringliteral">&quot;Adding a  key at the beginning of the index gives a lower bound equals to 0 after the insertion&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;}</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;TEST_F(_03_Advanced, Index_B_BxU_rawFilterIndex) {</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <a class="code" href="classEventSet.html">EventSet</a> es;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <a class="code" href="classIndex.html">Index</a> ies, iesfilter;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordtype">string</span> toadd, hashexpected, hashreal, uniques[MAXEVENT], brand, user;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordtype">int</span> B = MAXBRANDS, U = MAXUSERS, sizebefore, sizeafter,</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;            lowerbound, upperbound;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <a class="code" href="classPair.html">Pair</a> p;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    es = IndexBuild(es, B, U);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    ies.<a class="code" href="classIndex.html#a3b2c7f89af619efa0857084100fff2f8">build</a>(es, 1);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> b = 0; b &lt; 1 <span class="comment">/* B*/</span>; b++) {</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        brand = (string) <span class="stringliteral">&quot;Brand_&quot;</span> + format(<span class="stringliteral">&quot;%03d&quot;</span>, b);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        iesfilter = rawFilterIndex(es, ies, <span class="stringliteral">&quot;Brand&quot;</span>, brand);</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        SKIP_ASSERT_EQ_R(U, iesfilter.<a class="code" href="classIndex.html#a1d7170f9bdadd16f8db0b0905fdc1323">size</a>()) &lt;&lt; <span class="stringliteral">&quot;In an Index BxU , filtering the index by brand-i produces an index with exactly size U&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    }</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;}</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;TEST_F(_03_Advanced, Index_U_BxU_rawFilterIndex) {</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <a class="code" href="classEventSet.html">EventSet</a> es;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <a class="code" href="classIndex.html">Index</a> ies, iesfilter;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordtype">string</span> toadd, hashexpected, hashreal, uniques[MAXEVENT], brand, user;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordtype">int</span> B = MAXBRANDS, U = MAXUSERS, sizebefore, sizeafter,</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            lowerbound, upperbound;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <a class="code" href="classPair.html">Pair</a> p;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    es = IndexBuild(es, B, U);</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    ies.<a class="code" href="classIndex.html#a3b2c7f89af619efa0857084100fff2f8">build</a>(es, 0);</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> u = 0; u &lt; 1 <span class="comment">/* U */</span>; u++) {</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        user = (string) <span class="stringliteral">&quot;User_&quot;</span> + format(<span class="stringliteral">&quot;%03d&quot;</span>, u);</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        iesfilter = rawFilterIndex(es, ies, <span class="stringliteral">&quot;UserID&quot;</span>, user);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        SKIP_ASSERT_EQ_R(B, iesfilter.<a class="code" href="classIndex.html#a1d7170f9bdadd16f8db0b0905fdc1323">size</a>()) &lt;&lt; <span class="stringliteral">&quot;In an Index BxU , filtering the index by user-i produces an index with exactly size B&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    }</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;}</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;TEST_F(_03_Advanced, Index_Type_BxU_rawFilterIndex) {</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <a class="code" href="classEventSet.html">EventSet</a> es;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <a class="code" href="classIndex.html">Index</a> ies, iesfilter;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keywordtype">string</span> toadd, hashexpected, hashreal, uniques[MAXEVENT], brand, user, field, value;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keywordtype">int</span> B = MAXBRANDS, U = MAXUSERS, sizebefore, sizeafter,</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            lowerbound, upperbound;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <a class="code" href="classPair.html">Pair</a> p;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    es = IndexBuild(es, B, U);</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    ies.<a class="code" href="classIndex.html#a3b2c7f89af619efa0857084100fff2f8">build</a>(es, 0);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    field = <span class="stringliteral">&quot;Type&quot;</span>;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> t = 0; t &lt; 1 <span class="comment">/* 4*/</span>; t++) {</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        value = <a class="code" href="Event_8h.html#ac6d9035308945276f9fa837f67f5921e">VALID_TYPES</a>[t];</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        iesfilter = rawFilterIndex(es, ies, field, value);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        SKIP_ASSERT_EQ_R(B * U / 4, iesfilter.<a class="code" href="classIndex.html#a1d7170f9bdadd16f8db0b0905fdc1323">size</a>()) &lt;&lt; <span class="stringliteral">&quot;In an Index BxU , filtering the index by Type=cart produces an index with exactly size B&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    }</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;}</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;TEST_F(_03_Advanced, Index_DateTime_BxU_rawFilterIndex) {</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <a class="code" href="classEventSet.html">EventSet</a> es;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <a class="code" href="classIndex.html">Index</a> ies, iesfilter;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordtype">string</span> toadd, hashexpected, hashreal, uniques[MAXEVENT], brand, user, field, value;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keywordtype">int</span> B = MAXBRANDS, U = MAXUSERS, sizebefore, sizeafter,</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            lowerbound, upperbound;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <a class="code" href="classPair.html">Pair</a> p;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    es = IndexBuild(es, B, U);</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    ies.<a class="code" href="classIndex.html#a3b2c7f89af619efa0857084100fff2f8">build</a>(es, 0);</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    field = <span class="stringliteral">&quot;DateTime&quot;</span>;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    value = es.<a class="code" href="classEventSet.html#ab8ac311a6121981191ce61d505cc069f">at</a>(0).<a class="code" href="classEvent.html#ad89e0d4c55a2ede8980489d8d0de7704">getDateTime</a>().<a class="code" href="classDateTime.html#a246ab4f7cd93e15135efb69363d97d83">to_string</a>();</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    iesfilter = rawFilterIndex(es, ies, field, value);</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    SKIP_ASSERT_EQ_R(U, iesfilter.<a class="code" href="classIndex.html#a1d7170f9bdadd16f8db0b0905fdc1323">size</a>()) &lt;&lt; <span class="stringliteral">&quot;In an Index BxU , filtering the index by DateTime equals to the first available date produces an index with exactly size B&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;}</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;TEST_F(_03_Advanced, Index_BxU_sumPrice) {</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <a class="code" href="classEventSet.html">EventSet</a> es;</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <a class="code" href="classIndex.html">Index</a> ies, filter_brand, filter_user, filter_type, iest;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keywordtype">string</span> toadd, hashexpected, hashreal, uniques[MAXEVENT], brand, user, type, date;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keywordtype">int</span> B = MAXBRANDS, U = MAXUSERS, sizebefore, sizeafter,</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            lowerbound, upperbound, b, u, t, day;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="keywordtype">double</span> sump;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <a class="code" href="classPair.html">Pair</a> p;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    es = IndexBuild(es, B, U);</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    ies.<a class="code" href="classIndex.html#a3b2c7f89af619efa0857084100fff2f8">build</a>(es, 0);</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    u = 0;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    user = (string) <span class="stringliteral">&quot;User_&quot;</span> + format(<span class="stringliteral">&quot;%03d&quot;</span>, u);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    filter_user = rawFilterIndex(es, ies, <span class="stringliteral">&quot;UserID&quot;</span>, user);</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    SKIP_ASSERT_EQ_R(B * (1 + B) / 2, <a class="code" href="EventSet_8h.html#abe71e09d60b5cec46d638d14d9350135">sumPrice</a>(es, filter_user)) &lt;&lt; <span class="stringliteral">&quot;Given a BxU Index, a filter by user &quot;</span> &lt;&lt; u &lt;&lt; <span class="stringliteral">&quot; the sum of prices amounts to (U*B)/4*(1+B)/2&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    ies.<a class="code" href="classIndex.html#a3b2c7f89af619efa0857084100fff2f8">build</a>(es, 1);</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    b = 0;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    brand = (string) <span class="stringliteral">&quot;Brand_&quot;</span> + format(<span class="stringliteral">&quot;%03d&quot;</span>, b);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    filter_brand = rawFilterIndex(es, ies, <span class="stringliteral">&quot;Brand&quot;</span>, brand);</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    SKIP_ASSERT_EQ_R(U * (b + 1), <a class="code" href="EventSet_8h.html#abe71e09d60b5cec46d638d14d9350135">sumPrice</a>(es, filter_brand)) &lt;&lt; <span class="stringliteral">&quot;Given a BxU Index, a filter by brand &quot;</span> &lt;&lt; b &lt;&lt; <span class="stringliteral">&quot; the sum of prices amounts to U*(b+1)&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    t = 0;</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    type = <a class="code" href="Event_8h.html#ac6d9035308945276f9fa837f67f5921e">VALID_TYPES</a>[t];</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    filter_type = rawFilterIndex(es, ies, <span class="stringliteral">&quot;Type&quot;</span>, type);</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    SKIP_ASSERT_EQ_R((B * U) / 4 * (1 + B) / 2, <a class="code" href="EventSet_8h.html#abe71e09d60b5cec46d638d14d9350135">sumPrice</a>(es, filter_type)) &lt;&lt; <span class="stringliteral">&quot;Given a BxU Index, a filter by Type=&quot;</span> &lt;&lt; type &lt;&lt; <span class="stringliteral">&quot; the sum of prices amounts to (B*U)/4*(1+B)/2&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    date = <span class="stringliteral">&quot;2021-03-01 10:32:00 UTC&quot;</span>;</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    day = 1;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    date[8] = STR(day)[0];</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    date[9] = STR(day)[1];</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    filter_type = rawFilterIndex(es, ies, <span class="stringliteral">&quot;DateTime&quot;</span>, es.<a class="code" href="classEventSet.html#ab8ac311a6121981191ce61d505cc069f">at</a>(0).<a class="code" href="classEvent.html#ad89e0d4c55a2ede8980489d8d0de7704">getDateTime</a>().<a class="code" href="classDateTime.html#a246ab4f7cd93e15135efb69363d97d83">to_string</a>());</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    SKIP_ASSERT_EQ_R(U*day, <a class="code" href="EventSet_8h.html#abe71e09d60b5cec46d638d14d9350135">sumPrice</a>(es, filter_type)) &lt;&lt; <span class="stringliteral">&quot;Given a BxU Index, a filter by date=&quot;</span> &lt;&lt; date &lt;&lt; <span class="stringliteral">&quot; the sum of prices amounts to U*day&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aEvent_8h_html_ac6d9035308945276f9fa837f67f5921e"><div class="ttname"><a href="Event_8h.html#ac6d9035308945276f9fa837f67f5921e">VALID_TYPES</a></div><div class="ttdeci">const std::string VALID_TYPES[]</div><div class="ttdoc">The set of valid types. The default time is the first one.</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00018">Event.h:18</a></div></div>
+<div class="ttc" id="aclassPair_html_a265336f9fccf8cfd441545158192e68c"><div class="ttname"><a href="classPair.html#a265336f9fccf8cfd441545158192e68c">Pair::getKey</a></div><div class="ttdeci">const std::string &amp; getKey() const</div><div class="ttdoc">Get the key value from the Pair.</div><div class="ttdef"><b>Definition:</b> <a href="Pair_8cpp_source.html#l00026">Pair.cpp:26</a></div></div>
+<div class="ttc" id="aclassEvent_html_ab00ca66554ef75c2fd8b0b8805524d2a"><div class="ttname"><a href="classEvent.html#ab00ca66554ef75c2fd8b0b8805524d2a">Event::setProductID</a></div><div class="ttdeci">void setProductID(const std::string &amp;prod_id)</div><div class="ttdoc">It sets the Product ID of the event. If the value provided is the empty string &quot;&quot;,...</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cpp_source.html#l00083">Event.cpp:83</a></div></div>
+<div class="ttc" id="aclassDateTime_html_a246ab4f7cd93e15135efb69363d97d83"><div class="ttname"><a href="classDateTime.html#a246ab4f7cd93e15135efb69363d97d83">DateTime::to_string</a></div><div class="ttdeci">std::string to_string() const</div><div class="ttdoc">transform a dataTime to a string following the format: 2019-10-01 00:15:06 UTC</div><div class="ttdef"><b>Definition:</b> <a href="DateTime_8cpp_source.html#l00151">DateTime.cpp:151</a></div></div>
+<div class="ttc" id="aclassEvent_html_ad89e0d4c55a2ede8980489d8d0de7704"><div class="ttname"><a href="classEvent.html#ad89e0d4c55a2ede8980489d8d0de7704">Event::getDateTime</a></div><div class="ttdeci">DateTime getDateTime() const</div><div class="ttdoc">It gives the date of the event.</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cpp_source.html#l00027">Event.cpp:27</a></div></div>
+<div class="ttc" id="aDateTime_8h_html"><div class="ttname"><a href="DateTime_8h.html">DateTime.h</a></div></div>
+<div class="ttc" id="aclassIndex_html_ae0a2965afa0cd0a99498b19c0c02a76f"><div class="ttname"><a href="classIndex.html#ae0a2965afa0cd0a99498b19c0c02a76f">Index::upper_bound</a></div><div class="ttdeci">int upper_bound(const std::string &amp;key) const</div><div class="ttdoc">Returns the position to the first element in the Index which is considered to go after the key look a...</div><div class="ttdef"><b>Definition:</b> <a href="Index_8cpp_source.html#l00156">Index.cpp:156</a></div></div>
+<div class="ttc" id="aclassIndex_html"><div class="ttname"><a href="classIndex.html">Index</a></div><div class="ttdef"><b>Definition:</b> <a href="Index_8h_source.html#l00015">Index.h:15</a></div></div>
+<div class="ttc" id="aclassEvent_html_ac637a16105e0c1416e7ad3b030ee3a59"><div class="ttname"><a href="classEvent.html#ac637a16105e0c1416e7ad3b030ee3a59">Event::setPrice</a></div><div class="ttdeci">void setPrice(double price)</div><div class="ttdoc">Sets the price of the product in the event.</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cpp_source.html#l00102">Event.cpp:102</a></div></div>
+<div class="ttc" id="aclassIndex_html_a4b4100575cd7c41b532aaee42b27458a"><div class="ttname"><a href="classIndex.html#a4b4100575cd7c41b532aaee42b27458a">Index::at</a></div><div class="ttdeci">const Pair &amp; at(int pos) const</div><div class="ttdoc">get the Pair in a position selected, for consulting</div><div class="ttdef"><b>Definition:</b> <a href="Index_8cpp_source.html#l00165">Index.cpp:165</a></div></div>
+<div class="ttc" id="aclassEventSet_html_ab8ac311a6121981191ce61d505cc069f"><div class="ttname"><a href="classEventSet.html#ab8ac311a6121981191ce61d505cc069f">EventSet::at</a></div><div class="ttdeci">const Event &amp; at(int pos) const</div><div class="ttdoc">get the event in a position selected, for consulting</div><div class="ttdef"><b>Definition:</b> <a href="EventSet_8cpp_source.html#l00143">EventSet.cpp:143</a></div></div>
+<div class="ttc" id="aclassEvent_html_a317506221f3d1189594fe7ef47bd2910"><div class="ttname"><a href="classEvent.html#a317506221f3d1189594fe7ef47bd2910">Event::to_string</a></div><div class="ttdeci">std::string to_string() const</div><div class="ttdoc">transform an event to a string, using separator</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cpp_source.html#l00189">Event.cpp:189</a></div></div>
+<div class="ttc" id="aclassEventSet_html_acfb9e40b46c649bef5082f5577d733a6"><div class="ttname"><a href="classEventSet.html#acfb9e40b46c649bef5082f5577d733a6">EventSet::add</a></div><div class="ttdeci">int add(const Event &amp;e)</div><div class="ttdoc">Adds a new event at the end of the eventSet whenever there is some room.</div><div class="ttdef"><b>Definition:</b> <a href="EventSet_8cpp_source.html#l00127">EventSet.cpp:127</a></div></div>
+<div class="ttc" id="aclassEvent_html"><div class="ttname"><a href="classEvent.html">Event</a></div><div class="ttdoc">It stores every logged event of a web marketplace as it appears in https://www.kaggle....</div><div class="ttdef"><b>Definition:</b> <a href="Event_8h_source.html#l00041">Event.h:41</a></div></div>
+<div class="ttc" id="aclassPair_html_a50030329aed221d2942db296448f155a"><div class="ttname"><a href="classPair.html#a50030329aed221d2942db296448f155a">Pair::setKey</a></div><div class="ttdeci">void setKey(const std::string &amp;key)</div><div class="ttdoc">Set a key value for a Pair. Check the validity of the key.</div><div class="ttdef"><b>Definition:</b> <a href="Pair_8cpp_source.html#l00034">Pair.cpp:34</a></div></div>
+<div class="ttc" id="aEventSet_8h_html_abe71e09d60b5cec46d638d14d9350135"><div class="ttname"><a href="EventSet_8h.html#abe71e09d60b5cec46d638d14d9350135">sumPrice</a></div><div class="ttdeci">float sumPrice(const EventSet &amp;evSet)</div><div class="ttdoc">It Computes the total sum for price, on the complete EventSet.</div><div class="ttdef"><b>Definition:</b> <a href="EventSet_8cpp_source.html#l00237">EventSet.cpp:237</a></div></div>
+<div class="ttc" id="aclassIndex_html_aa9fb80238805162321140a1e12684594"><div class="ttname"><a href="classIndex.html#aa9fb80238805162321140a1e12684594">Index::add</a></div><div class="ttdeci">int add(const Pair &amp;pair)</div><div class="ttdoc">Inserts a new entry in the index, in a way that the index remains in ascending order of searching key...</div><div class="ttdef"><b>Definition:</b> <a href="Index_8cpp_source.html#l00098">Index.cpp:98</a></div></div>
+<div class="ttc" id="aclassPair_html_ae792131d5d5d921c6ec972ee928e3f05"><div class="ttname"><a href="classPair.html#ae792131d5d5d921c6ec972ee928e3f05">Pair::getPos</a></div><div class="ttdeci">const int getPos() const</div><div class="ttdoc">Get the position value from the Pair.</div><div class="ttdef"><b>Definition:</b> <a href="Pair_8cpp_source.html#l00030">Pair.cpp:30</a></div></div>
+<div class="ttc" id="aclassIndex_html_a1d7170f9bdadd16f8db0b0905fdc1323"><div class="ttname"><a href="classIndex.html#a1d7170f9bdadd16f8db0b0905fdc1323">Index::size</a></div><div class="ttdeci">int size() const</div><div class="ttdoc">Gets the size of the index.</div><div class="ttdef"><b>Definition:</b> <a href="Index_8cpp_source.html#l00086">Index.cpp:86</a></div></div>
+<div class="ttc" id="aEvent_8h_html"><div class="ttname"><a href="Event_8h.html">Event.h</a></div></div>
+<div class="ttc" id="aclassIndex_html_a4a5393a32896f664f2f3e78cf9982103"><div class="ttname"><a href="classIndex.html#a4a5393a32896f664f2f3e78cf9982103">Index::lower_bound</a></div><div class="ttdeci">int lower_bound(const std::string &amp;key) const</div><div class="ttdoc">Returns the position to the first element in the Index which is not considered to go before key (i....</div><div class="ttdef"><b>Definition:</b> <a href="Index_8cpp_source.html#l00147">Index.cpp:147</a></div></div>
+<div class="ttc" id="aclassPair_html"><div class="ttname"><a href="classPair.html">Pair</a></div><div class="ttdef"><b>Definition:</b> <a href="Pair_8h_source.html#l00013">Pair.h:13</a></div></div>
+<div class="ttc" id="aclassEvent_html_a90bf72790cc9b1fe934b14f17e222f18"><div class="ttname"><a href="classEvent.html#a90bf72790cc9b1fe934b14f17e222f18">Event::setType</a></div><div class="ttdeci">void setType(const std::string &amp;type)</div><div class="ttdoc">Sets the type of the event among the valid types in VALID_TYPES if it is not, then it assumes a defau...</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cpp_source.html#l00067">Event.cpp:67</a></div></div>
+<div class="ttc" id="aclassEventSet_html"><div class="ttname"><a href="classEventSet.html">EventSet</a></div><div class="ttdef"><b>Definition:</b> <a href="EventSet_8h_source.html#l00016">EventSet.h:16</a></div></div>
+<div class="ttc" id="aclassIndex_html_a3b2c7f89af619efa0857084100fff2f8"><div class="ttname"><a href="classIndex.html#a3b2c7f89af619efa0857084100fff2f8">Index::build</a></div><div class="ttdeci">void build(const EventSet &amp;evSet, int onBrand)</div><div class="ttdoc">Build the index using the Brand o the userID as searching key according to the onBrand value.</div><div class="ttdef"><b>Definition:</b> <a href="Index_8cpp_source.html#l00122">Index.cpp:122</a></div></div>
+<div class="ttc" id="aclassEvent_html_a5ae5a8a653c19d79e0c7157ea0f8a151"><div class="ttname"><a href="classEvent.html#a5ae5a8a653c19d79e0c7157ea0f8a151">Event::setBrand</a></div><div class="ttdeci">void setBrand(const std::string &amp;brand)</div><div class="ttdoc">It sets the Brand of the event. Empty strings &quot;&quot; are allowed.</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cpp_source.html#l00098">Event.cpp:98</a></div></div>
+<div class="ttc" id="aEventSet_8h_html"><div class="ttname"><a href="EventSet_8h.html">EventSet.h</a></div></div>
+<div class="ttc" id="aclassEvent_html_ae4a647d47f0a00fd1421d349f73d7f14"><div class="ttname"><a href="classEvent.html#ae4a647d47f0a00fd1421d349f73d7f14">Event::setUserID</a></div><div class="ttdeci">void setUserID(const std::string &amp;user_id)</div><div class="ttdoc">It sets the User ID of the event. If the value provided is the empty string &quot;&quot;, it is set to EMPTY_FI...</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cpp_source.html#l00109">Event.cpp:109</a></div></div>
+<div class="ttc" id="aclassEvent_html_a7f27f15e469fd53b6e8cfc4f70f242c8"><div class="ttname"><a href="classEvent.html#a7f27f15e469fd53b6e8cfc4f70f242c8">Event::setSession</a></div><div class="ttdeci">void setSession(const std::string &amp;session)</div><div class="ttdoc">It sets the Session of the event. If the value provided is the empty string &quot;&quot;, it is set to EMPTY_FI...</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cpp_source.html#l00116">Event.cpp:116</a></div></div>
+<div class="ttc" id="aclassPair_html_af20b1906372d2c140fa0a858baa7cfc8"><div class="ttname"><a href="classPair.html#af20b1906372d2c140fa0a858baa7cfc8">Pair::setPos</a></div><div class="ttdeci">void setPos(int pos)</div><div class="ttdoc">Set a value for entry in the Pair. Check the validity of the position.</div><div class="ttdef"><b>Definition:</b> <a href="Pair_8cpp_source.html#l00038">Pair.cpp:38</a></div></div>
+<div class="ttc" id="aclassEvent_html_ae549abc198ea2737dcaf426eadd9f70e"><div class="ttname"><a href="classEvent.html#ae549abc198ea2737dcaf426eadd9f70e">Event::setDateTime</a></div><div class="ttdeci">void setDateTime(const std::string &amp;Datetime)</div><div class="ttdoc">Sets the date and time of the event.</div><div class="ttdef"><b>Definition:</b> <a href="Event_8cpp_source.html#l00063">Event.cpp:63</a></div></div>
+<div class="ttc" id="aclassIndex_html_a734ad3d7b0f08e98616a9ec4207cae27"><div class="ttname"><a href="classIndex.html#a734ad3d7b0f08e98616a9ec4207cae27">Index::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Clears the index, setting the number of entries to 0.</div><div class="ttdef"><b>Definition:</b> <a href="Index_8cpp_source.html#l00090">Index.cpp:90</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>
